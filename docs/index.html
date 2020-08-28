@@ -1531,8 +1531,7 @@ Endpoint.</p>
 <h3 id='secure-redirect-endpoint'  >Secure Redirect Endpoint</h3>
 <p>As the redirect from the authorization endpoint in either grant procedure contains a code that is secret between Asana&#39;s
 authorization servers and your application, this response should not occur in plaintext over an unencrypted <code>http</code> connection.
-Asana is deprecating this behavior. We&#39;re enforcing the use of <code>https</code> redirect endpoints for new application registrations, and will soon stop calling back to
-<code>http</code> apps during the authorization process.</p>
+Because of this, we enforce the use of <code>https</code> redirect endpoints for application registrations.</p>
 
 <p>For non-production or personal use, you may wish to check out <a href="https://www.stunnel.org/index.html">stunnel</a>, which can act as a proxy
 to receive an encrypted connection, decrypt it, and forward it on to your application. For development work, you may wish to create a
