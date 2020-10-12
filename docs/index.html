@@ -3316,8 +3316,8 @@ Returns the compact records for all attachments on the task.
 <pre class="highlight shell tab-shell"><code>curl -X POST https://app.asana.com/api/1.0/tasks/<span class="o">{</span>task_gid<span class="o">}</span>/attachments <span class="se">\</span>
   -H <span class="s1">'Content-Type: multipart/form-data'</span> <span class="se">\</span>
   -H <span class="s1">'Accept: application/json'</span> <span class="se">\</span>
-  -H <span class="s1">'Authorization: Bearer {access-token}'</span>
-  -d <span class="s1">'{"field":"value","field":"value"}'</span>
+  -H <span class="s1">'Authorization: Bearer {access-token}'</span> <span class="se">\</span>
+  -d <span class="s1">'{"data": {"field":"value","field":"value"} }'</span>
 
 </code></pre><pre class="highlight javascript tab-javascript--nodejs" style="display:none"><code><span class="kr">const</span> <span class="nx">asana</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'asana'</span><span class="p">);</span>
 
@@ -3418,12 +3418,12 @@ in order for the server to reliably and properly handle the request.
 
 <p><em>Note when using curl:</em></p>
 
-<p>Be sure to add an <code>‘@’</code> before the file path, and use the <code>—form</code>
+<p>Be sure to add an <code>‘@’</code> before the file path, and use the <code>--form</code>
 option instead of the <code>-d</code> option.</p>
 
 <p>When uploading PDFs with curl, force the content-type to be pdf by
-appending the content type to the file path: <code>—form
-“file=@file.pdf;type=application/pdf”</code>.</p>
+appending the content type to the file path: <code>--form
+&quot;file=@file.pdf;type=application/pdf&quot;</code>.</p>
 
 <h3 id="upload-an-attachment-responses">Responses</h3>
 <div class='table-holder'><table class='asana-table'><thead><tr><td></td>
@@ -3490,14 +3490,14 @@ entirely.</li>
 <pre class="highlight shell tab-shell"><code>curl -X POST https://app.asana.com/api/1.0/batch <span class="se">\</span>
   -H <span class="s1">'Content-Type: application/json'</span> <span class="se">\</span>
   -H <span class="s1">'Accept: application/json'</span> <span class="se">\</span>
-  -H <span class="s1">'Authorization: Bearer {access-token}'</span>
-  -d <span class="s1">'{"field":"value","field":"value"}'</span>
+  -H <span class="s1">'Authorization: Bearer {access-token}'</span> <span class="se">\</span>
+  -d <span class="s1">'{"data": {"field":"value","field":"value"} }'</span>
 
 </code></pre><pre class="highlight javascript tab-javascript--nodejs" style="display:none"><code><span class="kr">const</span> <span class="nx">asana</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'asana'</span><span class="p">);</span>
 
 <span class="kr">const</span> <span class="nx">client</span> <span class="o">=</span> <span class="nx">asana</span><span class="p">.</span><span class="nx">Client</span><span class="p">.</span><span class="nx">create</span><span class="p">().</span><span class="nx">useAccessToken</span><span class="p">(</span><span class="s1">'PERSONAL_ACCESS_TOKEN'</span><span class="p">);</span>
 
-<span class="nx">client</span><span class="p">.</span><span class="nx">batchAPI</span><span class="p">.</span><span class="nx">createBatchRequest</span><span class="p">({</span><span class="na">field</span><span class="p">:</span> <span class="s2">"value"</span><span class="p">,</span> <span class="na">field</span><span class="p">:</span> <span class="s2">"value"</span><span class="p">,</span> <span class="na">pretty</span><span class="p">:</span> <span class="kc">true</span><span class="p">})</span>
+<span class="nx">client</span><span class="p">.</span><span class="nx">batchapi</span><span class="p">.</span><span class="nx">createBatchRequest</span><span class="p">({</span><span class="na">field</span><span class="p">:</span> <span class="s2">"value"</span><span class="p">,</span> <span class="na">field</span><span class="p">:</span> <span class="s2">"value"</span><span class="p">,</span> <span class="na">pretty</span><span class="p">:</span> <span class="kc">true</span><span class="p">})</span>
     <span class="p">.</span><span class="nx">then</span><span class="p">((</span><span class="nx">result</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
         <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">result</span><span class="p">);</span>
     <span class="p">});</span>
@@ -3698,14 +3698,14 @@ In the Asana application, Tasks, Projects, and Portfolios can hold user-specifie
 <pre class="highlight shell tab-shell"><code>curl -X POST https://app.asana.com/api/1.0/custom_fields <span class="se">\</span>
   -H <span class="s1">'Content-Type: application/json'</span> <span class="se">\</span>
   -H <span class="s1">'Accept: application/json'</span> <span class="se">\</span>
-  -H <span class="s1">'Authorization: Bearer {access-token}'</span>
-  -d <span class="s1">'{"field":"value","field":"value"}'</span>
+  -H <span class="s1">'Authorization: Bearer {access-token}'</span> <span class="se">\</span>
+  -d <span class="s1">'{"data": {"field":"value","field":"value"} }'</span>
 
 </code></pre><pre class="highlight javascript tab-javascript--nodejs" style="display:none"><code><span class="kr">const</span> <span class="nx">asana</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'asana'</span><span class="p">);</span>
 
 <span class="kr">const</span> <span class="nx">client</span> <span class="o">=</span> <span class="nx">asana</span><span class="p">.</span><span class="nx">Client</span><span class="p">.</span><span class="nx">create</span><span class="p">().</span><span class="nx">useAccessToken</span><span class="p">(</span><span class="s1">'PERSONAL_ACCESS_TOKEN'</span><span class="p">);</span>
 
-<span class="nx">client</span><span class="p">.</span><span class="nx">customFields</span><span class="p">.</span><span class="nx">createCustomField</span><span class="p">({</span><span class="na">field</span><span class="p">:</span> <span class="s2">"value"</span><span class="p">,</span> <span class="na">field</span><span class="p">:</span> <span class="s2">"value"</span><span class="p">,</span> <span class="na">pretty</span><span class="p">:</span> <span class="kc">true</span><span class="p">})</span>
+<span class="nx">client</span><span class="p">.</span><span class="nx">customfields</span><span class="p">.</span><span class="nx">createCustomField</span><span class="p">({</span><span class="na">field</span><span class="p">:</span> <span class="s2">"value"</span><span class="p">,</span> <span class="na">field</span><span class="p">:</span> <span class="s2">"value"</span><span class="p">,</span> <span class="na">pretty</span><span class="p">:</span> <span class="kc">true</span><span class="p">})</span>
     <span class="p">.</span><span class="nx">then</span><span class="p">((</span><span class="nx">result</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
         <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">result</span><span class="p">);</span>
     <span class="p">});</span>
@@ -3855,7 +3855,7 @@ The identifier format will always have a precision of 0.</p>
 
 <span class="kr">const</span> <span class="nx">client</span> <span class="o">=</span> <span class="nx">asana</span><span class="p">.</span><span class="nx">Client</span><span class="p">.</span><span class="nx">create</span><span class="p">().</span><span class="nx">useAccessToken</span><span class="p">(</span><span class="s1">'PERSONAL_ACCESS_TOKEN'</span><span class="p">);</span>
 
-<span class="nx">client</span><span class="p">.</span><span class="nx">customFields</span><span class="p">.</span><span class="nx">getCustomField</span><span class="p">(</span><span class="nx">customFieldGid</span><span class="p">,</span> <span class="p">{</span><span class="na">param</span><span class="p">:</span> <span class="s2">"value"</span><span class="p">,</span> <span class="na">param</span><span class="p">:</span> <span class="s2">"value"</span><span class="p">,</span> <span class="na">opt_pretty</span><span class="p">:</span> <span class="kc">true</span><span class="p">})</span>
+<span class="nx">client</span><span class="p">.</span><span class="nx">customfields</span><span class="p">.</span><span class="nx">getCustomField</span><span class="p">(</span><span class="nx">customFieldGid</span><span class="p">,</span> <span class="p">{</span><span class="na">param</span><span class="p">:</span> <span class="s2">"value"</span><span class="p">,</span> <span class="na">param</span><span class="p">:</span> <span class="s2">"value"</span><span class="p">,</span> <span class="na">opt_pretty</span><span class="p">:</span> <span class="kc">true</span><span class="p">})</span>
     <span class="p">.</span><span class="nx">then</span><span class="p">((</span><span class="nx">result</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
         <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">result</span><span class="p">);</span>
     <span class="p">});</span>
@@ -3963,14 +3963,14 @@ type-specific custom field definitions.
 <pre class="highlight shell tab-shell"><code>curl -X PUT https://app.asana.com/api/1.0/custom_fields/<span class="o">{</span>custom_field_gid<span class="o">}</span> <span class="se">\</span>
   -H <span class="s1">'Content-Type: application/json'</span> <span class="se">\</span>
   -H <span class="s1">'Accept: application/json'</span> <span class="se">\</span>
-  -H <span class="s1">'Authorization: Bearer {access-token}'</span>
-  -d <span class="s1">'{"field":"value","field":"value"}'</span>
+  -H <span class="s1">'Authorization: Bearer {access-token}'</span> <span class="se">\</span>
+  -d <span class="s1">'{"data": {"field":"value","field":"value"} }'</span>
 
 </code></pre><pre class="highlight javascript tab-javascript--nodejs" style="display:none"><code><span class="kr">const</span> <span class="nx">asana</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'asana'</span><span class="p">);</span>
 
 <span class="kr">const</span> <span class="nx">client</span> <span class="o">=</span> <span class="nx">asana</span><span class="p">.</span><span class="nx">Client</span><span class="p">.</span><span class="nx">create</span><span class="p">().</span><span class="nx">useAccessToken</span><span class="p">(</span><span class="s1">'PERSONAL_ACCESS_TOKEN'</span><span class="p">);</span>
 
-<span class="nx">client</span><span class="p">.</span><span class="nx">customFields</span><span class="p">.</span><span class="nx">updateCustomField</span><span class="p">(</span><span class="nx">customFieldGid</span><span class="p">,</span> <span class="p">{</span><span class="na">field</span><span class="p">:</span> <span class="s2">"value"</span><span class="p">,</span> <span class="na">field</span><span class="p">:</span> <span class="s2">"value"</span><span class="p">,</span> <span class="na">pretty</span><span class="p">:</span> <span class="kc">true</span><span class="p">})</span>
+<span class="nx">client</span><span class="p">.</span><span class="nx">customfields</span><span class="p">.</span><span class="nx">updateCustomField</span><span class="p">(</span><span class="nx">customFieldGid</span><span class="p">,</span> <span class="p">{</span><span class="na">field</span><span class="p">:</span> <span class="s2">"value"</span><span class="p">,</span> <span class="na">field</span><span class="p">:</span> <span class="s2">"value"</span><span class="p">,</span> <span class="na">pretty</span><span class="p">:</span> <span class="kc">true</span><span class="p">})</span>
     <span class="p">.</span><span class="nx">then</span><span class="p">((</span><span class="nx">result</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
         <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">result</span><span class="p">);</span>
     <span class="p">});</span>
@@ -4117,7 +4117,7 @@ The identifier format will always have a precision of 0.</p>
 
 <span class="kr">const</span> <span class="nx">client</span> <span class="o">=</span> <span class="nx">asana</span><span class="p">.</span><span class="nx">Client</span><span class="p">.</span><span class="nx">create</span><span class="p">().</span><span class="nx">useAccessToken</span><span class="p">(</span><span class="s1">'PERSONAL_ACCESS_TOKEN'</span><span class="p">);</span>
 
-<span class="nx">client</span><span class="p">.</span><span class="nx">customFields</span><span class="p">.</span><span class="nx">deleteCustomField</span><span class="p">(</span><span class="nx">customFieldGid</span><span class="p">)</span>
+<span class="nx">client</span><span class="p">.</span><span class="nx">customfields</span><span class="p">.</span><span class="nx">deleteCustomField</span><span class="p">(</span><span class="nx">customFieldGid</span><span class="p">)</span>
     <span class="p">.</span><span class="nx">then</span><span class="p">((</span><span class="nx">result</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
         <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">result</span><span class="p">);</span>
     <span class="p">});</span>
@@ -4198,7 +4198,7 @@ Returns an empty data record.
 
 <span class="kr">const</span> <span class="nx">client</span> <span class="o">=</span> <span class="nx">asana</span><span class="p">.</span><span class="nx">Client</span><span class="p">.</span><span class="nx">create</span><span class="p">().</span><span class="nx">useAccessToken</span><span class="p">(</span><span class="s1">'PERSONAL_ACCESS_TOKEN'</span><span class="p">);</span>
 
-<span class="nx">client</span><span class="p">.</span><span class="nx">customFields</span><span class="p">.</span><span class="nx">getCustomFieldsForWorkspace</span><span class="p">(</span><span class="nx">workspaceGid</span><span class="p">,</span> <span class="p">{</span><span class="na">param</span><span class="p">:</span> <span class="s2">"value"</span><span class="p">,</span> <span class="na">param</span><span class="p">:</span> <span class="s2">"value"</span><span class="p">,</span> <span class="na">opt_pretty</span><span class="p">:</span> <span class="kc">true</span><span class="p">})</span>
+<span class="nx">client</span><span class="p">.</span><span class="nx">customfields</span><span class="p">.</span><span class="nx">getCustomFieldsForWorkspace</span><span class="p">(</span><span class="nx">workspaceGid</span><span class="p">,</span> <span class="p">{</span><span class="na">param</span><span class="p">:</span> <span class="s2">"value"</span><span class="p">,</span> <span class="na">param</span><span class="p">:</span> <span class="s2">"value"</span><span class="p">,</span> <span class="na">opt_pretty</span><span class="p">:</span> <span class="kc">true</span><span class="p">})</span>
     <span class="p">.</span><span class="nx">then</span><span class="p">((</span><span class="nx">result</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
         <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">result</span><span class="p">);</span>
     <span class="p">});</span>
@@ -4301,14 +4301,14 @@ Returns a list of the compact representation of all of the custom fields in a wo
 <pre class="highlight shell tab-shell"><code>curl -X POST https://app.asana.com/api/1.0/custom_fields/<span class="o">{</span>custom_field_gid<span class="o">}</span>/enum_options <span class="se">\</span>
   -H <span class="s1">'Content-Type: application/json'</span> <span class="se">\</span>
   -H <span class="s1">'Accept: application/json'</span> <span class="se">\</span>
-  -H <span class="s1">'Authorization: Bearer {access-token}'</span>
-  -d <span class="s1">'{"field":"value","field":"value"}'</span>
+  -H <span class="s1">'Authorization: Bearer {access-token}'</span> <span class="se">\</span>
+  -d <span class="s1">'{"data": {"field":"value","field":"value"} }'</span>
 
 </code></pre><pre class="highlight javascript tab-javascript--nodejs" style="display:none"><code><span class="kr">const</span> <span class="nx">asana</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'asana'</span><span class="p">);</span>
 
 <span class="kr">const</span> <span class="nx">client</span> <span class="o">=</span> <span class="nx">asana</span><span class="p">.</span><span class="nx">Client</span><span class="p">.</span><span class="nx">create</span><span class="p">().</span><span class="nx">useAccessToken</span><span class="p">(</span><span class="s1">'PERSONAL_ACCESS_TOKEN'</span><span class="p">);</span>
 
-<span class="nx">client</span><span class="p">.</span><span class="nx">customFields</span><span class="p">.</span><span class="nx">createEnumOptionForCustomField</span><span class="p">(</span><span class="nx">customFieldGid</span><span class="p">,</span> <span class="p">{</span><span class="na">field</span><span class="p">:</span> <span class="s2">"value"</span><span class="p">,</span> <span class="na">field</span><span class="p">:</span> <span class="s2">"value"</span><span class="p">,</span> <span class="na">pretty</span><span class="p">:</span> <span class="kc">true</span><span class="p">})</span>
+<span class="nx">client</span><span class="p">.</span><span class="nx">customfields</span><span class="p">.</span><span class="nx">createEnumOptionForCustomField</span><span class="p">(</span><span class="nx">customFieldGid</span><span class="p">,</span> <span class="p">{</span><span class="na">field</span><span class="p">:</span> <span class="s2">"value"</span><span class="p">,</span> <span class="na">field</span><span class="p">:</span> <span class="s2">"value"</span><span class="p">,</span> <span class="na">pretty</span><span class="p">:</span> <span class="kc">true</span><span class="p">})</span>
     <span class="p">.</span><span class="nx">then</span><span class="p">((</span><span class="nx">result</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
         <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">result</span><span class="p">);</span>
     <span class="p">});</span>
@@ -4399,14 +4399,14 @@ Returns the full record of the newly created enum option.
 <pre class="highlight shell tab-shell"><code>curl -X POST https://app.asana.com/api/1.0/custom_fields/<span class="o">{</span>custom_field_gid<span class="o">}</span>/enum_options/insert <span class="se">\</span>
   -H <span class="s1">'Content-Type: application/json'</span> <span class="se">\</span>
   -H <span class="s1">'Accept: application/json'</span> <span class="se">\</span>
-  -H <span class="s1">'Authorization: Bearer {access-token}'</span>
-  -d <span class="s1">'{"field":"value","field":"value"}'</span>
+  -H <span class="s1">'Authorization: Bearer {access-token}'</span> <span class="se">\</span>
+  -d <span class="s1">'{"data": {"field":"value","field":"value"} }'</span>
 
 </code></pre><pre class="highlight javascript tab-javascript--nodejs" style="display:none"><code><span class="kr">const</span> <span class="nx">asana</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'asana'</span><span class="p">);</span>
 
 <span class="kr">const</span> <span class="nx">client</span> <span class="o">=</span> <span class="nx">asana</span><span class="p">.</span><span class="nx">Client</span><span class="p">.</span><span class="nx">create</span><span class="p">().</span><span class="nx">useAccessToken</span><span class="p">(</span><span class="s1">'PERSONAL_ACCESS_TOKEN'</span><span class="p">);</span>
 
-<span class="nx">client</span><span class="p">.</span><span class="nx">customFields</span><span class="p">.</span><span class="nx">insertEnumOptionForCustomField</span><span class="p">(</span><span class="nx">customFieldGid</span><span class="p">,</span> <span class="p">{</span><span class="na">field</span><span class="p">:</span> <span class="s2">"value"</span><span class="p">,</span> <span class="na">field</span><span class="p">:</span> <span class="s2">"value"</span><span class="p">,</span> <span class="na">pretty</span><span class="p">:</span> <span class="kc">true</span><span class="p">})</span>
+<span class="nx">client</span><span class="p">.</span><span class="nx">customfields</span><span class="p">.</span><span class="nx">insertEnumOptionForCustomField</span><span class="p">(</span><span class="nx">customFieldGid</span><span class="p">,</span> <span class="p">{</span><span class="na">field</span><span class="p">:</span> <span class="s2">"value"</span><span class="p">,</span> <span class="na">field</span><span class="p">:</span> <span class="s2">"value"</span><span class="p">,</span> <span class="na">pretty</span><span class="p">:</span> <span class="kc">true</span><span class="p">})</span>
     <span class="p">.</span><span class="nx">then</span><span class="p">((</span><span class="nx">result</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
         <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">result</span><span class="p">);</span>
     <span class="p">});</span>
@@ -4494,14 +4494,14 @@ Locked custom fields can only be reordered by the user who locked the field.
 <pre class="highlight shell tab-shell"><code>curl -X PUT https://app.asana.com/api/1.0/enum_options/<span class="o">{</span>enum_option_gid<span class="o">}</span> <span class="se">\</span>
   -H <span class="s1">'Content-Type: application/json'</span> <span class="se">\</span>
   -H <span class="s1">'Accept: application/json'</span> <span class="se">\</span>
-  -H <span class="s1">'Authorization: Bearer {access-token}'</span>
-  -d <span class="s1">'{"field":"value","field":"value"}'</span>
+  -H <span class="s1">'Authorization: Bearer {access-token}'</span> <span class="se">\</span>
+  -d <span class="s1">'{"data": {"field":"value","field":"value"} }'</span>
 
 </code></pre><pre class="highlight javascript tab-javascript--nodejs" style="display:none"><code><span class="kr">const</span> <span class="nx">asana</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'asana'</span><span class="p">);</span>
 
 <span class="kr">const</span> <span class="nx">client</span> <span class="o">=</span> <span class="nx">asana</span><span class="p">.</span><span class="nx">Client</span><span class="p">.</span><span class="nx">create</span><span class="p">().</span><span class="nx">useAccessToken</span><span class="p">(</span><span class="s1">'PERSONAL_ACCESS_TOKEN'</span><span class="p">);</span>
 
-<span class="nx">client</span><span class="p">.</span><span class="nx">customFields</span><span class="p">.</span><span class="nx">updateEnumOption</span><span class="p">(</span><span class="nx">enumOptionGid</span><span class="p">,</span> <span class="p">{</span><span class="na">field</span><span class="p">:</span> <span class="s2">"value"</span><span class="p">,</span> <span class="na">field</span><span class="p">:</span> <span class="s2">"value"</span><span class="p">,</span> <span class="na">pretty</span><span class="p">:</span> <span class="kc">true</span><span class="p">})</span>
+<span class="nx">client</span><span class="p">.</span><span class="nx">customfields</span><span class="p">.</span><span class="nx">updateEnumOption</span><span class="p">(</span><span class="nx">enumOptionGid</span><span class="p">,</span> <span class="p">{</span><span class="na">field</span><span class="p">:</span> <span class="s2">"value"</span><span class="p">,</span> <span class="na">field</span><span class="p">:</span> <span class="s2">"value"</span><span class="p">,</span> <span class="na">pretty</span><span class="p">:</span> <span class="kc">true</span><span class="p">})</span>
     <span class="p">.</span><span class="nx">then</span><span class="p">((</span><span class="nx">result</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
         <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">result</span><span class="p">);</span>
     <span class="p">});</span>
@@ -4611,7 +4611,7 @@ Custom fields are attached to a particular project with the Custom Field Setting
 
 <span class="kr">const</span> <span class="nx">client</span> <span class="o">=</span> <span class="nx">asana</span><span class="p">.</span><span class="nx">Client</span><span class="p">.</span><span class="nx">create</span><span class="p">().</span><span class="nx">useAccessToken</span><span class="p">(</span><span class="s1">'PERSONAL_ACCESS_TOKEN'</span><span class="p">);</span>
 
-<span class="nx">client</span><span class="p">.</span><span class="nx">customFieldSettings</span><span class="p">.</span><span class="nx">getCustomFieldSettingsForProject</span><span class="p">(</span><span class="nx">projectGid</span><span class="p">,</span> <span class="p">{</span><span class="na">param</span><span class="p">:</span> <span class="s2">"value"</span><span class="p">,</span> <span class="na">param</span><span class="p">:</span> <span class="s2">"value"</span><span class="p">,</span> <span class="na">opt_pretty</span><span class="p">:</span> <span class="kc">true</span><span class="p">})</span>
+<span class="nx">client</span><span class="p">.</span><span class="nx">customfieldsettings</span><span class="p">.</span><span class="nx">getCustomFieldSettingsForProject</span><span class="p">(</span><span class="nx">projectGid</span><span class="p">,</span> <span class="p">{</span><span class="na">param</span><span class="p">:</span> <span class="s2">"value"</span><span class="p">,</span> <span class="na">param</span><span class="p">:</span> <span class="s2">"value"</span><span class="p">,</span> <span class="na">opt_pretty</span><span class="p">:</span> <span class="kc">true</span><span class="p">})</span>
     <span class="p">.</span><span class="nx">then</span><span class="p">((</span><span class="nx">result</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
         <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">result</span><span class="p">);</span>
     <span class="p">});</span>
@@ -4734,7 +4734,7 @@ Returns a list of all of the custom fields settings on a project, in compact for
 
 <span class="kr">const</span> <span class="nx">client</span> <span class="o">=</span> <span class="nx">asana</span><span class="p">.</span><span class="nx">Client</span><span class="p">.</span><span class="nx">create</span><span class="p">().</span><span class="nx">useAccessToken</span><span class="p">(</span><span class="s1">'PERSONAL_ACCESS_TOKEN'</span><span class="p">);</span>
 
-<span class="nx">client</span><span class="p">.</span><span class="nx">customFieldSettings</span><span class="p">.</span><span class="nx">getCustomFieldSettingsForPortfolio</span><span class="p">(</span><span class="nx">portfolioGid</span><span class="p">,</span> <span class="p">{</span><span class="na">param</span><span class="p">:</span> <span class="s2">"value"</span><span class="p">,</span> <span class="na">param</span><span class="p">:</span> <span class="s2">"value"</span><span class="p">,</span> <span class="na">opt_pretty</span><span class="p">:</span> <span class="kc">true</span><span class="p">})</span>
+<span class="nx">client</span><span class="p">.</span><span class="nx">customfieldsettings</span><span class="p">.</span><span class="nx">getCustomFieldSettingsForPortfolio</span><span class="p">(</span><span class="nx">portfolioGid</span><span class="p">,</span> <span class="p">{</span><span class="na">param</span><span class="p">:</span> <span class="s2">"value"</span><span class="p">,</span> <span class="na">param</span><span class="p">:</span> <span class="s2">"value"</span><span class="p">,</span> <span class="na">opt_pretty</span><span class="p">:</span> <span class="kc">true</span><span class="p">})</span>
     <span class="p">.</span><span class="nx">then</span><span class="p">((</span><span class="nx">result</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
         <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">result</span><span class="p">);</span>
     <span class="p">});</span>
@@ -5133,14 +5133,14 @@ for large Organizations.</li>
 <pre class="highlight shell tab-shell"><code>curl -X POST https://app.asana.com/api/1.0/organization_exports <span class="se">\</span>
   -H <span class="s1">'Content-Type: application/json'</span> <span class="se">\</span>
   -H <span class="s1">'Accept: application/json'</span> <span class="se">\</span>
-  -H <span class="s1">'Authorization: Bearer {access-token}'</span>
-  -d <span class="s1">'{"field":"value","field":"value"}'</span>
+  -H <span class="s1">'Authorization: Bearer {access-token}'</span> <span class="se">\</span>
+  -d <span class="s1">'{"data": {"field":"value","field":"value"} }'</span>
 
 </code></pre><pre class="highlight javascript tab-javascript--nodejs" style="display:none"><code><span class="kr">const</span> <span class="nx">asana</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'asana'</span><span class="p">);</span>
 
 <span class="kr">const</span> <span class="nx">client</span> <span class="o">=</span> <span class="nx">asana</span><span class="p">.</span><span class="nx">Client</span><span class="p">.</span><span class="nx">create</span><span class="p">().</span><span class="nx">useAccessToken</span><span class="p">(</span><span class="s1">'PERSONAL_ACCESS_TOKEN'</span><span class="p">);</span>
 
-<span class="nx">client</span><span class="p">.</span><span class="nx">organizationExports</span><span class="p">.</span><span class="nx">createOrganizationExport</span><span class="p">({</span><span class="na">field</span><span class="p">:</span> <span class="s2">"value"</span><span class="p">,</span> <span class="na">field</span><span class="p">:</span> <span class="s2">"value"</span><span class="p">,</span> <span class="na">pretty</span><span class="p">:</span> <span class="kc">true</span><span class="p">})</span>
+<span class="nx">client</span><span class="p">.</span><span class="nx">organizationexports</span><span class="p">.</span><span class="nx">createOrganizationExport</span><span class="p">({</span><span class="na">field</span><span class="p">:</span> <span class="s2">"value"</span><span class="p">,</span> <span class="na">field</span><span class="p">:</span> <span class="s2">"value"</span><span class="p">,</span> <span class="na">pretty</span><span class="p">:</span> <span class="kc">true</span><span class="p">})</span>
     <span class="p">.</span><span class="nx">then</span><span class="p">((</span><span class="nx">result</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
         <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">result</span><span class="p">);</span>
     <span class="p">});</span>
@@ -5243,7 +5243,7 @@ This method creates a request to export an Organization. Asana will complete the
 
 <span class="kr">const</span> <span class="nx">client</span> <span class="o">=</span> <span class="nx">asana</span><span class="p">.</span><span class="nx">Client</span><span class="p">.</span><span class="nx">create</span><span class="p">().</span><span class="nx">useAccessToken</span><span class="p">(</span><span class="s1">'PERSONAL_ACCESS_TOKEN'</span><span class="p">);</span>
 
-<span class="nx">client</span><span class="p">.</span><span class="nx">organizationExports</span><span class="p">.</span><span class="nx">getOrganizationExport</span><span class="p">(</span><span class="nx">organizationExportGid</span><span class="p">,</span> <span class="p">{</span><span class="na">param</span><span class="p">:</span> <span class="s2">"value"</span><span class="p">,</span> <span class="na">param</span><span class="p">:</span> <span class="s2">"value"</span><span class="p">,</span> <span class="na">opt_pretty</span><span class="p">:</span> <span class="kc">true</span><span class="p">})</span>
+<span class="nx">client</span><span class="p">.</span><span class="nx">organizationexports</span><span class="p">.</span><span class="nx">getOrganizationExport</span><span class="p">(</span><span class="nx">organizationExportGid</span><span class="p">,</span> <span class="p">{</span><span class="na">param</span><span class="p">:</span> <span class="s2">"value"</span><span class="p">,</span> <span class="na">param</span><span class="p">:</span> <span class="s2">"value"</span><span class="p">,</span> <span class="na">opt_pretty</span><span class="p">:</span> <span class="kc">true</span><span class="p">})</span>
     <span class="p">.</span><span class="nx">then</span><span class="p">((</span><span class="nx">result</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
         <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">result</span><span class="p">);</span>
     <span class="p">});</span>
@@ -5424,8 +5424,8 @@ Returns a list of the portfolios in compact representation that are owned by the
 <pre class="highlight shell tab-shell"><code>curl -X POST https://app.asana.com/api/1.0/portfolios <span class="se">\</span>
   -H <span class="s1">'Content-Type: application/json'</span> <span class="se">\</span>
   -H <span class="s1">'Accept: application/json'</span> <span class="se">\</span>
-  -H <span class="s1">'Authorization: Bearer {access-token}'</span>
-  -d <span class="s1">'{"field":"value","field":"value"}'</span>
+  -H <span class="s1">'Authorization: Bearer {access-token}'</span> <span class="se">\</span>
+  -d <span class="s1">'{"data": {"field":"value","field":"value"} }'</span>
 
 </code></pre><pre class="highlight javascript tab-javascript--nodejs" style="display:none"><code><span class="kr">const</span> <span class="nx">asana</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'asana'</span><span class="p">);</span>
 
@@ -5761,8 +5761,8 @@ Returns the complete portfolio record for a single portfolio.
 <pre class="highlight shell tab-shell"><code>curl -X PUT https://app.asana.com/api/1.0/portfolios/<span class="o">{</span>portfolio_gid<span class="o">}</span> <span class="se">\</span>
   -H <span class="s1">'Content-Type: application/json'</span> <span class="se">\</span>
   -H <span class="s1">'Accept: application/json'</span> <span class="se">\</span>
-  -H <span class="s1">'Authorization: Bearer {access-token}'</span>
-  -d <span class="s1">'{"field":"value","field":"value"}'</span>
+  -H <span class="s1">'Authorization: Bearer {access-token}'</span> <span class="se">\</span>
+  -d <span class="s1">'{"data": {"field":"value","field":"value"} }'</span>
 
 </code></pre><pre class="highlight javascript tab-javascript--nodejs" style="display:none"><code><span class="kr">const</span> <span class="nx">asana</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'asana'</span><span class="p">);</span>
 
@@ -6102,8 +6102,8 @@ Get a list of the items in compact form in a portfolio.
 <pre class="highlight shell tab-shell"><code>curl -X POST https://app.asana.com/api/1.0/portfolios/<span class="o">{</span>portfolio_gid<span class="o">}</span>/addItem <span class="se">\</span>
   -H <span class="s1">'Content-Type: application/json'</span> <span class="se">\</span>
   -H <span class="s1">'Accept: application/json'</span> <span class="se">\</span>
-  -H <span class="s1">'Authorization: Bearer {access-token}'</span>
-  -d <span class="s1">'{"field":"value","field":"value"}'</span>
+  -H <span class="s1">'Authorization: Bearer {access-token}'</span> <span class="se">\</span>
+  -d <span class="s1">'{"data": {"field":"value","field":"value"} }'</span>
 
 </code></pre><pre class="highlight javascript tab-javascript--nodejs" style="display:none"><code><span class="kr">const</span> <span class="nx">asana</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'asana'</span><span class="p">);</span>
 
@@ -6197,8 +6197,8 @@ Returns an empty data block.
 <pre class="highlight shell tab-shell"><code>curl -X POST https://app.asana.com/api/1.0/portfolios/<span class="o">{</span>portfolio_gid<span class="o">}</span>/removeItem <span class="se">\</span>
   -H <span class="s1">'Content-Type: application/json'</span> <span class="se">\</span>
   -H <span class="s1">'Accept: application/json'</span> <span class="se">\</span>
-  -H <span class="s1">'Authorization: Bearer {access-token}'</span>
-  -d <span class="s1">'{"field":"value","field":"value"}'</span>
+  -H <span class="s1">'Authorization: Bearer {access-token}'</span> <span class="se">\</span>
+  -d <span class="s1">'{"data": {"field":"value","field":"value"} }'</span>
 
 </code></pre><pre class="highlight javascript tab-javascript--nodejs" style="display:none"><code><span class="kr">const</span> <span class="nx">asana</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'asana'</span><span class="p">);</span>
 
@@ -6290,8 +6290,8 @@ Returns an empty data block.
 <pre class="highlight shell tab-shell"><code>curl -X POST https://app.asana.com/api/1.0/portfolios/<span class="o">{</span>portfolio_gid<span class="o">}</span>/addCustomFieldSetting <span class="se">\</span>
   -H <span class="s1">'Content-Type: application/json'</span> <span class="se">\</span>
   -H <span class="s1">'Accept: application/json'</span> <span class="se">\</span>
-  -H <span class="s1">'Authorization: Bearer {access-token}'</span>
-  -d <span class="s1">'{"field":"value","field":"value"}'</span>
+  -H <span class="s1">'Authorization: Bearer {access-token}'</span> <span class="se">\</span>
+  -d <span class="s1">'{"data": {"field":"value","field":"value"} }'</span>
 
 </code></pre><pre class="highlight javascript tab-javascript--nodejs" style="display:none"><code><span class="kr">const</span> <span class="nx">asana</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'asana'</span><span class="p">);</span>
 
@@ -6385,8 +6385,8 @@ Custom fields are associated with portfolios by way of custom field settings.  T
 <pre class="highlight shell tab-shell"><code>curl -X POST https://app.asana.com/api/1.0/portfolios/<span class="o">{</span>portfolio_gid<span class="o">}</span>/removeCustomFieldSetting <span class="se">\</span>
   -H <span class="s1">'Content-Type: application/json'</span> <span class="se">\</span>
   -H <span class="s1">'Accept: application/json'</span> <span class="se">\</span>
-  -H <span class="s1">'Authorization: Bearer {access-token}'</span>
-  -d <span class="s1">'{"field":"value","field":"value"}'</span>
+  -H <span class="s1">'Authorization: Bearer {access-token}'</span> <span class="se">\</span>
+  -d <span class="s1">'{"data": {"field":"value","field":"value"} }'</span>
 
 </code></pre><pre class="highlight javascript tab-javascript--nodejs" style="display:none"><code><span class="kr">const</span> <span class="nx">asana</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'asana'</span><span class="p">);</span>
 
@@ -6477,8 +6477,8 @@ Removes a custom field setting from a portfolio.
 <pre class="highlight shell tab-shell"><code>curl -X POST https://app.asana.com/api/1.0/portfolios/<span class="o">{</span>portfolio_gid<span class="o">}</span>/addMembers <span class="se">\</span>
   -H <span class="s1">'Content-Type: application/json'</span> <span class="se">\</span>
   -H <span class="s1">'Accept: application/json'</span> <span class="se">\</span>
-  -H <span class="s1">'Authorization: Bearer {access-token}'</span>
-  -d <span class="s1">'{"field":"value","field":"value"}'</span>
+  -H <span class="s1">'Authorization: Bearer {access-token}'</span> <span class="se">\</span>
+  -d <span class="s1">'{"data": {"field":"value","field":"value"} }'</span>
 
 </code></pre><pre class="highlight javascript tab-javascript--nodejs" style="display:none"><code><span class="kr">const</span> <span class="nx">asana</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'asana'</span><span class="p">);</span>
 
@@ -6570,8 +6570,8 @@ Returns the updated portfolio record.
 <pre class="highlight shell tab-shell"><code>curl -X POST https://app.asana.com/api/1.0/portfolios/<span class="o">{</span>portfolio_gid<span class="o">}</span>/removeMembers <span class="se">\</span>
   -H <span class="s1">'Content-Type: application/json'</span> <span class="se">\</span>
   -H <span class="s1">'Accept: application/json'</span> <span class="se">\</span>
-  -H <span class="s1">'Authorization: Bearer {access-token}'</span>
-  -d <span class="s1">'{"field":"value","field":"value"}'</span>
+  -H <span class="s1">'Authorization: Bearer {access-token}'</span> <span class="se">\</span>
+  -d <span class="s1">'{"data": {"field":"value","field":"value"} }'</span>
 
 </code></pre><pre class="highlight javascript tab-javascript--nodejs" style="display:none"><code><span class="kr">const</span> <span class="nx">asana</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'asana'</span><span class="p">);</span>
 
@@ -6682,7 +6682,7 @@ This object determines if a user is a member of a portfolio.
 
 <span class="kr">const</span> <span class="nx">client</span> <span class="o">=</span> <span class="nx">asana</span><span class="p">.</span><span class="nx">Client</span><span class="p">.</span><span class="nx">create</span><span class="p">().</span><span class="nx">useAccessToken</span><span class="p">(</span><span class="s1">'PERSONAL_ACCESS_TOKEN'</span><span class="p">);</span>
 
-<span class="nx">client</span><span class="p">.</span><span class="nx">portfolioMemberships</span><span class="p">.</span><span class="nx">getPortfolioMemberships</span><span class="p">({</span><span class="na">param</span><span class="p">:</span> <span class="s2">"value"</span><span class="p">,</span> <span class="na">param</span><span class="p">:</span> <span class="s2">"value"</span><span class="p">,</span> <span class="na">opt_pretty</span><span class="p">:</span> <span class="kc">true</span><span class="p">})</span>
+<span class="nx">client</span><span class="p">.</span><span class="nx">portfoliomemberships</span><span class="p">.</span><span class="nx">getPortfolioMemberships</span><span class="p">({</span><span class="na">param</span><span class="p">:</span> <span class="s2">"value"</span><span class="p">,</span> <span class="na">param</span><span class="p">:</span> <span class="s2">"value"</span><span class="p">,</span> <span class="na">opt_pretty</span><span class="p">:</span> <span class="kc">true</span><span class="p">})</span>
     <span class="p">.</span><span class="nx">then</span><span class="p">((</span><span class="nx">result</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
         <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">result</span><span class="p">);</span>
     <span class="p">});</span>
@@ -6770,7 +6770,7 @@ Returns a list of portfolio memberships in compact representation. You must spec
 
 <span class="kr">const</span> <span class="nx">client</span> <span class="o">=</span> <span class="nx">asana</span><span class="p">.</span><span class="nx">Client</span><span class="p">.</span><span class="nx">create</span><span class="p">().</span><span class="nx">useAccessToken</span><span class="p">(</span><span class="s1">'PERSONAL_ACCESS_TOKEN'</span><span class="p">);</span>
 
-<span class="nx">client</span><span class="p">.</span><span class="nx">portfolioMemberships</span><span class="p">.</span><span class="nx">getPortfolioMembership</span><span class="p">(</span><span class="nx">portfolioMembershipGid</span><span class="p">,</span> <span class="p">{</span><span class="na">param</span><span class="p">:</span> <span class="s2">"value"</span><span class="p">,</span> <span class="na">param</span><span class="p">:</span> <span class="s2">"value"</span><span class="p">,</span> <span class="na">opt_pretty</span><span class="p">:</span> <span class="kc">true</span><span class="p">})</span>
+<span class="nx">client</span><span class="p">.</span><span class="nx">portfoliomemberships</span><span class="p">.</span><span class="nx">getPortfolioMembership</span><span class="p">(</span><span class="nx">portfolioMembershipGid</span><span class="p">,</span> <span class="p">{</span><span class="na">param</span><span class="p">:</span> <span class="s2">"value"</span><span class="p">,</span> <span class="na">param</span><span class="p">:</span> <span class="s2">"value"</span><span class="p">,</span> <span class="na">opt_pretty</span><span class="p">:</span> <span class="kc">true</span><span class="p">})</span>
     <span class="p">.</span><span class="nx">then</span><span class="p">((</span><span class="nx">result</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
         <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">result</span><span class="p">);</span>
     <span class="p">});</span>
@@ -6856,7 +6856,7 @@ Returns the complete portfolio record for a single portfolio membership.
 
 <span class="kr">const</span> <span class="nx">client</span> <span class="o">=</span> <span class="nx">asana</span><span class="p">.</span><span class="nx">Client</span><span class="p">.</span><span class="nx">create</span><span class="p">().</span><span class="nx">useAccessToken</span><span class="p">(</span><span class="s1">'PERSONAL_ACCESS_TOKEN'</span><span class="p">);</span>
 
-<span class="nx">client</span><span class="p">.</span><span class="nx">portfolioMemberships</span><span class="p">.</span><span class="nx">getPortfolioMembershipsForPortfolio</span><span class="p">(</span><span class="nx">portfolioGid</span><span class="p">,</span> <span class="p">{</span><span class="na">param</span><span class="p">:</span> <span class="s2">"value"</span><span class="p">,</span> <span class="na">param</span><span class="p">:</span> <span class="s2">"value"</span><span class="p">,</span> <span class="na">opt_pretty</span><span class="p">:</span> <span class="kc">true</span><span class="p">})</span>
+<span class="nx">client</span><span class="p">.</span><span class="nx">portfoliomemberships</span><span class="p">.</span><span class="nx">getPortfolioMembershipsForPortfolio</span><span class="p">(</span><span class="nx">portfolioGid</span><span class="p">,</span> <span class="p">{</span><span class="na">param</span><span class="p">:</span> <span class="s2">"value"</span><span class="p">,</span> <span class="na">param</span><span class="p">:</span> <span class="s2">"value"</span><span class="p">,</span> <span class="na">opt_pretty</span><span class="p">:</span> <span class="kc">true</span><span class="p">})</span>
     <span class="p">.</span><span class="nx">then</span><span class="p">((</span><span class="nx">result</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
         <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">result</span><span class="p">);</span>
     <span class="p">});</span>
@@ -7036,8 +7036,8 @@ Returns the compact project records for some filtered set of projects. Use one o
 <pre class="highlight shell tab-shell"><code>curl -X POST https://app.asana.com/api/1.0/projects <span class="se">\</span>
   -H <span class="s1">'Content-Type: application/json'</span> <span class="se">\</span>
   -H <span class="s1">'Accept: application/json'</span> <span class="se">\</span>
-  -H <span class="s1">'Authorization: Bearer {access-token}'</span>
-  -d <span class="s1">'{"field":"value","field":"value"}'</span>
+  -H <span class="s1">'Authorization: Bearer {access-token}'</span> <span class="se">\</span>
+  -d <span class="s1">'{"data": {"field":"value","field":"value"} }'</span>
 
 </code></pre><pre class="highlight javascript tab-javascript--nodejs" style="display:none"><code><span class="kr">const</span> <span class="nx">asana</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'asana'</span><span class="p">);</span>
 
@@ -7428,8 +7428,8 @@ Returns the complete project record for a single project.
 <pre class="highlight shell tab-shell"><code>curl -X PUT https://app.asana.com/api/1.0/projects/<span class="o">{</span>project_gid<span class="o">}</span> <span class="se">\</span>
   -H <span class="s1">'Content-Type: application/json'</span> <span class="se">\</span>
   -H <span class="s1">'Accept: application/json'</span> <span class="se">\</span>
-  -H <span class="s1">'Authorization: Bearer {access-token}'</span>
-  -d <span class="s1">'{"field":"value","field":"value"}'</span>
+  -H <span class="s1">'Authorization: Bearer {access-token}'</span> <span class="se">\</span>
+  -d <span class="s1">'{"data": {"field":"value","field":"value"} }'</span>
 
 </code></pre><pre class="highlight javascript tab-javascript--nodejs" style="display:none"><code><span class="kr">const</span> <span class="nx">asana</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'asana'</span><span class="p">);</span>
 
@@ -7733,8 +7733,8 @@ the URL for that project.</p>
 <pre class="highlight shell tab-shell"><code>curl -X POST https://app.asana.com/api/1.0/projects/<span class="o">{</span>project_gid<span class="o">}</span>/duplicate <span class="se">\</span>
   -H <span class="s1">'Content-Type: application/json'</span> <span class="se">\</span>
   -H <span class="s1">'Accept: application/json'</span> <span class="se">\</span>
-  -H <span class="s1">'Authorization: Bearer {access-token}'</span>
-  -d <span class="s1">'{"field":"value","field":"value"}'</span>
+  -H <span class="s1">'Authorization: Bearer {access-token}'</span> <span class="se">\</span>
+  -d <span class="s1">'{"data": {"field":"value","field":"value"} }'</span>
 
 </code></pre><pre class="highlight javascript tab-javascript--nodejs" style="display:none"><code><span class="kr">const</span> <span class="nx">asana</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'asana'</span><span class="p">);</span>
 
@@ -8004,8 +8004,8 @@ Returns the compact project records for all projects in the team.
 <pre class="highlight shell tab-shell"><code>curl -X POST https://app.asana.com/api/1.0/teams/<span class="o">{</span>team_gid<span class="o">}</span>/projects <span class="se">\</span>
   -H <span class="s1">'Content-Type: application/json'</span> <span class="se">\</span>
   -H <span class="s1">'Accept: application/json'</span> <span class="se">\</span>
-  -H <span class="s1">'Authorization: Bearer {access-token}'</span>
-  -d <span class="s1">'{"field":"value","field":"value"}'</span>
+  -H <span class="s1">'Authorization: Bearer {access-token}'</span> <span class="se">\</span>
+  -d <span class="s1">'{"data": {"field":"value","field":"value"} }'</span>
 
 </code></pre><pre class="highlight javascript tab-javascript--nodejs" style="display:none"><code><span class="kr">const</span> <span class="nx">asana</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'asana'</span><span class="p">);</span>
 
@@ -8300,8 +8300,8 @@ Returns the compact project records for all projects in the workspace.
 <pre class="highlight shell tab-shell"><code>curl -X POST https://app.asana.com/api/1.0/workspaces/<span class="o">{</span>workspace_gid<span class="o">}</span>/projects <span class="se">\</span>
   -H <span class="s1">'Content-Type: application/json'</span> <span class="se">\</span>
   -H <span class="s1">'Accept: application/json'</span> <span class="se">\</span>
-  -H <span class="s1">'Authorization: Bearer {access-token}'</span>
-  -d <span class="s1">'{"field":"value","field":"value"}'</span>
+  -H <span class="s1">'Authorization: Bearer {access-token}'</span> <span class="se">\</span>
+  -d <span class="s1">'{"data": {"field":"value","field":"value"} }'</span>
 
 </code></pre><pre class="highlight javascript tab-javascript--nodejs" style="display:none"><code><span class="kr">const</span> <span class="nx">asana</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'asana'</span><span class="p">);</span>
 
@@ -8520,8 +8520,8 @@ supply a team to share the project with.</p>
 <pre class="highlight shell tab-shell"><code>curl -X POST https://app.asana.com/api/1.0/projects/<span class="o">{</span>project_gid<span class="o">}</span>/addCustomFieldSetting <span class="se">\</span>
   -H <span class="s1">'Content-Type: application/json'</span> <span class="se">\</span>
   -H <span class="s1">'Accept: application/json'</span> <span class="se">\</span>
-  -H <span class="s1">'Authorization: Bearer {access-token}'</span>
-  -d <span class="s1">'{"field":"value","field":"value"}'</span>
+  -H <span class="s1">'Authorization: Bearer {access-token}'</span> <span class="se">\</span>
+  -d <span class="s1">'{"data": {"field":"value","field":"value"} }'</span>
 
 </code></pre><pre class="highlight javascript tab-javascript--nodejs" style="display:none"><code><span class="kr">const</span> <span class="nx">asana</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'asana'</span><span class="p">);</span>
 
@@ -8657,8 +8657,8 @@ Custom fields are associated with projects by way of custom field settings.  Thi
 <pre class="highlight shell tab-shell"><code>curl -X POST https://app.asana.com/api/1.0/projects/<span class="o">{</span>project_gid<span class="o">}</span>/removeCustomFieldSetting <span class="se">\</span>
   -H <span class="s1">'Content-Type: application/json'</span> <span class="se">\</span>
   -H <span class="s1">'Accept: application/json'</span> <span class="se">\</span>
-  -H <span class="s1">'Authorization: Bearer {access-token}'</span>
-  -d <span class="s1">'{"field":"value","field":"value"}'</span>
+  -H <span class="s1">'Authorization: Bearer {access-token}'</span> <span class="se">\</span>
+  -d <span class="s1">'{"data": {"field":"value","field":"value"} }'</span>
 
 </code></pre><pre class="highlight javascript tab-javascript--nodejs" style="display:none"><code><span class="kr">const</span> <span class="nx">asana</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'asana'</span><span class="p">);</span>
 
@@ -8839,8 +8839,8 @@ Get an object that holds task count fields. <strong>All fields are excluded by d
 <pre class="highlight shell tab-shell"><code>curl -X POST https://app.asana.com/api/1.0/projects/<span class="o">{</span>project_gid<span class="o">}</span>/addMembers <span class="se">\</span>
   -H <span class="s1">'Content-Type: application/json'</span> <span class="se">\</span>
   -H <span class="s1">'Accept: application/json'</span> <span class="se">\</span>
-  -H <span class="s1">'Authorization: Bearer {access-token}'</span>
-  -d <span class="s1">'{"field":"value","field":"value"}'</span>
+  -H <span class="s1">'Authorization: Bearer {access-token}'</span> <span class="se">\</span>
+  -d <span class="s1">'{"data": {"field":"value","field":"value"} }'</span>
 
 </code></pre><pre class="highlight javascript tab-javascript--nodejs" style="display:none"><code><span class="kr">const</span> <span class="nx">asana</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'asana'</span><span class="p">);</span>
 
@@ -8932,8 +8932,8 @@ Returns the updated project record.
 <pre class="highlight shell tab-shell"><code>curl -X POST https://app.asana.com/api/1.0/projects/<span class="o">{</span>project_gid<span class="o">}</span>/removeMembers <span class="se">\</span>
   -H <span class="s1">'Content-Type: application/json'</span> <span class="se">\</span>
   -H <span class="s1">'Accept: application/json'</span> <span class="se">\</span>
-  -H <span class="s1">'Authorization: Bearer {access-token}'</span>
-  -d <span class="s1">'{"field":"value","field":"value"}'</span>
+  -H <span class="s1">'Authorization: Bearer {access-token}'</span> <span class="se">\</span>
+  -d <span class="s1">'{"data": {"field":"value","field":"value"} }'</span>
 
 </code></pre><pre class="highlight javascript tab-javascript--nodejs" style="display:none"><code><span class="kr">const</span> <span class="nx">asana</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'asana'</span><span class="p">);</span>
 
@@ -9025,8 +9025,8 @@ Returns the updated project record.
 <pre class="highlight shell tab-shell"><code>curl -X POST https://app.asana.com/api/1.0/projects/<span class="o">{</span>project_gid<span class="o">}</span>/addFollowers <span class="se">\</span>
   -H <span class="s1">'Content-Type: application/json'</span> <span class="se">\</span>
   -H <span class="s1">'Accept: application/json'</span> <span class="se">\</span>
-  -H <span class="s1">'Authorization: Bearer {access-token}'</span>
-  -d <span class="s1">'{"field":"value","field":"value"}'</span>
+  -H <span class="s1">'Authorization: Bearer {access-token}'</span> <span class="se">\</span>
+  -d <span class="s1">'{"data": {"field":"value","field":"value"} }'</span>
 
 </code></pre><pre class="highlight javascript tab-javascript--nodejs" style="display:none"><code><span class="kr">const</span> <span class="nx">asana</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'asana'</span><span class="p">);</span>
 
@@ -9118,8 +9118,8 @@ Returns the updated project record.
 <pre class="highlight shell tab-shell"><code>curl -X POST https://app.asana.com/api/1.0/projects/<span class="o">{</span>project_gid<span class="o">}</span>/removeFollowers <span class="se">\</span>
   -H <span class="s1">'Content-Type: application/json'</span> <span class="se">\</span>
   -H <span class="s1">'Accept: application/json'</span> <span class="se">\</span>
-  -H <span class="s1">'Authorization: Bearer {access-token}'</span>
-  -d <span class="s1">'{"field":"value","field":"value"}'</span>
+  -H <span class="s1">'Authorization: Bearer {access-token}'</span> <span class="se">\</span>
+  -d <span class="s1">'{"data": {"field":"value","field":"value"} }'</span>
 
 </code></pre><pre class="highlight javascript tab-javascript--nodejs" style="display:none"><code><span class="kr">const</span> <span class="nx">asana</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'asana'</span><span class="p">);</span>
 
@@ -9230,7 +9230,7 @@ With the introduction of “comment-only” projects in Asana, a user’s member
 
 <span class="kr">const</span> <span class="nx">client</span> <span class="o">=</span> <span class="nx">asana</span><span class="p">.</span><span class="nx">Client</span><span class="p">.</span><span class="nx">create</span><span class="p">().</span><span class="nx">useAccessToken</span><span class="p">(</span><span class="s1">'PERSONAL_ACCESS_TOKEN'</span><span class="p">);</span>
 
-<span class="nx">client</span><span class="p">.</span><span class="nx">projectMemberships</span><span class="p">.</span><span class="nx">getProjectMembership</span><span class="p">(</span><span class="nx">projectMembershipGid</span><span class="p">,</span> <span class="p">{</span><span class="na">param</span><span class="p">:</span> <span class="s2">"value"</span><span class="p">,</span> <span class="na">param</span><span class="p">:</span> <span class="s2">"value"</span><span class="p">,</span> <span class="na">opt_pretty</span><span class="p">:</span> <span class="kc">true</span><span class="p">})</span>
+<span class="nx">client</span><span class="p">.</span><span class="nx">projectmemberships</span><span class="p">.</span><span class="nx">getProjectMembership</span><span class="p">(</span><span class="nx">projectMembershipGid</span><span class="p">,</span> <span class="p">{</span><span class="na">param</span><span class="p">:</span> <span class="s2">"value"</span><span class="p">,</span> <span class="na">param</span><span class="p">:</span> <span class="s2">"value"</span><span class="p">,</span> <span class="na">opt_pretty</span><span class="p">:</span> <span class="kc">true</span><span class="p">})</span>
     <span class="p">.</span><span class="nx">then</span><span class="p">((</span><span class="nx">result</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
         <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">result</span><span class="p">);</span>
     <span class="p">});</span>
@@ -9317,7 +9317,7 @@ Returns the complete project record for a single project membership.
 
 <span class="kr">const</span> <span class="nx">client</span> <span class="o">=</span> <span class="nx">asana</span><span class="p">.</span><span class="nx">Client</span><span class="p">.</span><span class="nx">create</span><span class="p">().</span><span class="nx">useAccessToken</span><span class="p">(</span><span class="s1">'PERSONAL_ACCESS_TOKEN'</span><span class="p">);</span>
 
-<span class="nx">client</span><span class="p">.</span><span class="nx">projectMemberships</span><span class="p">.</span><span class="nx">getProjectMembershipsForProject</span><span class="p">(</span><span class="nx">projectGid</span><span class="p">,</span> <span class="p">{</span><span class="na">param</span><span class="p">:</span> <span class="s2">"value"</span><span class="p">,</span> <span class="na">param</span><span class="p">:</span> <span class="s2">"value"</span><span class="p">,</span> <span class="na">opt_pretty</span><span class="p">:</span> <span class="kc">true</span><span class="p">})</span>
+<span class="nx">client</span><span class="p">.</span><span class="nx">projectmemberships</span><span class="p">.</span><span class="nx">getProjectMembershipsForProject</span><span class="p">(</span><span class="nx">projectGid</span><span class="p">,</span> <span class="p">{</span><span class="na">param</span><span class="p">:</span> <span class="s2">"value"</span><span class="p">,</span> <span class="na">param</span><span class="p">:</span> <span class="s2">"value"</span><span class="p">,</span> <span class="na">opt_pretty</span><span class="p">:</span> <span class="kc">true</span><span class="p">})</span>
     <span class="p">.</span><span class="nx">then</span><span class="p">((</span><span class="nx">result</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
         <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">result</span><span class="p">);</span>
     <span class="p">});</span>
@@ -9416,7 +9416,7 @@ A <em>project status</em> is an update on the progress of a particular project, 
 
 <span class="kr">const</span> <span class="nx">client</span> <span class="o">=</span> <span class="nx">asana</span><span class="p">.</span><span class="nx">Client</span><span class="p">.</span><span class="nx">create</span><span class="p">().</span><span class="nx">useAccessToken</span><span class="p">(</span><span class="s1">'PERSONAL_ACCESS_TOKEN'</span><span class="p">);</span>
 
-<span class="nx">client</span><span class="p">.</span><span class="nx">projectStatuses</span><span class="p">.</span><span class="nx">getProjectStatus</span><span class="p">(</span><span class="nx">projectStatusGid</span><span class="p">,</span> <span class="p">{</span><span class="na">param</span><span class="p">:</span> <span class="s2">"value"</span><span class="p">,</span> <span class="na">param</span><span class="p">:</span> <span class="s2">"value"</span><span class="p">,</span> <span class="na">opt_pretty</span><span class="p">:</span> <span class="kc">true</span><span class="p">})</span>
+<span class="nx">client</span><span class="p">.</span><span class="nx">projectstatuses</span><span class="p">.</span><span class="nx">getProjectStatus</span><span class="p">(</span><span class="nx">projectStatusGid</span><span class="p">,</span> <span class="p">{</span><span class="na">param</span><span class="p">:</span> <span class="s2">"value"</span><span class="p">,</span> <span class="na">param</span><span class="p">:</span> <span class="s2">"value"</span><span class="p">,</span> <span class="na">opt_pretty</span><span class="p">:</span> <span class="kc">true</span><span class="p">})</span>
     <span class="p">.</span><span class="nx">then</span><span class="p">((</span><span class="nx">result</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
         <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">result</span><span class="p">);</span>
     <span class="p">});</span>
@@ -9508,7 +9508,7 @@ Returns the complete record for a single status update.
 
 <span class="kr">const</span> <span class="nx">client</span> <span class="o">=</span> <span class="nx">asana</span><span class="p">.</span><span class="nx">Client</span><span class="p">.</span><span class="nx">create</span><span class="p">().</span><span class="nx">useAccessToken</span><span class="p">(</span><span class="s1">'PERSONAL_ACCESS_TOKEN'</span><span class="p">);</span>
 
-<span class="nx">client</span><span class="p">.</span><span class="nx">projectStatuses</span><span class="p">.</span><span class="nx">deleteProjectStatus</span><span class="p">(</span><span class="nx">projectStatusGid</span><span class="p">)</span>
+<span class="nx">client</span><span class="p">.</span><span class="nx">projectstatuses</span><span class="p">.</span><span class="nx">deleteProjectStatus</span><span class="p">(</span><span class="nx">projectStatusGid</span><span class="p">)</span>
     <span class="p">.</span><span class="nx">then</span><span class="p">((</span><span class="nx">result</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
         <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">result</span><span class="p">);</span>
     <span class="p">});</span>
@@ -9589,7 +9589,7 @@ Deletes a specific, existing project status update.</p>
 
 <span class="kr">const</span> <span class="nx">client</span> <span class="o">=</span> <span class="nx">asana</span><span class="p">.</span><span class="nx">Client</span><span class="p">.</span><span class="nx">create</span><span class="p">().</span><span class="nx">useAccessToken</span><span class="p">(</span><span class="s1">'PERSONAL_ACCESS_TOKEN'</span><span class="p">);</span>
 
-<span class="nx">client</span><span class="p">.</span><span class="nx">projectStatuses</span><span class="p">.</span><span class="nx">getProjectStatusesForProject</span><span class="p">(</span><span class="nx">projectGid</span><span class="p">,</span> <span class="p">{</span><span class="na">param</span><span class="p">:</span> <span class="s2">"value"</span><span class="p">,</span> <span class="na">param</span><span class="p">:</span> <span class="s2">"value"</span><span class="p">,</span> <span class="na">opt_pretty</span><span class="p">:</span> <span class="kc">true</span><span class="p">})</span>
+<span class="nx">client</span><span class="p">.</span><span class="nx">projectstatuses</span><span class="p">.</span><span class="nx">getProjectStatusesForProject</span><span class="p">(</span><span class="nx">projectGid</span><span class="p">,</span> <span class="p">{</span><span class="na">param</span><span class="p">:</span> <span class="s2">"value"</span><span class="p">,</span> <span class="na">param</span><span class="p">:</span> <span class="s2">"value"</span><span class="p">,</span> <span class="na">opt_pretty</span><span class="p">:</span> <span class="kc">true</span><span class="p">})</span>
     <span class="p">.</span><span class="nx">then</span><span class="p">((</span><span class="nx">result</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
         <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">result</span><span class="p">);</span>
     <span class="p">});</span>
@@ -9663,14 +9663,14 @@ Returns the compact project status update records for all updates on the project
 <pre class="highlight shell tab-shell"><code>curl -X POST https://app.asana.com/api/1.0/projects/<span class="o">{</span>project_gid<span class="o">}</span>/project_statuses <span class="se">\</span>
   -H <span class="s1">'Content-Type: application/json'</span> <span class="se">\</span>
   -H <span class="s1">'Accept: application/json'</span> <span class="se">\</span>
-  -H <span class="s1">'Authorization: Bearer {access-token}'</span>
-  -d <span class="s1">'{"field":"value","field":"value"}'</span>
+  -H <span class="s1">'Authorization: Bearer {access-token}'</span> <span class="se">\</span>
+  -d <span class="s1">'{"data": {"field":"value","field":"value"} }'</span>
 
 </code></pre><pre class="highlight javascript tab-javascript--nodejs" style="display:none"><code><span class="kr">const</span> <span class="nx">asana</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'asana'</span><span class="p">);</span>
 
 <span class="kr">const</span> <span class="nx">client</span> <span class="o">=</span> <span class="nx">asana</span><span class="p">.</span><span class="nx">Client</span><span class="p">.</span><span class="nx">create</span><span class="p">().</span><span class="nx">useAccessToken</span><span class="p">(</span><span class="s1">'PERSONAL_ACCESS_TOKEN'</span><span class="p">);</span>
 
-<span class="nx">client</span><span class="p">.</span><span class="nx">projectStatuses</span><span class="p">.</span><span class="nx">createProjectStatusForProject</span><span class="p">(</span><span class="nx">projectGid</span><span class="p">,</span> <span class="p">{</span><span class="na">field</span><span class="p">:</span> <span class="s2">"value"</span><span class="p">,</span> <span class="na">field</span><span class="p">:</span> <span class="s2">"value"</span><span class="p">,</span> <span class="na">pretty</span><span class="p">:</span> <span class="kc">true</span><span class="p">})</span>
+<span class="nx">client</span><span class="p">.</span><span class="nx">projectstatuses</span><span class="p">.</span><span class="nx">createProjectStatusForProject</span><span class="p">(</span><span class="nx">projectGid</span><span class="p">,</span> <span class="p">{</span><span class="na">field</span><span class="p">:</span> <span class="s2">"value"</span><span class="p">,</span> <span class="na">field</span><span class="p">:</span> <span class="s2">"value"</span><span class="p">,</span> <span class="na">pretty</span><span class="p">:</span> <span class="kc">true</span><span class="p">})</span>
     <span class="p">.</span><span class="nx">then</span><span class="p">((</span><span class="nx">result</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
         <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">result</span><span class="p">);</span>
     <span class="p">});</span>
@@ -9889,8 +9889,8 @@ Returns the complete record for a single section.
 <pre class="highlight shell tab-shell"><code>curl -X PUT https://app.asana.com/api/1.0/sections/<span class="o">{</span>section_gid<span class="o">}</span> <span class="se">\</span>
   -H <span class="s1">'Content-Type: application/json'</span> <span class="se">\</span>
   -H <span class="s1">'Accept: application/json'</span> <span class="se">\</span>
-  -H <span class="s1">'Authorization: Bearer {access-token}'</span>
-  -d <span class="s1">'{"field":"value","field":"value"}'</span>
+  -H <span class="s1">'Authorization: Bearer {access-token}'</span> <span class="se">\</span>
+  -d <span class="s1">'{"data": {"field":"value","field":"value"} }'</span>
 
 </code></pre><pre class="highlight javascript tab-javascript--nodejs" style="display:none"><code><span class="kr">const</span> <span class="nx">asana</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'asana'</span><span class="p">);</span>
 
@@ -10169,8 +10169,8 @@ Returns the compact records for all sections in the specified project.
 <pre class="highlight shell tab-shell"><code>curl -X POST https://app.asana.com/api/1.0/projects/<span class="o">{</span>project_gid<span class="o">}</span>/sections <span class="se">\</span>
   -H <span class="s1">'Content-Type: application/json'</span> <span class="se">\</span>
   -H <span class="s1">'Accept: application/json'</span> <span class="se">\</span>
-  -H <span class="s1">'Authorization: Bearer {access-token}'</span>
-  -d <span class="s1">'{"field":"value","field":"value"}'</span>
+  -H <span class="s1">'Authorization: Bearer {access-token}'</span> <span class="se">\</span>
+  -d <span class="s1">'{"data": {"field":"value","field":"value"} }'</span>
 
 </code></pre><pre class="highlight javascript tab-javascript--nodejs" style="display:none"><code><span class="kr">const</span> <span class="nx">asana</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'asana'</span><span class="p">);</span>
 
@@ -10276,8 +10276,8 @@ Returns the full record of the newly created section.
 <pre class="highlight shell tab-shell"><code>curl -X POST https://app.asana.com/api/1.0/sections/<span class="o">{</span>section_gid<span class="o">}</span>/addTask <span class="se">\</span>
   -H <span class="s1">'Content-Type: application/json'</span> <span class="se">\</span>
   -H <span class="s1">'Accept: application/json'</span> <span class="se">\</span>
-  -H <span class="s1">'Authorization: Bearer {access-token}'</span>
-  -d <span class="s1">'{"field":"value","field":"value"}'</span>
+  -H <span class="s1">'Authorization: Bearer {access-token}'</span> <span class="se">\</span>
+  -d <span class="s1">'{"data": {"field":"value","field":"value"} }'</span>
 
 </code></pre><pre class="highlight javascript tab-javascript--nodejs" style="display:none"><code><span class="kr">const</span> <span class="nx">asana</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'asana'</span><span class="p">);</span>
 
@@ -10374,8 +10374,8 @@ Add a task to a specific, existing section. This will remove the task from other
 <pre class="highlight shell tab-shell"><code>curl -X POST https://app.asana.com/api/1.0/projects/<span class="o">{</span>project_gid<span class="o">}</span>/sections/insert <span class="se">\</span>
   -H <span class="s1">'Content-Type: application/json'</span> <span class="se">\</span>
   -H <span class="s1">'Accept: application/json'</span> <span class="se">\</span>
-  -H <span class="s1">'Authorization: Bearer {access-token}'</span>
-  -d <span class="s1">'{"field":"value","field":"value"}'</span>
+  -H <span class="s1">'Authorization: Bearer {access-token}'</span> <span class="se">\</span>
+  -d <span class="s1">'{"data": {"field":"value","field":"value"} }'</span>
 
 </code></pre><pre class="highlight javascript tab-javascript--nodejs" style="display:none"><code><span class="kr">const</span> <span class="nx">asana</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'asana'</span><span class="p">);</span>
 
@@ -10733,8 +10733,8 @@ Returns the full record for a single story.
 <pre class="highlight shell tab-shell"><code>curl -X PUT https://app.asana.com/api/1.0/stories/<span class="o">{</span>story_gid<span class="o">}</span> <span class="se">\</span>
   -H <span class="s1">'Content-Type: application/json'</span> <span class="se">\</span>
   -H <span class="s1">'Accept: application/json'</span> <span class="se">\</span>
-  -H <span class="s1">'Authorization: Bearer {access-token}'</span>
-  -d <span class="s1">'{"field":"value","field":"value"}'</span>
+  -H <span class="s1">'Authorization: Bearer {access-token}'</span> <span class="se">\</span>
+  -d <span class="s1">'{"data": {"field":"value","field":"value"} }'</span>
 
 </code></pre><pre class="highlight javascript tab-javascript--nodejs" style="display:none"><code><span class="kr">const</span> <span class="nx">asana</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'asana'</span><span class="p">);</span>
 
@@ -11161,8 +11161,8 @@ Returns the compact records for all stories on the task.
 <pre class="highlight shell tab-shell"><code>curl -X POST https://app.asana.com/api/1.0/tasks/<span class="o">{</span>task_gid<span class="o">}</span>/stories <span class="se">\</span>
   -H <span class="s1">'Content-Type: application/json'</span> <span class="se">\</span>
   -H <span class="s1">'Accept: application/json'</span> <span class="se">\</span>
-  -H <span class="s1">'Authorization: Bearer {access-token}'</span>
-  -d <span class="s1">'{"field":"value","field":"value"}'</span>
+  -H <span class="s1">'Authorization: Bearer {access-token}'</span> <span class="se">\</span>
+  -d <span class="s1">'{"data": {"field":"value","field":"value"} }'</span>
 
 </code></pre><pre class="highlight javascript tab-javascript--nodejs" style="display:none"><code><span class="kr">const</span> <span class="nx">asana</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'asana'</span><span class="p">);</span>
 
@@ -11521,8 +11521,8 @@ Returns the compact tag records for some filtered set of tags. Use one or more o
 <pre class="highlight shell tab-shell"><code>curl -X POST https://app.asana.com/api/1.0/tags <span class="se">\</span>
   -H <span class="s1">'Content-Type: application/json'</span> <span class="se">\</span>
   -H <span class="s1">'Accept: application/json'</span> <span class="se">\</span>
-  -H <span class="s1">'Authorization: Bearer {access-token}'</span>
-  -d <span class="s1">'{"field":"value","field":"value"}'</span>
+  -H <span class="s1">'Authorization: Bearer {access-token}'</span> <span class="se">\</span>
+  -d <span class="s1">'{"data": {"field":"value","field":"value"} }'</span>
 
 </code></pre><pre class="highlight javascript tab-javascript--nodejs" style="display:none"><code><span class="kr">const</span> <span class="nx">asana</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'asana'</span><span class="p">);</span>
 
@@ -11730,8 +11730,8 @@ Returns the complete tag record for a single tag.
 </blockquote>
 <pre class="highlight shell tab-shell"><code>curl -X PUT https://app.asana.com/api/1.0/tags/<span class="o">{</span>tag_gid<span class="o">}</span> <span class="se">\</span>
   -H <span class="s1">'Accept: application/json'</span> <span class="se">\</span>
-  -H <span class="s1">'Authorization: Bearer {access-token}'</span>
-  -d <span class="s1">'{"field":"value","field":"value"}'</span>
+  -H <span class="s1">'Authorization: Bearer {access-token}'</span> <span class="se">\</span>
+  -d <span class="s1">'{"data": {"field":"value","field":"value"} }'</span>
 
 </code></pre><pre class="highlight javascript tab-javascript--nodejs" style="display:none"><code><span class="kr">const</span> <span class="nx">asana</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'asana'</span><span class="p">);</span>
 
@@ -12072,8 +12072,8 @@ Returns the compact tag records for some filtered set of tags. Use one or more o
 <pre class="highlight shell tab-shell"><code>curl -X POST https://app.asana.com/api/1.0/workspaces/<span class="o">{</span>workspace_gid<span class="o">}</span>/tags <span class="se">\</span>
   -H <span class="s1">'Content-Type: application/json'</span> <span class="se">\</span>
   -H <span class="s1">'Accept: application/json'</span> <span class="se">\</span>
-  -H <span class="s1">'Authorization: Bearer {access-token}'</span>
-  -d <span class="s1">'{"field":"value","field":"value"}'</span>
+  -H <span class="s1">'Authorization: Bearer {access-token}'</span> <span class="se">\</span>
+  -d <span class="s1">'{"data": {"field":"value","field":"value"} }'</span>
 
 </code></pre><pre class="highlight javascript tab-javascript--nodejs" style="display:none"><code><span class="kr">const</span> <span class="nx">asana</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'asana'</span><span class="p">);</span>
 
@@ -12306,8 +12306,8 @@ include assigning, renaming, completing, and adding stories.</em></p>
 <pre class="highlight shell tab-shell"><code>curl -X POST https://app.asana.com/api/1.0/tasks <span class="se">\</span>
   -H <span class="s1">'Content-Type: application/json'</span> <span class="se">\</span>
   -H <span class="s1">'Accept: application/json'</span> <span class="se">\</span>
-  -H <span class="s1">'Authorization: Bearer {access-token}'</span>
-  -d <span class="s1">'{"field":"value","field":"value"}'</span>
+  -H <span class="s1">'Authorization: Bearer {access-token}'</span> <span class="se">\</span>
+  -d <span class="s1">'{"data": {"field":"value","field":"value"} }'</span>
 
 </code></pre><pre class="highlight javascript tab-javascript--nodejs" style="display:none"><code><span class="kr">const</span> <span class="nx">asana</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'asana'</span><span class="p">);</span>
 
@@ -12816,8 +12816,8 @@ Returns the complete task record for a single task.
 <pre class="highlight shell tab-shell"><code>curl -X PUT https://app.asana.com/api/1.0/tasks/<span class="o">{</span>task_gid<span class="o">}</span> <span class="se">\</span>
   -H <span class="s1">'Content-Type: application/json'</span> <span class="se">\</span>
   -H <span class="s1">'Accept: application/json'</span> <span class="se">\</span>
-  -H <span class="s1">'Authorization: Bearer {access-token}'</span>
-  -d <span class="s1">'{"field":"value","field":"value"}'</span>
+  -H <span class="s1">'Authorization: Bearer {access-token}'</span> <span class="se">\</span>
+  -d <span class="s1">'{"data": {"field":"value","field":"value"} }'</span>
 
 </code></pre><pre class="highlight javascript tab-javascript--nodejs" style="display:none"><code><span class="kr">const</span> <span class="nx">asana</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'asana'</span><span class="p">);</span>
 
@@ -13190,8 +13190,8 @@ period of 30 days; afterward they are completely removed from the system.</p>
 <pre class="highlight shell tab-shell"><code>curl -X POST https://app.asana.com/api/1.0/tasks/<span class="o">{</span>task_gid<span class="o">}</span>/duplicate <span class="se">\</span>
   -H <span class="s1">'Content-Type: application/json'</span> <span class="se">\</span>
   -H <span class="s1">'Accept: application/json'</span> <span class="se">\</span>
-  -H <span class="s1">'Authorization: Bearer {access-token}'</span>
-  -d <span class="s1">'{"field":"value","field":"value"}'</span>
+  -H <span class="s1">'Authorization: Bearer {access-token}'</span> <span class="se">\</span>
+  -d <span class="s1">'{"data": {"field":"value","field":"value"} }'</span>
 
 </code></pre><pre class="highlight javascript tab-javascript--nodejs" style="display:none"><code><span class="kr">const</span> <span class="nx">asana</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'asana'</span><span class="p">);</span>
 
@@ -13697,8 +13697,8 @@ Returns a compact representation of all of the subtasks of a task.
 <pre class="highlight shell tab-shell"><code>curl -X POST https://app.asana.com/api/1.0/tasks/<span class="o">{</span>task_gid<span class="o">}</span>/subtasks <span class="se">\</span>
   -H <span class="s1">'Content-Type: application/json'</span> <span class="se">\</span>
   -H <span class="s1">'Accept: application/json'</span> <span class="se">\</span>
-  -H <span class="s1">'Authorization: Bearer {access-token}'</span>
-  -d <span class="s1">'{"field":"value","field":"value"}'</span>
+  -H <span class="s1">'Authorization: Bearer {access-token}'</span> <span class="se">\</span>
+  -d <span class="s1">'{"data": {"field":"value","field":"value"} }'</span>
 
 </code></pre><pre class="highlight javascript tab-javascript--nodejs" style="display:none"><code><span class="kr">const</span> <span class="nx">asana</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'asana'</span><span class="p">);</span>
 
@@ -13979,8 +13979,8 @@ The resource_subtype <code>milestone</code> represent a single moment in time. T
 <pre class="highlight shell tab-shell"><code>curl -X POST https://app.asana.com/api/1.0/tasks/<span class="o">{</span>task_gid<span class="o">}</span>/setParent <span class="se">\</span>
   -H <span class="s1">'Content-Type: application/json'</span> <span class="se">\</span>
   -H <span class="s1">'Accept: application/json'</span> <span class="se">\</span>
-  -H <span class="s1">'Authorization: Bearer {access-token}'</span>
-  -d <span class="s1">'{"field":"value","field":"value"}'</span>
+  -H <span class="s1">'Authorization: Bearer {access-token}'</span> <span class="se">\</span>
+  -d <span class="s1">'{"data": {"field":"value","field":"value"} }'</span>
 
 </code></pre><pre class="highlight javascript tab-javascript--nodejs" style="display:none"><code><span class="kr">const</span> <span class="nx">asana</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'asana'</span><span class="p">);</span>
 
@@ -14295,8 +14295,8 @@ Returns the compact representations of all of the dependencies of a task.
 <pre class="highlight shell tab-shell"><code>curl -X POST https://app.asana.com/api/1.0/tasks/<span class="o">{</span>task_gid<span class="o">}</span>/addDependencies <span class="se">\</span>
   -H <span class="s1">'Content-Type: application/json'</span> <span class="se">\</span>
   -H <span class="s1">'Accept: application/json'</span> <span class="se">\</span>
-  -H <span class="s1">'Authorization: Bearer {access-token}'</span>
-  -d <span class="s1">'{"field":"value","field":"value"}'</span>
+  -H <span class="s1">'Authorization: Bearer {access-token}'</span> <span class="se">\</span>
+  -d <span class="s1">'{"data": {"field":"value","field":"value"} }'</span>
 
 </code></pre><pre class="highlight javascript tab-javascript--nodejs" style="display:none"><code><span class="kr">const</span> <span class="nx">asana</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'asana'</span><span class="p">);</span>
 
@@ -14390,8 +14390,8 @@ Marks a set of tasks as dependencies of this task, if they are not already depen
 <pre class="highlight shell tab-shell"><code>curl -X POST https://app.asana.com/api/1.0/tasks/<span class="o">{</span>task_gid<span class="o">}</span>/removeDependencies <span class="se">\</span>
   -H <span class="s1">'Content-Type: application/json'</span> <span class="se">\</span>
   -H <span class="s1">'Accept: application/json'</span> <span class="se">\</span>
-  -H <span class="s1">'Authorization: Bearer {access-token}'</span>
-  -d <span class="s1">'{"field":"value","field":"value"}'</span>
+  -H <span class="s1">'Authorization: Bearer {access-token}'</span> <span class="se">\</span>
+  -d <span class="s1">'{"data": {"field":"value","field":"value"} }'</span>
 
 </code></pre><pre class="highlight javascript tab-javascript--nodejs" style="display:none"><code><span class="kr">const</span> <span class="nx">asana</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'asana'</span><span class="p">);</span>
 
@@ -14566,8 +14566,8 @@ Returns the compact representations of all of the dependents of a task.
 <pre class="highlight shell tab-shell"><code>curl -X POST https://app.asana.com/api/1.0/tasks/<span class="o">{</span>task_gid<span class="o">}</span>/addDependents <span class="se">\</span>
   -H <span class="s1">'Content-Type: application/json'</span> <span class="se">\</span>
   -H <span class="s1">'Accept: application/json'</span> <span class="se">\</span>
-  -H <span class="s1">'Authorization: Bearer {access-token}'</span>
-  -d <span class="s1">'{"field":"value","field":"value"}'</span>
+  -H <span class="s1">'Authorization: Bearer {access-token}'</span> <span class="se">\</span>
+  -d <span class="s1">'{"data": {"field":"value","field":"value"} }'</span>
 
 </code></pre><pre class="highlight javascript tab-javascript--nodejs" style="display:none"><code><span class="kr">const</span> <span class="nx">asana</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'asana'</span><span class="p">);</span>
 
@@ -14661,8 +14661,8 @@ Marks a set of tasks as dependents of this task, if they are not already depende
 <pre class="highlight shell tab-shell"><code>curl -X POST https://app.asana.com/api/1.0/tasks/<span class="o">{</span>task_gid<span class="o">}</span>/removeDependents <span class="se">\</span>
   -H <span class="s1">'Content-Type: application/json'</span> <span class="se">\</span>
   -H <span class="s1">'Accept: application/json'</span> <span class="se">\</span>
-  -H <span class="s1">'Authorization: Bearer {access-token}'</span>
-  -d <span class="s1">'{"field":"value","field":"value"}'</span>
+  -H <span class="s1">'Authorization: Bearer {access-token}'</span> <span class="se">\</span>
+  -d <span class="s1">'{"data": {"field":"value","field":"value"} }'</span>
 
 </code></pre><pre class="highlight javascript tab-javascript--nodejs" style="display:none"><code><span class="kr">const</span> <span class="nx">asana</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'asana'</span><span class="p">);</span>
 
@@ -14758,8 +14758,8 @@ Unlinks a set of dependents from this task.
 <pre class="highlight shell tab-shell"><code>curl -X POST https://app.asana.com/api/1.0/tasks/<span class="o">{</span>task_gid<span class="o">}</span>/addProject <span class="se">\</span>
   -H <span class="s1">'Content-Type: application/json'</span> <span class="se">\</span>
   -H <span class="s1">'Accept: application/json'</span> <span class="se">\</span>
-  -H <span class="s1">'Authorization: Bearer {access-token}'</span>
-  -d <span class="s1">'{"field":"value","field":"value"}'</span>
+  -H <span class="s1">'Authorization: Bearer {access-token}'</span> <span class="se">\</span>
+  -d <span class="s1">'{"data": {"field":"value","field":"value"} }'</span>
 
 </code></pre><pre class="highlight javascript tab-javascript--nodejs" style="display:none"><code><span class="kr">const</span> <span class="nx">asana</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'asana'</span><span class="p">);</span>
 
@@ -14866,8 +14866,8 @@ within the section to anchor the position of this task.</p>
 <pre class="highlight shell tab-shell"><code>curl -X POST https://app.asana.com/api/1.0/tasks/<span class="o">{</span>task_gid<span class="o">}</span>/removeProject <span class="se">\</span>
   -H <span class="s1">'Content-Type: application/json'</span> <span class="se">\</span>
   -H <span class="s1">'Accept: application/json'</span> <span class="se">\</span>
-  -H <span class="s1">'Authorization: Bearer {access-token}'</span>
-  -d <span class="s1">'{"field":"value","field":"value"}'</span>
+  -H <span class="s1">'Authorization: Bearer {access-token}'</span> <span class="se">\</span>
+  -d <span class="s1">'{"data": {"field":"value","field":"value"} }'</span>
 
 </code></pre><pre class="highlight javascript tab-javascript--nodejs" style="display:none"><code><span class="kr">const</span> <span class="nx">asana</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'asana'</span><span class="p">);</span>
 
@@ -14961,8 +14961,8 @@ the system, but it will not be in the project anymore.</p>
 <pre class="highlight shell tab-shell"><code>curl -X POST https://app.asana.com/api/1.0/tasks/<span class="o">{</span>task_gid<span class="o">}</span>/addTag <span class="se">\</span>
   -H <span class="s1">'Content-Type: application/json'</span> <span class="se">\</span>
   -H <span class="s1">'Accept: application/json'</span> <span class="se">\</span>
-  -H <span class="s1">'Authorization: Bearer {access-token}'</span>
-  -d <span class="s1">'{"field":"value","field":"value"}'</span>
+  -H <span class="s1">'Authorization: Bearer {access-token}'</span> <span class="se">\</span>
+  -d <span class="s1">'{"data": {"field":"value","field":"value"} }'</span>
 
 </code></pre><pre class="highlight javascript tab-javascript--nodejs" style="display:none"><code><span class="kr">const</span> <span class="nx">asana</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'asana'</span><span class="p">);</span>
 
@@ -15053,8 +15053,8 @@ Adds a tag to a task. Returns an empty data block.
 <pre class="highlight shell tab-shell"><code>curl -X POST https://app.asana.com/api/1.0/tasks/<span class="o">{</span>task_gid<span class="o">}</span>/removeTag <span class="se">\</span>
   -H <span class="s1">'Content-Type: application/json'</span> <span class="se">\</span>
   -H <span class="s1">'Accept: application/json'</span> <span class="se">\</span>
-  -H <span class="s1">'Authorization: Bearer {access-token}'</span>
-  -d <span class="s1">'{"field":"value","field":"value"}'</span>
+  -H <span class="s1">'Authorization: Bearer {access-token}'</span> <span class="se">\</span>
+  -d <span class="s1">'{"data": {"field":"value","field":"value"} }'</span>
 
 </code></pre><pre class="highlight javascript tab-javascript--nodejs" style="display:none"><code><span class="kr">const</span> <span class="nx">asana</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'asana'</span><span class="p">);</span>
 
@@ -15145,8 +15145,8 @@ Removes a tag from a task. Returns an empty data block.
 <pre class="highlight shell tab-shell"><code>curl -X POST https://app.asana.com/api/1.0/tasks/<span class="o">{</span>task_gid<span class="o">}</span>/addFollowers <span class="se">\</span>
   -H <span class="s1">'Content-Type: application/json'</span> <span class="se">\</span>
   -H <span class="s1">'Accept: application/json'</span> <span class="se">\</span>
-  -H <span class="s1">'Authorization: Bearer {access-token}'</span>
-  -d <span class="s1">'{"field":"value","field":"value"}'</span>
+  -H <span class="s1">'Authorization: Bearer {access-token}'</span> <span class="se">\</span>
+  -d <span class="s1">'{"data": {"field":"value","field":"value"} }'</span>
 
 </code></pre><pre class="highlight javascript tab-javascript--nodejs" style="display:none"><code><span class="kr">const</span> <span class="nx">asana</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'asana'</span><span class="p">);</span>
 
@@ -15242,8 +15242,8 @@ Requests to add/remove followers, if successful, will return the complete update
 <pre class="highlight shell tab-shell"><code>curl -X POST https://app.asana.com/api/1.0/tasks/<span class="o">{</span>task_gid<span class="o">}</span>/removeFollowers <span class="se">\</span>
   -H <span class="s1">'Content-Type: application/json'</span> <span class="se">\</span>
   -H <span class="s1">'Accept: application/json'</span> <span class="se">\</span>
-  -H <span class="s1">'Authorization: Bearer {access-token}'</span>
-  -d <span class="s1">'{"field":"value","field":"value"}'</span>
+  -H <span class="s1">'Authorization: Bearer {access-token}'</span> <span class="se">\</span>
+  -d <span class="s1">'{"data": {"field":"value","field":"value"} }'</span>
 
 </code></pre><pre class="highlight javascript tab-javascript--nodejs" style="display:none"><code><span class="kr">const</span> <span class="nx">asana</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'asana'</span><span class="p">);</span>
 
@@ -15697,8 +15697,8 @@ Returns the compact records for all teams to which the given user is assigned.
 <pre class="highlight shell tab-shell"><code>curl -X POST https://app.asana.com/api/1.0/teams/<span class="o">{</span>team_gid<span class="o">}</span>/addUser <span class="se">\</span>
   -H <span class="s1">'Content-Type: application/json'</span> <span class="se">\</span>
   -H <span class="s1">'Accept: application/json'</span> <span class="se">\</span>
-  -H <span class="s1">'Authorization: Bearer {access-token}'</span>
-  -d <span class="s1">'{"field":"value","field":"value"}'</span>
+  -H <span class="s1">'Authorization: Bearer {access-token}'</span> <span class="se">\</span>
+  -d <span class="s1">'{"data": {"field":"value","field":"value"} }'</span>
 
 </code></pre><pre class="highlight javascript tab-javascript--nodejs" style="display:none"><code><span class="kr">const</span> <span class="nx">asana</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'asana'</span><span class="p">);</span>
 
@@ -15802,8 +15802,8 @@ The user making this call must be a member of the team in order to add others. T
 <pre class="highlight shell tab-shell"><code>curl -X POST https://app.asana.com/api/1.0/teams/<span class="o">{</span>team_gid<span class="o">}</span>/removeUser <span class="se">\</span>
   -H <span class="s1">'Content-Type: application/json'</span> <span class="se">\</span>
   -H <span class="s1">'Accept: application/json'</span> <span class="se">\</span>
-  -H <span class="s1">'Authorization: Bearer {access-token}'</span>
-  -d <span class="s1">'{"field":"value","field":"value"}'</span>
+  -H <span class="s1">'Authorization: Bearer {access-token}'</span> <span class="se">\</span>
+  -d <span class="s1">'{"data": {"field":"value","field":"value"} }'</span>
 
 </code></pre><pre class="highlight javascript tab-javascript--nodejs" style="display:none"><code><span class="kr">const</span> <span class="nx">asana</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'asana'</span><span class="p">);</span>
 
@@ -15913,7 +15913,7 @@ This object determines if a user is a member of a team.
 
 <span class="kr">const</span> <span class="nx">client</span> <span class="o">=</span> <span class="nx">asana</span><span class="p">.</span><span class="nx">Client</span><span class="p">.</span><span class="nx">create</span><span class="p">().</span><span class="nx">useAccessToken</span><span class="p">(</span><span class="s1">'PERSONAL_ACCESS_TOKEN'</span><span class="p">);</span>
 
-<span class="nx">client</span><span class="p">.</span><span class="nx">teamMemberships</span><span class="p">.</span><span class="nx">getTeamMembership</span><span class="p">(</span><span class="nx">teamMembershipGid</span><span class="p">,</span> <span class="p">{</span><span class="na">param</span><span class="p">:</span> <span class="s2">"value"</span><span class="p">,</span> <span class="na">param</span><span class="p">:</span> <span class="s2">"value"</span><span class="p">,</span> <span class="na">opt_pretty</span><span class="p">:</span> <span class="kc">true</span><span class="p">})</span>
+<span class="nx">client</span><span class="p">.</span><span class="nx">teammemberships</span><span class="p">.</span><span class="nx">getTeamMembership</span><span class="p">(</span><span class="nx">teamMembershipGid</span><span class="p">,</span> <span class="p">{</span><span class="na">param</span><span class="p">:</span> <span class="s2">"value"</span><span class="p">,</span> <span class="na">param</span><span class="p">:</span> <span class="s2">"value"</span><span class="p">,</span> <span class="na">opt_pretty</span><span class="p">:</span> <span class="kc">true</span><span class="p">})</span>
     <span class="p">.</span><span class="nx">then</span><span class="p">((</span><span class="nx">result</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
         <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">result</span><span class="p">);</span>
     <span class="p">});</span>
@@ -16000,7 +16000,7 @@ Returns the complete team membership record for a single team membership.
 
 <span class="kr">const</span> <span class="nx">client</span> <span class="o">=</span> <span class="nx">asana</span><span class="p">.</span><span class="nx">Client</span><span class="p">.</span><span class="nx">create</span><span class="p">().</span><span class="nx">useAccessToken</span><span class="p">(</span><span class="s1">'PERSONAL_ACCESS_TOKEN'</span><span class="p">);</span>
 
-<span class="nx">client</span><span class="p">.</span><span class="nx">teamMemberships</span><span class="p">.</span><span class="nx">getTeamMemberships</span><span class="p">({</span><span class="na">param</span><span class="p">:</span> <span class="s2">"value"</span><span class="p">,</span> <span class="na">param</span><span class="p">:</span> <span class="s2">"value"</span><span class="p">,</span> <span class="na">opt_pretty</span><span class="p">:</span> <span class="kc">true</span><span class="p">})</span>
+<span class="nx">client</span><span class="p">.</span><span class="nx">teammemberships</span><span class="p">.</span><span class="nx">getTeamMemberships</span><span class="p">({</span><span class="na">param</span><span class="p">:</span> <span class="s2">"value"</span><span class="p">,</span> <span class="na">param</span><span class="p">:</span> <span class="s2">"value"</span><span class="p">,</span> <span class="na">opt_pretty</span><span class="p">:</span> <span class="kc">true</span><span class="p">})</span>
     <span class="p">.</span><span class="nx">then</span><span class="p">((</span><span class="nx">result</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
         <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">result</span><span class="p">);</span>
     <span class="p">});</span>
@@ -16089,7 +16089,7 @@ Returns compact team membership records.
 
 <span class="kr">const</span> <span class="nx">client</span> <span class="o">=</span> <span class="nx">asana</span><span class="p">.</span><span class="nx">Client</span><span class="p">.</span><span class="nx">create</span><span class="p">().</span><span class="nx">useAccessToken</span><span class="p">(</span><span class="s1">'PERSONAL_ACCESS_TOKEN'</span><span class="p">);</span>
 
-<span class="nx">client</span><span class="p">.</span><span class="nx">teamMemberships</span><span class="p">.</span><span class="nx">getTeamMembershipsForTeam</span><span class="p">(</span><span class="nx">teamGid</span><span class="p">,</span> <span class="p">{</span><span class="na">param</span><span class="p">:</span> <span class="s2">"value"</span><span class="p">,</span> <span class="na">param</span><span class="p">:</span> <span class="s2">"value"</span><span class="p">,</span> <span class="na">opt_pretty</span><span class="p">:</span> <span class="kc">true</span><span class="p">})</span>
+<span class="nx">client</span><span class="p">.</span><span class="nx">teammemberships</span><span class="p">.</span><span class="nx">getTeamMembershipsForTeam</span><span class="p">(</span><span class="nx">teamGid</span><span class="p">,</span> <span class="p">{</span><span class="na">param</span><span class="p">:</span> <span class="s2">"value"</span><span class="p">,</span> <span class="na">param</span><span class="p">:</span> <span class="s2">"value"</span><span class="p">,</span> <span class="na">opt_pretty</span><span class="p">:</span> <span class="kc">true</span><span class="p">})</span>
     <span class="p">.</span><span class="nx">then</span><span class="p">((</span><span class="nx">result</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
         <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">result</span><span class="p">);</span>
     <span class="p">});</span>
@@ -16178,7 +16178,7 @@ Returns the compact team memberships for the team.
 
 <span class="kr">const</span> <span class="nx">client</span> <span class="o">=</span> <span class="nx">asana</span><span class="p">.</span><span class="nx">Client</span><span class="p">.</span><span class="nx">create</span><span class="p">().</span><span class="nx">useAccessToken</span><span class="p">(</span><span class="s1">'PERSONAL_ACCESS_TOKEN'</span><span class="p">);</span>
 
-<span class="nx">client</span><span class="p">.</span><span class="nx">teamMemberships</span><span class="p">.</span><span class="nx">getTeamMembershipsForUser</span><span class="p">(</span><span class="nx">userGid</span><span class="p">,</span> <span class="p">{</span><span class="na">param</span><span class="p">:</span> <span class="s2">"value"</span><span class="p">,</span> <span class="na">param</span><span class="p">:</span> <span class="s2">"value"</span><span class="p">,</span> <span class="na">opt_pretty</span><span class="p">:</span> <span class="kc">true</span><span class="p">})</span>
+<span class="nx">client</span><span class="p">.</span><span class="nx">teammemberships</span><span class="p">.</span><span class="nx">getTeamMembershipsForUser</span><span class="p">(</span><span class="nx">userGid</span><span class="p">,</span> <span class="p">{</span><span class="na">param</span><span class="p">:</span> <span class="s2">"value"</span><span class="p">,</span> <span class="na">param</span><span class="p">:</span> <span class="s2">"value"</span><span class="p">,</span> <span class="na">opt_pretty</span><span class="p">:</span> <span class="kc">true</span><span class="p">})</span>
     <span class="p">.</span><span class="nx">then</span><span class="p">((</span><span class="nx">result</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
         <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">result</span><span class="p">);</span>
     <span class="p">});</span>
@@ -16840,7 +16840,7 @@ A user task list represents the tasks assigned to a particular user.</p>
 
 <span class="kr">const</span> <span class="nx">client</span> <span class="o">=</span> <span class="nx">asana</span><span class="p">.</span><span class="nx">Client</span><span class="p">.</span><span class="nx">create</span><span class="p">().</span><span class="nx">useAccessToken</span><span class="p">(</span><span class="s1">'PERSONAL_ACCESS_TOKEN'</span><span class="p">);</span>
 
-<span class="nx">client</span><span class="p">.</span><span class="nx">userTaskLists</span><span class="p">.</span><span class="nx">getUserTaskList</span><span class="p">(</span><span class="nx">userTaskListGid</span><span class="p">,</span> <span class="p">{</span><span class="na">param</span><span class="p">:</span> <span class="s2">"value"</span><span class="p">,</span> <span class="na">param</span><span class="p">:</span> <span class="s2">"value"</span><span class="p">,</span> <span class="na">opt_pretty</span><span class="p">:</span> <span class="kc">true</span><span class="p">})</span>
+<span class="nx">client</span><span class="p">.</span><span class="nx">usertasklists</span><span class="p">.</span><span class="nx">getUserTaskList</span><span class="p">(</span><span class="nx">userTaskListGid</span><span class="p">,</span> <span class="p">{</span><span class="na">param</span><span class="p">:</span> <span class="s2">"value"</span><span class="p">,</span> <span class="na">param</span><span class="p">:</span> <span class="s2">"value"</span><span class="p">,</span> <span class="na">opt_pretty</span><span class="p">:</span> <span class="kc">true</span><span class="p">})</span>
     <span class="p">.</span><span class="nx">then</span><span class="p">((</span><span class="nx">result</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
         <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">result</span><span class="p">);</span>
     <span class="p">});</span>
@@ -16927,7 +16927,7 @@ Returns the full record for a user task list.
 
 <span class="kr">const</span> <span class="nx">client</span> <span class="o">=</span> <span class="nx">asana</span><span class="p">.</span><span class="nx">Client</span><span class="p">.</span><span class="nx">create</span><span class="p">().</span><span class="nx">useAccessToken</span><span class="p">(</span><span class="s1">'PERSONAL_ACCESS_TOKEN'</span><span class="p">);</span>
 
-<span class="nx">client</span><span class="p">.</span><span class="nx">userTaskLists</span><span class="p">.</span><span class="nx">getUserTaskListForUser</span><span class="p">(</span><span class="nx">userGid</span><span class="p">,</span> <span class="p">{</span><span class="na">param</span><span class="p">:</span> <span class="s2">"value"</span><span class="p">,</span> <span class="na">param</span><span class="p">:</span> <span class="s2">"value"</span><span class="p">,</span> <span class="na">opt_pretty</span><span class="p">:</span> <span class="kc">true</span><span class="p">})</span>
+<span class="nx">client</span><span class="p">.</span><span class="nx">usertasklists</span><span class="p">.</span><span class="nx">getUserTaskListForUser</span><span class="p">(</span><span class="nx">userGid</span><span class="p">,</span> <span class="p">{</span><span class="na">param</span><span class="p">:</span> <span class="s2">"value"</span><span class="p">,</span> <span class="na">param</span><span class="p">:</span> <span class="s2">"value"</span><span class="p">,</span> <span class="na">opt_pretty</span><span class="p">:</span> <span class="kc">true</span><span class="p">})</span>
     <span class="p">.</span><span class="nx">then</span><span class="p">((</span><span class="nx">result</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
         <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">result</span><span class="p">);</span>
     <span class="p">});</span>
@@ -17192,8 +17192,8 @@ Get the compact representation of all webhooks your app has registered for the a
 <pre class="highlight shell tab-shell"><code>curl -X POST https://app.asana.com/api/1.0/webhooks <span class="se">\</span>
   -H <span class="s1">'Content-Type: application/json'</span> <span class="se">\</span>
   -H <span class="s1">'Accept: application/json'</span> <span class="se">\</span>
-  -H <span class="s1">'Authorization: Bearer {access-token}'</span>
-  -d <span class="s1">'{"field":"value","field":"value"}'</span>
+  -H <span class="s1">'Authorization: Bearer {access-token}'</span> <span class="se">\</span>
+  -d <span class="s1">'{"data": {"field":"value","field":"value"} }'</span>
 
 </code></pre><pre class="highlight javascript tab-javascript--nodejs" style="display:none"><code><span class="kr">const</span> <span class="nx">asana</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'asana'</span><span class="p">);</span>
 
@@ -17716,8 +17716,8 @@ Returns the full workspace record for a single workspace.
 <pre class="highlight shell tab-shell"><code>curl -X PUT https://app.asana.com/api/1.0/workspaces/<span class="o">{</span>workspace_gid<span class="o">}</span> <span class="se">\</span>
   -H <span class="s1">'Content-Type: application/json'</span> <span class="se">\</span>
   -H <span class="s1">'Accept: application/json'</span> <span class="se">\</span>
-  -H <span class="s1">'Authorization: Bearer {access-token}'</span>
-  -d <span class="s1">'{"field":"value","field":"value"}'</span>
+  -H <span class="s1">'Authorization: Bearer {access-token}'</span> <span class="se">\</span>
+  -d <span class="s1">'{"data": {"field":"value","field":"value"} }'</span>
 
 </code></pre><pre class="highlight javascript tab-javascript--nodejs" style="display:none"><code><span class="kr">const</span> <span class="nx">asana</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'asana'</span><span class="p">);</span>
 
@@ -17812,8 +17812,8 @@ Returns the complete, updated workspace record.
 <pre class="highlight shell tab-shell"><code>curl -X POST https://app.asana.com/api/1.0/workspaces/<span class="o">{</span>workspace_gid<span class="o">}</span>/addUser <span class="se">\</span>
   -H <span class="s1">'Content-Type: application/json'</span> <span class="se">\</span>
   -H <span class="s1">'Accept: application/json'</span> <span class="se">\</span>
-  -H <span class="s1">'Authorization: Bearer {access-token}'</span>
-  -d <span class="s1">'{"field":"value","field":"value"}'</span>
+  -H <span class="s1">'Authorization: Bearer {access-token}'</span> <span class="se">\</span>
+  -d <span class="s1">'{"data": {"field":"value","field":"value"} }'</span>
 
 </code></pre><pre class="highlight javascript tab-javascript--nodejs" style="display:none"><code><span class="kr">const</span> <span class="nx">asana</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'asana'</span><span class="p">);</span>
 
@@ -17918,8 +17918,8 @@ The user can be referenced by their globally unique user ID or their email addre
 <pre class="highlight shell tab-shell"><code>curl -X POST https://app.asana.com/api/1.0/workspaces/<span class="o">{</span>workspace_gid<span class="o">}</span>/removeUser <span class="se">\</span>
   -H <span class="s1">'Content-Type: application/json'</span> <span class="se">\</span>
   -H <span class="s1">'Accept: application/json'</span> <span class="se">\</span>
-  -H <span class="s1">'Authorization: Bearer {access-token}'</span>
-  -d <span class="s1">'{"field":"value","field":"value"}'</span>
+  -H <span class="s1">'Authorization: Bearer {access-token}'</span> <span class="se">\</span>
+  -d <span class="s1">'{"data": {"field":"value","field":"value"} }'</span>
 
 </code></pre><pre class="highlight javascript tab-javascript--nodejs" style="display:none"><code><span class="kr">const</span> <span class="nx">asana</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'asana'</span><span class="p">);</span>
 
@@ -18031,7 +18031,7 @@ This object determines if a user is a member of a workspace.
 
 <span class="kr">const</span> <span class="nx">client</span> <span class="o">=</span> <span class="nx">asana</span><span class="p">.</span><span class="nx">Client</span><span class="p">.</span><span class="nx">create</span><span class="p">().</span><span class="nx">useAccessToken</span><span class="p">(</span><span class="s1">'PERSONAL_ACCESS_TOKEN'</span><span class="p">);</span>
 
-<span class="nx">client</span><span class="p">.</span><span class="nx">workspaceMemberships</span><span class="p">.</span><span class="nx">getWorkspaceMembership</span><span class="p">(</span><span class="nx">workspaceMembershipGid</span><span class="p">,</span> <span class="p">{</span><span class="na">param</span><span class="p">:</span> <span class="s2">"value"</span><span class="p">,</span> <span class="na">param</span><span class="p">:</span> <span class="s2">"value"</span><span class="p">,</span> <span class="na">opt_pretty</span><span class="p">:</span> <span class="kc">true</span><span class="p">})</span>
+<span class="nx">client</span><span class="p">.</span><span class="nx">workspacememberships</span><span class="p">.</span><span class="nx">getWorkspaceMembership</span><span class="p">(</span><span class="nx">workspaceMembershipGid</span><span class="p">,</span> <span class="p">{</span><span class="na">param</span><span class="p">:</span> <span class="s2">"value"</span><span class="p">,</span> <span class="na">param</span><span class="p">:</span> <span class="s2">"value"</span><span class="p">,</span> <span class="na">opt_pretty</span><span class="p">:</span> <span class="kc">true</span><span class="p">})</span>
     <span class="p">.</span><span class="nx">then</span><span class="p">((</span><span class="nx">result</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
         <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">result</span><span class="p">);</span>
     <span class="p">});</span>
@@ -18135,7 +18135,7 @@ Returns the complete workspace record for a single workspace membership.
 
 <span class="kr">const</span> <span class="nx">client</span> <span class="o">=</span> <span class="nx">asana</span><span class="p">.</span><span class="nx">Client</span><span class="p">.</span><span class="nx">create</span><span class="p">().</span><span class="nx">useAccessToken</span><span class="p">(</span><span class="s1">'PERSONAL_ACCESS_TOKEN'</span><span class="p">);</span>
 
-<span class="nx">client</span><span class="p">.</span><span class="nx">workspaceMemberships</span><span class="p">.</span><span class="nx">getWorkspaceMembershipsForUser</span><span class="p">(</span><span class="nx">userGid</span><span class="p">,</span> <span class="p">{</span><span class="na">param</span><span class="p">:</span> <span class="s2">"value"</span><span class="p">,</span> <span class="na">param</span><span class="p">:</span> <span class="s2">"value"</span><span class="p">,</span> <span class="na">opt_pretty</span><span class="p">:</span> <span class="kc">true</span><span class="p">})</span>
+<span class="nx">client</span><span class="p">.</span><span class="nx">workspacememberships</span><span class="p">.</span><span class="nx">getWorkspaceMembershipsForUser</span><span class="p">(</span><span class="nx">userGid</span><span class="p">,</span> <span class="p">{</span><span class="na">param</span><span class="p">:</span> <span class="s2">"value"</span><span class="p">,</span> <span class="na">param</span><span class="p">:</span> <span class="s2">"value"</span><span class="p">,</span> <span class="na">opt_pretty</span><span class="p">:</span> <span class="kc">true</span><span class="p">})</span>
     <span class="p">.</span><span class="nx">then</span><span class="p">((</span><span class="nx">result</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
         <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">result</span><span class="p">);</span>
     <span class="p">});</span>
@@ -18223,7 +18223,7 @@ Returns the compact workspace membership records for the user.
 
 <span class="kr">const</span> <span class="nx">client</span> <span class="o">=</span> <span class="nx">asana</span><span class="p">.</span><span class="nx">Client</span><span class="p">.</span><span class="nx">create</span><span class="p">().</span><span class="nx">useAccessToken</span><span class="p">(</span><span class="s1">'PERSONAL_ACCESS_TOKEN'</span><span class="p">);</span>
 
-<span class="nx">client</span><span class="p">.</span><span class="nx">workspaceMemberships</span><span class="p">.</span><span class="nx">getWorkspaceMembershipsForWorkspace</span><span class="p">(</span><span class="nx">workspaceGid</span><span class="p">,</span> <span class="p">{</span><span class="na">param</span><span class="p">:</span> <span class="s2">"value"</span><span class="p">,</span> <span class="na">param</span><span class="p">:</span> <span class="s2">"value"</span><span class="p">,</span> <span class="na">opt_pretty</span><span class="p">:</span> <span class="kc">true</span><span class="p">})</span>
+<span class="nx">client</span><span class="p">.</span><span class="nx">workspacememberships</span><span class="p">.</span><span class="nx">getWorkspaceMembershipsForWorkspace</span><span class="p">(</span><span class="nx">workspaceGid</span><span class="p">,</span> <span class="p">{</span><span class="na">param</span><span class="p">:</span> <span class="s2">"value"</span><span class="p">,</span> <span class="na">param</span><span class="p">:</span> <span class="s2">"value"</span><span class="p">,</span> <span class="na">opt_pretty</span><span class="p">:</span> <span class="kc">true</span><span class="p">})</span>
     <span class="p">.</span><span class="nx">then</span><span class="p">((</span><span class="nx">result</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
         <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">result</span><span class="p">);</span>
     <span class="p">});</span>
