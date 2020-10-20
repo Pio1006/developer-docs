@@ -357,6 +357,9 @@
             <a href="/docs/developer-sandbox" class="toc-h1 toc-link" data-title="Developer Sandbox">Developer Sandbox</a>
           </li>
           <li>
+            <a href="/docs/api-explorer" class="toc-h1 toc-link" data-title="API Explorer">API Explorer</a>
+          </li>
+          <li>
             <a href="/docs/submit-your-app" class="toc-h1 toc-link" data-title="Submit your App">Submit your App</a>
               <ul class="toc-list-h2 ">
                   <li>
@@ -2222,6 +2225,36 @@ An Asana developer sandbox consists of a temporary Asana domain with limited use
 
 <p><hr>
 <section></p>
+<h1 id='api-explorer'  >API Explorer</h1>
+<p><span class="description">
+The Asana API Explorer is a tool to easily make API requests in your browser and quickly test various routes, fields, and parameters. </p>
+
+<p>The explorer is not meant to be an exhaustive tool with every endpoint in the API (try <a href="/docs/using-postman">Postman</a> if you want a tool with complete coverage). Instead, the explorer is designed to be a simple tool to help developers quickly access the API and see examples of requests and responses fetching real Asana data.<br>
+</span></p>
+<h4  >Follow these steps to get started:</h4>
+<ol>
+<li><p>Go to the API Explorer site: <a href="https://developers.asana.com/explorer" target="_blank">https://developers.asana.com/explorer</a></p></li>
+<li><p>Click the large button that says “Click to authorize API Explorer”. This will use your Asana credentials to provide cookie authentication for the requests you make in the explorer. Because the explorer is using your Asana account, it only allows read requests (i.e. <code>GET</code> only) to protect against unintentionally changing your Asana data.</p></li>
+<li><p>Choose the resource you wish to query from the drop-down. </p></li>
+<li><p>In the next drop-down, choose your desired route for that resource. </p></li>
+<li><p>Under &quot;Include Fields,&quot; You have the option to select only the fields you would like to include in the response (more about <a href="/docs/input-output-options">I/O options</a>). </p></li>
+<li><p>The default response limit is 10. You can increase it up to 100.</p></li>
+<li><p>Add the required “Attribute parameters”. Note that task and project gids are in URLs when viewing those resources in the Asana web product (e.g. when viewing a task in a project: https<nolink>://app.asana.com/0/&#39;project-gid&#39;/&#39;task-gid&#39;). </p></li>
+<li><p>In subsequent requests, you may have a pagination token (see the <a href="/docs/pagination">pagination docs</a> for more on this) to paste into the “Offset” field.</p></li>
+<li><p>You have the option to include additional parameters in your request.</p></li>
+<li><p>Click “Submit” to send your request to the API. You will receive a JSON pretty-formatted response.   </p></li>
+</ol>
+
+<div>
+  <div class="docs-developer-satisfaction-content">
+      <h4>Was this section helpful? <a class="positiveFeedback-DevSatisfaction" style="cursor:pointer;">Yes </a><a class="negativeFeedback-DevSatisfaction" style="cursor:pointer;">No</a></h4>
+  </div>
+</div>
+
+<p></section></p>
+
+<p><hr>
+<section></p>
 <h1 id='submit-your-app'  >Submit your App</h1>
 <p><span class="description">
 Have you built a web application that you want to share with the Asana community? Submit <a href="https://www.asana.com/apps/submit">this form</a> to get your app listed in the <a href="https://www.asana.com/apps">Asana apps directory</a>.
@@ -2246,8 +2279,9 @@ Have you built a web application that you want to share with the Asana community
   </div>
 </div>
 
-<p></section>
-</section></p>
+<p></section></p>
+
+<p></section></p>
 <p><hr class="full-line">
 <section class="full-section">
 <section></p>
@@ -2425,7 +2459,7 @@ We’ll use cURL, a command line[^1] program to make HTTP requests. MacOS and ma
 </blockquote>
 
 <p><span class="description">
-You can quickly get started on Asana&#39;s API with the <a href="/explorer">API Explorer</a>. However, if you want a more robust experience hitting the API, we recommend using Postman. You can get started with the &#39;Run in Postman&#39; button!
+You can quickly get started on Asana&#39;s API with the <a href="/docs/api-explorer">API Explorer</a>. However, if you want a more robust experience hitting the API, we recommend using Postman. You can get started with the &#39;Run in Postman&#39; button!
 </span></p>
 
 <p>Once you have the collection, you should <a href="https://learning.getpostman.com/docs/postman/environments_and_globals/manage_environments/">create an environment</a>.</p>
