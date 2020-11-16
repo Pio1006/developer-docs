@@ -380,6 +380,9 @@
               </ul>
           </li>
           <li>
+            <a href="/docs/custom-apps" class="toc-h1 toc-link" data-title="Custom Apps">Custom Apps</a>
+          </li>
+          <li>
             <a href="/docs/how-to-use-the-api" class="toc-h1 toc-link" data-title="How to use the API">How to use the API</a>
               <ul class="toc-list-h2 ">
                   <li>
@@ -2524,8 +2527,58 @@ Have you built a web application that you want to share with the Asana community
   </div>
 </div>
 
+<p></section></p>
+
+<p><hr>
+<section></p>
+<h1 id='custom-apps'  >Custom Apps</h1><h4  >What to consider when building a custom app.</h4>
+<p><span class="description">
+Unlike 3rd-party apps and integrations used by many companies, custom apps are designed to only be used within a single domain. For example, an Asana customer may want to use the API to create a bot, integrate Asana with a homegrown tool, or generate custom reports. If you want to get inspired about what’s possible with custom apps, here are some <a href="/docs/common-usecases">common use cases</a>.
+</span></p>
+<h4  >Authentication</h4>
+<p>Most custom apps use <a href="/docs/personal-access-token">Personal Access Tokens</a> (PATs) for authentication. In general, PATs are best for projects that don’t require multiple users to log in. For example, it’s advisable to use PATs to auth scripts, bots, or anything else that doesn’t require taking action on behalf of multiple Asana users. While less common, if your custom app requires users to sign in to use it, then you should consider <a href="/docs/oauth">using OAuth</a>.  </p>
+<h4  >API Explorer</h4>
+<p>If you&#39;re unfamiliar with our API, it may be helpful to start by playing around with our <a href="/docs/api-explorer">API explorer</a>. It’s a quick and easy way to test endpoints and see how various parameters affect responses. You will also find guides and <a href="/docs/examples">code examples</a> in our docs and client libraries that are helpful when getting started. </p>
+<h4  >Client Libraries</h4>
+<p>You should consider using one of our <a href="/docs/official-client-libraries">API client libraries</a> for your custom app. They simplify some of the more technically challenging aspects of development such as authentication and pagination. There are code examples for each library to help you get started. The client libraries also help developers navigate <a href="/docs/communicating-about-breaking-changes">API deprecations</a>, which will help you avoid unexpected breaking changes and reduce the overall time required for maintenance. </p>
+
+<p>Note that client library functions are not documented. You need to check the <code>lib/resources/gen</code> folder of each library to see the built-in functions.  </p>
+<h4  >API support</h4>
+<p>If you get stuck or need help developing your custom app (or just want to meet other Asana developers), join our active <a href="https://forum.asana.com/c/developersAPI/24">developer community</a>. On the forum, you can find answers to many technical questions. If your question has not yet been answered, post it and you should get a reply within a day or so. In addition to community support, internal Asana engineers also help troubleshoot issues on the forum.
+If you have found an API bug, you can either post it to the community or email the issue to api-support at Asana dot com.</p>
+<h4  >Deployment</h4>
+<p>Once you’ve created a custom app, you will likely want to host it somewhere. While you could run your script from the command line, doing so is tedious and time consuming.</p>
+
+<p>The most basic, automated option is to use launchd to programmatically execute your app on your machine (launchd is like cron but better). Here’s a <a href="https://medium.com/@chetcorcos/a-simple-launchd-tutorial-9fecfcf2dbb3">tutorial to get you started with launchd</a>.</p>
+
+<p>A more robust option would be to deploy your custom app to a hosted server. Here’s a guide exploring some of the <a href="https://api.slack.com/docs/hosting">popular hosting providers</a>. Hosting your app makes it more resilient and allows you to add more sophisticated features (e.g. use webhooks). </p>
+
+<p>Remember to <a href="https://www.freecodecamp.org/news/how-to-securely-store-api-keys-4ff3ea19ebda/">securely store your PAT</a> and any other sensitive data (never expose a PAT in a public repository). </p>
+<h4  >Maintenance</h4>
+<p>Make certain that the email address associated with your custom app is being actively monitored. We only email developers for critical issues such as API bans and <a href="/docs/communicating-about-breaking-changes">upcoming deprecations</a> that our logs show will break your app. If you’re using a PAT to authenticate, you should confirm that the email address associated with the Asana account that generated the PAT is being actively monitored by one or more people. </p>
+
+<p>We also recommend all developers join the <a href="https://forum.asana.com/c/developersAPI/24">Asana developer community</a>. This is where we will communicate new API features as well as announce upcoming breaking changes. To ensure you don’t miss these announcements, we encourage you to turn on notifications for the <a href="https://forum.asana.com/c/developersAPI/platform-news/97">Platform News</a> section of the community. </p>
+
+<p>If your app is having issues, here are some steps to help you troubleshoot the issue:</p>
+
+<ol>
+<li>Carefully read any error messages (here are the docs for Asana <a href="/docs/errors">error codes</a>). </li>
+<li>Check the <a href="https://status.asana.com/">status of the Asana API</a> to confirm it’s up and available.</li>
+<li>Check for any issues with the server that is hosting your app.</li>
+<li>Check the <a href="https://forum.asana.com/c/developersAPI/24">Asana dev community</a> to see if others are having the same issue.</li>
+<li>If you can&#39;t find an answer on the community, post your issue and someone will likely help. Please include all of the required information to reproduce the issue (e.g. verbose CURL request with full response). Never post a PAT to the forum (or share it anywhere else). </li>
+</ol>
+
+<div>
+  <div class="docs-developer-satisfaction-content">
+      <h4>Was this section helpful? <a class="positiveFeedback-DevSatisfaction" style="cursor:pointer;">Yes </a><a class="negativeFeedback-DevSatisfaction" style="cursor:pointer;">No</a></h4>
+  </div>
+</div>
+
 <p></section>
 </section></p>
+
+<p></section></p>
 <p><hr class="full-line">
 <section class="full-section">
 <section></p>
