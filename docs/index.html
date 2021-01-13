@@ -2291,9 +2291,9 @@ so this should not be used for private user data.</p>
 <span class="cp">?&gt;</span>
 </code></pre>
 <p>An App Server is required for working with <a href="/docs/webhooks">Webhooks</a>
-and <a href="/docs/platform-ui-overview">Platform UI</a> (UI Hooks). When we say &quot;App Server&quot;, we
+and <a href="/docs/workflow-apps-overview">Workflow Apps</a> (UI Hooks). When we say &quot;App Server&quot;, we
 are referring to the server Asana directly sends requests to. This is different
-than the service it may be connecting to in the end (like Slack or Jira).</p>
+from the service it may be connecting to in the end (like Slack or Jira).</p>
 
 <p>For some features, Asana needs to send requests to an App. In order for an App to
 use these features, they will need to implement an App Server. App Servers are simply servers 
@@ -2304,7 +2304,7 @@ servers. </p>
 
 <p>App Servers define their own paths. During the lifecycle of a Webhook or UI Hook, 
 apps will need to declare the endpoints for Asana. For Webhooks, this happens when you create a 
-new webhook. For Platform UI, some UI Hooks are declared on App Creation while others are dynamically 
+new webhook. For Workflow Apps, some UI Hooks are declared on App Creation while others are dynamically 
 declared in responses to requests from Asana.</p>
 
 <p>You should test/debug your App Server with a tool like <a href="https://www.postman.com/">Postman</a> or 
@@ -3515,7 +3515,7 @@ on changes a user makes.</p>
 
 <p>To take advantage of <code>on_change</code> events, you&#39;ll supply a list of <code>watched_fields</code> and an endpoint to hit with updates. 
 See the <code>on_change</code> field in the response to the 
-<a href="/get-form-metadata">form metadata request</a>. The request sent to that
+<a href="/docs/get-form-metadata">form metadata request</a>. The request sent to that
 endpoint is the <a href="/docs/on-change-callback">On change callback request</a>.</p>
 
 <p>Related References: </p>
@@ -3523,7 +3523,7 @@ endpoint is the <a href="/docs/on-change-callback">On change callback request</a
 <ul>
 <li><p><a href="/docs/get-form-metadata">Get form metadata</a></p></li>
 <li><p><a href="/docs/on-change-callback">On change callback</a></p></li>
-<li><p><a href="/docs/on-submit-callback">On change callback</a></p></li>
+<li><p><a href="/docs/on-submit-callback">On submit callback</a></p></li>
 </ul>
 
 <p><hr></p>
@@ -3614,7 +3614,7 @@ the App Server with the user-specified inputs. When the rule is triggered, Asana
 <ul>
 <li><p><a href="/docs/get-action-metadata">Get action metadata</a></p></li>
 <li><p><a href="/docs/on-action-change-callback">On action change callback</a></p></li>
-<li><p><a href="/docs/on-action-submit-callback">On action change callback</a></p></li>
+<li><p><a href="/docs/on-action-submit-callback">On action submit callback</a></p></li>
 </ul>
 
 <p><hr class="full-line"></p>
@@ -4038,7 +4038,7 @@ the url params (for GET requests) or the json body (for POST requests) using a s
 this signature as shown in pseudocode on the right.</p>
 
 <p>Additionally, your app should respect the timeliness of requests. Without this, attackers can replay requests to your 
-server after. This is also shown in the pseudocode on the right.</p>
+server. This is also shown in the pseudocode on the right.</p>
 
 <p>You should read the <a href="/docs/ui-hooks-security">UI Hooks Security</a> section before deploying anything to production.</p>
 
@@ -4048,7 +4048,7 @@ server after. This is also shown in the pseudocode on the right.</p>
 
 <ol>
 <li>All of your urls need to change to the new hosted location (both in your app definition and your responses).</li>
-<li>We recommend hosting on AWS Lambda or Google Cloud Functions for reliable uptime and easy maintenance.</li>
+<li>We recommend hosting on AWS Lambda, Google Cloud Functions, or Microsoft Azure for reliable uptime and easy maintenance.</li>
 </ol>
 
 <p><hr></p>
@@ -4148,7 +4148,7 @@ The creation form is displayed when the user starts the flow to create a resourc
       </span><span class="s2">"description"</span><span class="w">
     </span><span class="p">]</span><span class="w">
   </span><span class="p">},</span><span class="w">
-  </span><span class="s2">"on_submit_callback"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Create New Issue"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"on_submit_callback"</span><span class="p">:</span><span class="w"> </span><span class="s2">"www.example.com/on_submit"</span><span class="p">,</span><span class="w">
   </span><span class="s2">"submit_button_text"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Create New Issue"</span><span class="p">,</span><span class="w">
   </span><span class="s2">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Create New Issue"</span><span class="w">
 </span><span class="p">}</span><span class="w">
@@ -4234,7 +4234,7 @@ Get the metadata from the App Server to render a form.
       </span><span class="s2">"description"</span><span class="w">
     </span><span class="p">]</span><span class="w">
   </span><span class="p">},</span><span class="w">
-  </span><span class="s2">"on_submit_callback"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Create New Issue"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"on_submit_callback"</span><span class="p">:</span><span class="w"> </span><span class="s2">"www.example.com/on_submit"</span><span class="p">,</span><span class="w">
   </span><span class="s2">"submit_button_text"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Create New Issue"</span><span class="p">,</span><span class="w">
   </span><span class="s2">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Create New Issue"</span><span class="w">
 </span><span class="p">}</span><span class="w">
@@ -4502,7 +4502,7 @@ The request made when an action is triggered.
       </span><span class="s2">"description"</span><span class="w">
     </span><span class="p">]</span><span class="w">
   </span><span class="p">},</span><span class="w">
-  </span><span class="s2">"on_submit_callback"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Create New Issue"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"on_submit_callback"</span><span class="p">:</span><span class="w"> </span><span class="s2">"www.example.com/on_submit"</span><span class="p">,</span><span class="w">
   </span><span class="s2">"submit_button_text"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Create New Issue"</span><span class="p">,</span><span class="w">
   </span><span class="s2">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Create New Issue"</span><span class="w">
 </span><span class="p">}</span><span class="w">
@@ -4590,7 +4590,7 @@ When a user has navigated to the Custom Rule Builder UI and selected an App Acti
       </span><span class="s2">"description"</span><span class="w">
     </span><span class="p">]</span><span class="w">
   </span><span class="p">},</span><span class="w">
-  </span><span class="s2">"on_submit_callback"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Create New Issue"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"on_submit_callback"</span><span class="p">:</span><span class="w"> </span><span class="s2">"www.example.com/on_submit"</span><span class="p">,</span><span class="w">
   </span><span class="s2">"submit_button_text"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Create New Issue"</span><span class="p">,</span><span class="w">
   </span><span class="s2">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Create New Issue"</span><span class="w">
 </span><span class="p">}</span><span class="w">
@@ -4997,7 +4997,7 @@ The response to a successful attach request.</p>
       </span><span class="s2">"description"</span><span class="w">
     </span><span class="p">]</span><span class="w">
   </span><span class="p">},</span><span class="w">
-  </span><span class="s2">"on_submit_callback"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Create New Issue"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"on_submit_callback"</span><span class="p">:</span><span class="w"> </span><span class="s2">"www.example.com/on_submit"</span><span class="p">,</span><span class="w">
   </span><span class="s2">"submit_button_text"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Create New Issue"</span><span class="p">,</span><span class="w">
   </span><span class="s2">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Create New Issue"</span><span class="w">
 </span><span class="p">}</span><span class="w">
