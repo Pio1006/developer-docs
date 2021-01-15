@@ -344,14 +344,6 @@
             <a href="/docs/news-and-changelog" class="toc-h1 toc-link" data-title="News and Changelog">News and Changelog</a>
           </li>
           <li>
-            <a href="/docs/scim" class="toc-h1 toc-link" data-title="SCIM">SCIM</a>
-              <ul class="toc-list-h2 ">
-                  <li>
-                    <a href="/docs/scim-endpoints" class="toc-h2 toc-link" data-title="SCIM endpoints">SCIM endpoints</a>
-                  </li>
-              </ul>
-          </li>
-          <li>
             <a href="/docs/deprecations" class="toc-h1 toc-link" data-title="Deprecations">Deprecations</a>
               <ul class="toc-list-h2 ">
                   <li>
@@ -2367,15 +2359,6 @@ right to &quot;Watching First Post&quot; or &quot;Tracking&quot;. </li>
   </div>
 </div>
 
-<p></section></p>
-<p><hr>
-<section></p>
-<h1 id='scim'  >SCIM</h1><h2 id='scim-endpoints'  >SCIM endpoints</h2>
-<p>Asana supports SCIM operations at <code>https://app.asana.com/api/1.0/scim</code>. Okta provides greats docs for 
-<a href="https://developer.okta.com/docs/concepts/scim/">understanding SCIM</a>.</p>
-<div class='table-holder'><table class='asana-table'><thead><tr><td></td>
-<td>API call</td><td>Asana Behavior</td></tr>
-</thead><tbody><tr class='c0'><td><svg class='chevron' viewBox='0 0 40 40'><path d='M23.2,16c0,0.3-0.1,0.7-0.3,0.9l-9,11c-0.5,0.6-1.5,0.7-2.1,0.2s-0.7-1.5-0.2-2.1l8.2-10L11.6,6c-0.5-0.6-0.4-1.6,0.2-2.1s1.6-0.4,2.1,0.2l9,11C23.1,15.3,23.2,15.7,23.2,16z'></path></svg></td><td>GET /Users</td><td>Return full list of users in the domain.  Does not return Asana guest users</td></tr></tr><tr class='c0'><td><svg class='chevron' viewBox='0 0 40 40'><path d='M23.2,16c0,0.3-0.1,0.7-0.3,0.9l-9,11c-0.5,0.6-1.5,0.7-2.1,0.2s-0.7-1.5-0.2-2.1l8.2-10L11.6,6c-0.5-0.6-0.4-1.6,0.2-2.1s1.6-0.4,2.1,0.2l9,11C23.1,15.3,23.2,15.7,23.2,16z'></path></svg></td><td>GET /Users/:id</td><td>Return specific user in the domain.  Does not return Asana guest users.</td></tr></tr><tr class='c0'><td><svg class='chevron' viewBox='0 0 40 40'><path d='M23.2,16c0,0.3-0.1,0.7-0.3,0.9l-9,11c-0.5,0.6-1.5,0.7-2.1,0.2s-0.7-1.5-0.2-2.1l8.2-10L11.6,6c-0.5-0.6-0.4-1.6,0.2-2.1s1.6-0.4,2.1,0.2l9,11C23.1,15.3,23.2,15.7,23.2,16z'></path></svg></td><td>POST /Users</td><td>Creates new user if the user does not exist</td></tr></tr><tr class='c0'><td><svg class='chevron' viewBox='0 0 40 40'><path d='M23.2,16c0,0.3-0.1,0.7-0.3,0.9l-9,11c-0.5,0.6-1.5,0.7-2.1,0.2s-0.7-1.5-0.2-2.1l8.2-10L11.6,6c-0.5-0.6-0.4-1.6,0.2-2.1s1.6-0.4,2.1,0.2l9,11C23.1,15.3,23.2,15.7,23.2,16z'></path></svg></td><td>PUT /Users/:id</td><td>Update / remove attributes for a user. Deprovision user (zombify) in Asana upon active=false</td></tr></tr><tr class='c0'><td><svg class='chevron' viewBox='0 0 40 40'><path d='M23.2,16c0,0.3-0.1,0.7-0.3,0.9l-9,11c-0.5,0.6-1.5,0.7-2.1,0.2s-0.7-1.5-0.2-2.1l8.2-10L11.6,6c-0.5-0.6-0.4-1.6,0.2-2.1s1.6-0.4,2.1,0.2l9,11C23.1,15.3,23.2,15.7,23.2,16z'></path></svg></td><td>PATCH /Users/:id</td><td>Deprovision user (zombify) in Asana upon active=false</td></tr></tr><tr class='c0'><td><svg class='chevron' viewBox='0 0 40 40'><path d='M23.2,16c0,0.3-0.1,0.7-0.3,0.9l-9,11c-0.5,0.6-1.5,0.7-2.1,0.2s-0.7-1.5-0.2-2.1l8.2-10L11.6,6c-0.5-0.6-0.4-1.6,0.2-2.1s1.6-0.4,2.1,0.2l9,11C23.1,15.3,23.2,15.7,23.2,16z'></path></svg></td><td>DELETE /Users/:id</td><td>Deprovision user (zombify) in Asana</td></tr></tr><tr class='c0'><td><svg class='chevron' viewBox='0 0 40 40'><path d='M23.2,16c0,0.3-0.1,0.7-0.3,0.9l-9,11c-0.5,0.6-1.5,0.7-2.1,0.2s-0.7-1.5-0.2-2.1l8.2-10L11.6,6c-0.5-0.6-0.4-1.6,0.2-2.1s1.6-0.4,2.1,0.2l9,11C23.1,15.3,23.2,15.7,23.2,16z'></path></svg></td><td>GET /ServiceProviderConfig</td><td>Read-only meta information</td></tr></tr><tr class='c0'><td><svg class='chevron' viewBox='0 0 40 40'><path d='M23.2,16c0,0.3-0.1,0.7-0.3,0.9l-9,11c-0.5,0.6-1.5,0.7-2.1,0.2s-0.7-1.5-0.2-2.1l8.2-10L11.6,6c-0.5-0.6-0.4-1.6,0.2-2.1s1.6-0.4,2.1,0.2l9,11C23.1,15.3,23.2,15.7,23.2,16z'></path></svg></td><td>GET /ResourceTypes</td><td>Read-only meta information</td></tr></tr><tr class='c0'><td><svg class='chevron' viewBox='0 0 40 40'><path d='M23.2,16c0,0.3-0.1,0.7-0.3,0.9l-9,11c-0.5,0.6-1.5,0.7-2.1,0.2s-0.7-1.5-0.2-2.1l8.2-10L11.6,6c-0.5-0.6-0.4-1.6,0.2-2.1s1.6-0.4,2.1,0.2l9,11C23.1,15.3,23.2,15.7,23.2,16z'></path></svg></td><td>GET /Schemas</td><td>Read-only meta information</td></tr></tr></tbody></table></div>
 <p></section></p>
 <p><hr>
 <section></p>
