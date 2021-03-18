@@ -123,7 +123,7 @@ Get the metadata from the App Server to render a form.
 |?task<span class="param-type"> undefined</span>|The task gid this hook is coming from.|
 |?user<span class="param-type"> undefined</span>|The user gid this hook is coming from.|
 |?locale<span class="param-type"> undefined</span>|The locale of the user (i.e. en, fr)|
-|?expires<span class="param-type"> undefined</span>|The time in milliseconds since epoch time when the request should expire|
+|?expires_at<span class="param-type"> undefined</span>|The time (in ISO-8601 date format) when the request should expire|
 
 <h3 id="get-form-metadata-responses">Responses</h3>
 
@@ -294,7 +294,7 @@ onFormSubmit
 
 ```json
 {
-  "expires": "string",
+  "expires_at": "string",
   "locale": "string",
   "task": "string",
   "user": "string",
@@ -368,7 +368,7 @@ The callback request made to an App Server when a form is submitted.
 |Name|Description|
 |---|---|
 |body<span class="param-type"> object</span><div class="param-required">required</div>|Request to notify of a form submission.|
-|» expires<span class="param-type"> string</span>|The time in milliseconds since epoch time when the request should expire|
+|» expires_at<span class="param-type"> string</span>|The time (in ISO-8601 date format) when the request should expire|
 |» locale<span class="param-type"> string</span>|The locale of the user (i.e. en, fr)|
 |» task<span class="param-type"> string</span>|The task gid this hook is coming from.|
 |» user<span class="param-type"> string</span>|The user gid this hook is coming from.|
@@ -476,7 +476,7 @@ runAction
 ```json
 {
   "action_type": "string",
-  "expires": "string",
+  "expires_at": "string",
   "locale": "string",
   "target_object": "string",
   "task": "string",
@@ -515,7 +515,7 @@ The request made when an action is triggered.
 |---|---|
 |body<span class="param-type"> object</span><div class="param-required">required</div>|Request to notify of an action running.|
 |» action_type<span class="param-type"> string</span>|The id from the configuration used to create the app action. This is a developer-provided string.|
-|» expires<span class="param-type"> string</span>|The time in milliseconds since epoch time when the request should expire|
+|» expires_at<span class="param-type"> string</span>|The time (in ISO-8601 date format) when the request should expire|
 |» locale<span class="param-type"> string</span>|The locale of the user (i.e. en, fr)|
 |» target_object<span class="param-type"> string</span>|The id of the target object that the Rule is acting on (currently always a Task id)|
 |» task<span class="param-type"> string</span>|The task gid this hook is coming from.|
@@ -629,7 +629,7 @@ When a user has navigated to the Custom Rule Builder UI and selected an App Acti
 |?task<span class="param-type"> undefined</span>|The task gid this hook is coming from.|
 |?user<span class="param-type"> undefined</span>|The user gid this hook is coming from.|
 |?locale<span class="param-type"> undefined</span>|The locale of the user (i.e. en, fr)|
-|?expires<span class="param-type"> undefined</span>|The time in milliseconds since epoch time when the request should expire|
+|?expires_at<span class="param-type"> undefined</span>|The time (in ISO-8601 date format) when the request should expire|
 
 <h3 id="get-action-metadata-responses">Responses</h3>
 
@@ -806,7 +806,7 @@ onActionFormSubmit
 {
   "action": "string",
   "action_type": "string",
-  "expires": "string",
+  "expires_at": "string",
   "locale": "string",
   "rule_name": "string",
   "task": "string",
@@ -872,7 +872,7 @@ The form is submitted when the user chooses to create their Rule. Asana will cre
 |body<span class="param-type"> object</span><div class="param-required">required</div>|Request to submit an action form.|
 |» action<span class="param-type"> string</span>|The id of an existing app action that is being edited|
 |» action_type<span class="param-type"> string</span>|The id of the configuration used to create the app action|
-|» expires<span class="param-type"> string</span>|The time in milliseconds since epoch time when the request should expire|
+|» expires_at<span class="param-type"> string</span>|The time (in ISO-8601 date format) when the request should expire|
 |» locale<span class="param-type"> string</span>|The locale of the user (i.e. en, fr)|
 |» rule_name<span class="param-type"> string</span>|The name of the rule being created|
 |» task<span class="param-type"> string</span>|The task gid this hook is coming from.|
@@ -1008,7 +1008,7 @@ The typeahead request made to an App Server when a typeahead field changes.
 |?task<span class="param-type"> undefined</span>|The task gid this hook is coming from.|
 |?user<span class="param-type"> undefined</span>|The user gid this hook is coming from.|
 |?locale<span class="param-type"> undefined</span>|The locale of the user (i.e. en, fr)|
-|?expires<span class="param-type"> undefined</span>|The time in milliseconds since epoch time when the request should expire|
+|?expires_at<span class="param-type"> undefined</span>|The time (in ISO-8601 date format) when the request should expire|
 
 <h3 id="typeahead-(ui)-responses">Responses</h3>
 
@@ -1128,7 +1128,7 @@ Get the metadata from the App Server to render a widget.
 |?locale<span class="param-type"> undefined</span>|The locale of the user (i.e. en, fr)|
 |?attachment<span class="param-type"> undefined</span>|The attachment id of the URL attachment|
 |?asset<span class="param-type"> undefined</span>|The asset id of the asset containing the URL attachment|
-|?expires<span class="param-type"> undefined</span>|The time in milliseconds since epoch time when the request should expire|
+|?expires_at<span class="param-type"> undefined</span>|The time (in ISO-8601 date format) when the request should expire|
 
 <h3 id="get-widget-metadata-responses">Responses</h3>
 
@@ -1189,7 +1189,7 @@ attachResource
 {
   "asset": "string",
   "attachment": "string",
-  "expires": "string",
+  "expires_at": "string",
   "locale": "string",
   "task": "string",
   "user": "string",
@@ -1224,7 +1224,7 @@ When the user attaches a resource URL to a task, Asana will make a signed reques
 |body<span class="param-type"> object</span><div class="param-required">required</div>|Request to attach a resource.|
 |» asset<span class="param-type"> string</span>|The asset id of the asset containing the URL attachment|
 |» attachment<span class="param-type"> string</span>|The attachment id of the URL attachment|
-|» expires<span class="param-type"> string</span>|The time in milliseconds since epoch time when the request should expire|
+|» expires_at<span class="param-type"> string</span>|The time (in ISO-8601 date format) when the request should expire|
 |» locale<span class="param-type"> string</span>|The locale of the user (i.e. en, fr)|
 |» task<span class="param-type"> string</span>|The task gid this hook is coming from.|
 |» user<span class="param-type"> string</span>|The user gid this hook is coming from.|
