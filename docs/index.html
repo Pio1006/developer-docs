@@ -3401,7 +3401,7 @@ happens when a User takes actions within these components.</p>
 <blockquote>
 <p>Request to the App Server</p>
 </blockquote>
-<pre class="highlight http tab-http"><code><span class="err">https://app-server.com/widget?workspace=12345&amp;task=23456&amp;user=34567&amp;locale=en&amp;attachment=45678&amp;asset=56789&amp;expires=1602192507761&amp;resource_url=https%3A%2F%2Fcompany.atlassian.net%2Fissue%2F1254
+<pre class="highlight http tab-http"><code><span class="err">https://app-server.com/widget?workspace=12345&amp;task=23456&amp;user=34567&amp;locale=en&amp;attachment=45678&amp;asset=56789&amp;expires_at=2011-10-05T14%3A48%3A00.000Z&amp;resource_url=https%3A%2F%2Fcompany.atlassian.net%2Fissue%2F1254
 </span></code></pre>
 <blockquote>
 <p>Response from the App Server</p>
@@ -3483,7 +3483,7 @@ API (See sample on the right).</p></li>
 <blockquote>
 <p>Request to the App Server</p>
 </blockquote>
-<pre class="highlight http tab-http"><code><span class="err">https://app-server.com/form?workspace=12345&amp;task=23456&amp;user=34567&amp;locale=en&amp;expires=1602192507761
+<pre class="highlight http tab-http"><code><span class="err">https://app-server.com/form?workspace=12345&amp;task=23456&amp;user=34567&amp;locale=en&amp;expires_at=2011-10-05T14%3A48%3A00.000Z
 </span></code></pre>
 <blockquote>
 <p>Response from the App Server</p>
@@ -3563,7 +3563,7 @@ endpoint is the <a href="/docs/on-change-callback">On change callback request</a
 <blockquote>
 <p>Request to the App Server</p>
 </blockquote>
-<pre class="highlight http tab-http"><code><span class="err">https://app-server.com/resource-search?fragment=Cool&amp;workspace=12345&amp;task=23456&amp;user=34567&amp;locale=en&amp;expires=1602192507761
+<pre class="highlight http tab-http"><code><span class="err">https://app-server.com/resource-search?fragment=Cool&amp;workspace=12345&amp;task=23456&amp;user=34567&amp;locale=en&amp;expires_at=2011-10-05T14%3A48%3A00.000Z
 </span></code></pre>
 <blockquote>
 <p>Response from the App Server</p>
@@ -3602,7 +3602,7 @@ the applicable objects for their query. The App Server entirely determines what 
 <blockquote>
 <p>Request to the App Server</p>
 </blockquote>
-<pre class="highlight http tab-http"><code><span class="err">https://app-server.com/rule?workspace=12345&amp;project=23456&amp;action_type=45678&amp;action=56789&amp;user=34567&amp;locale=en&amp;expires=1602192507761
+<pre class="highlight http tab-http"><code><span class="err">https://app-server.com/rule?workspace=12345&amp;project=23456&amp;action_type=45678&amp;action=56789&amp;user=34567&amp;locale=en&amp;expires_at=2011-10-05T14%3A48%3A00.000Z
 </span></code></pre>
 <blockquote>
 <p>Response from the App Server</p>
@@ -4057,7 +4057,7 @@ or setup something like ngrok to expose your localhost server.</p>
   <span class="p">}</span>
 
   <span class="kd">let</span> <span class="nx">now</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Date</span><span class="p">();</span>
-  <span class="k">if</span> <span class="p">(</span><span class="nx">now</span><span class="p">.</span><span class="nx">getTime</span><span class="p">()</span> <span class="o">&gt;</span> <span class="nx">req</span><span class="p">.</span><span class="nx">query</span><span class="p">[</span><span class="s2">"expires"</span><span class="p">])</span> <span class="p">{</span>
+  <span class="k">if</span> <span class="p">(</span><span class="nx">now</span><span class="p">.</span><span class="nx">getTime</span><span class="p">()</span> <span class="o">&gt;</span> <span class="nb">Date</span><span class="p">.</span><span class="nx">parse</span><span class="p">(</span><span class="nx">req</span><span class="p">.</span><span class="nx">query</span><span class="p">[</span><span class="s2">"expires_at"</span><span class="p">]))</span> <span class="p">{</span>
     <span class="nx">reject</span><span class="p">(</span><span class="nx">req</span><span class="p">);</span>
     <span class="k">return</span><span class="p">;</span>
   <span class="p">}</span>
