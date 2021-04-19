@@ -18790,7 +18790,7 @@ A user object represents an account in Asana that can be given access to various
 
 <span class="n">Client</span> <span class="n">client</span> <span class="o">=</span> <span class="n">Client</span><span class="o">.</span><span class="na">accessToken</span><span class="o">(</span><span class="s">"PERSONAL_ACCESS_TOKEN"</span><span class="o">);</span>
 
-<span class="n">List</span><span class="o">&lt;</span><span class="n">User</span><span class="o">&gt;</span> <span class="n">result</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="na">users</span><span class="o">.</span><span class="na">getUsers</span><span class="o">(</span><span class="n">workspace</span><span class="o">)</span>
+<span class="n">List</span><span class="o">&lt;</span><span class="n">User</span><span class="o">&gt;</span> <span class="n">result</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="na">users</span><span class="o">.</span><span class="na">getUsers</span><span class="o">(</span><span class="n">team</span><span class="o">,</span> <span class="n">workspace</span><span class="o">)</span>
     <span class="o">.</span><span class="na">option</span><span class="o">(</span><span class="s">"pretty"</span><span class="o">,</span> <span class="kc">true</span><span class="o">)</span>
     <span class="o">.</span><span class="na">execute</span><span class="o">();</span>
 </code></pre><pre class="highlight php tab-php" style="display:none"><code><span class="cp">&lt;?php</span>
