@@ -19433,7 +19433,16 @@ to <code>added</code> and <code>removed</code>.</li>
 <li>Team - added, changed, deleted</li>
 <li>Team Membership - added, removed</li>
 <li>Workspace - added, removed, changed</li>
-<li>Workspace Memberships - added, removed
+<li>Workspace Memberships - added, removed</li>
+</ul>
+<h4  >Webhook Limits</h4>
+<p>Webhooks have two different limits</p>
+
+<ul>
+<li>1k limit per resource in Asana. (If 10 apps each have 100 webhooks
+watching the same resource, no more webhooks can be placed on the
+webhook. <code>/events</code> streams count towards this limit)</li>
+<li>10k per user-app (An app can have 10k webhooks for EACH user)
 </span></li>
 </ul>
 
