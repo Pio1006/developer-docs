@@ -1483,7 +1483,7 @@ Asana is a work tracking and collaboration tool. This guide is designed to give 
 <p><a id="authentication-basics"></a></p>
 
 <p><span class="description">
-Asana supports a few methods of authenticating with the API. Simple cases are usually handled with a Personal Access Token, while multi-user apps utilize oauth.
+Asana supports a few methods of authenticating with the API. Simple cases are usually handled with a Personal Access Token, while multi-user apps utilize OAuth.
 </span></p>
 <pre class="highlight shellshell"><code><span class="s2">"Authorization: Bearer ACCESS_TOKEN"</span>
 </code></pre>
@@ -1690,7 +1690,7 @@ it <a href="https://www.oauth.com/oauth2-servers/pkce/">here</a>.</p>
 <p>Here&#39;s what you need to know:</p>
 
 <ol>
-<li><p>Whenever a user wants to oauth with Asana, your app server should generate a random string called the 
+<li><p>Whenever a user wants to OAuth with Asana, your app server should generate a random string called the 
 <code>code_verifier</code>. This string should be saved to the user (as every <code>code_verifier</code> should be unique per user). This
 should stay on the app server and only be sent to the <a href="/docs/token-exchange-endpoint">Token Exchange Endpoint</a>.</p></li>
 <li><p>Your app server will hash the <code>code_verifier</code> with SHA256 to get a string called the <code>code_challenge</code>. Your server
@@ -2006,7 +2006,7 @@ The web product offers a number of rich formatting features when writing task no
 <span class="o">}</span>
 </code></pre>
 <blockquote>
-<p>Javascript</p>
+<p>JavaScript</p>
 </blockquote>
 <pre class="highlight javascriptjavascript"><code><span class="kd">var</span> <span class="nx">htmlText</span> <span class="o">=</span> <span class="s1">'&lt;body&gt;...&lt;/body&gt;'</span>
 <span class="kd">var</span> <span class="nx">parser</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">DOMParser</span><span class="p">()</span>
@@ -2479,7 +2479,7 @@ Asana-Disable: a_third_change
 <h2 id='client-library-support'  >Client library support</h2>
 <p><a name="client-libraries" class="jump-anchor"></a></p>
 
-<p>The latest version of our <a href="/docs/official-client-libraries">official client libraries</a> for Python, Java, PHP, and Javascript all support sending custom headers and are able to use our deprecations framework. Consult the individual libraries for how to send headers with each request.</p>
+<p>The latest version of our <a href="/docs/official-client-libraries">official client libraries</a> for Python, Java, PHP, and JavaScript all support sending custom headers and are able to use our deprecations framework. Consult the individual libraries for how to send headers with each request.</p>
 
 <div>
   <div class="docs-developer-satisfaction-content">
@@ -2916,7 +2916,7 @@ To get started, run <code>pip install asana</code> or follow the detailed instal
 
 <p>All of the built-in functions can be found in the <a href="https://github.com/Asana/python-asana/tree/master/asana/resources/gen">/gen folder of the client library</a>. </p>
 
-<p>You can see a variant of this script, and other useful Asana API scripts, in our open-source <a href="https://github.com/Asana/DevRel-Examples/tree/master/python" target="_blank">Github examples repository</a></p>
+<p>You can see a variant of this script, and other useful Asana API scripts, in our open-source <a href="https://github.com/Asana/DevRel-Examples/tree/master/python" target="_blank">GitHub examples repository</a></p>
 
 <div>
   <div class="docs-developer-satisfaction-content">
@@ -2946,7 +2946,7 @@ To get started, run <code>pip install asana</code> or follow the detailed instal
 To get started, <code>npm install asana</code> or follow the detailed installation instructions on the <a href="https://github.com/Asana/node-asana/">GitHub page for the Node client library</a>.<br>
 </span></p>
 
-<p>Once it’s installed, open your favorite text editor and we’ll code a GET request to <code>/users/me</code> - the same request as above, but in Javascript.</p>
+<p>Once it’s installed, open your favorite text editor and we’ll code a GET request to <code>/users/me</code> - the same request as above, but in JavaScript.</p>
 
 <p>Save this file as something descriptive like &quot;hello_world.js&quot;</p>
 
@@ -2954,7 +2954,7 @@ To get started, <code>npm install asana</code> or follow the detailed installati
 
 <p>All of the built-in functions can be found in the <a href="https://github.com/Asana/node-asana/tree/master/lib/resources/gen">/gen folder of the client library</a>.</p>
 
-<p>You can see a variant of this script, and other useful Asana API scripts, in our open-source <a href="https://github.com/Asana/DevRel-Examples/tree/master/javascript" target="_blank">Github examples repository</a></p>
+<p>You can see a variant of this script, and other useful Asana API scripts, in our open-source <a href="https://github.com/Asana/DevRel-Examples/tree/master/javascript" target="_blank">GitHub examples repository</a></p>
 
 <div>
   <div class="docs-developer-satisfaction-content">
@@ -2993,7 +2993,7 @@ To get started, `gem install asana` or follow the detailed installation instruct
 
 <p>All of the built-in methods can be found in the <a href="https://github.com/Asana/ruby-asana/tree/master/lib/asana/resources">/resources folder of the client library</a>. </p>
 
-<p>You can see a variant of this script, and other useful Asana API scripts, in our open-source <a href="https://github.com/Asana/DevRel-Examples/tree/master/ruby" target="_blank">Github examples repository</a></p>
+<p>You can see a variant of this script, and other useful Asana API scripts, in our open-source <a href="https://github.com/Asana/DevRel-Examples/tree/master/ruby" target="_blank">GitHub examples repository</a></p>
 <h2 id='workflow-automation-script'  >Workflow automation script</h2>
 <p><span class="description">
 Asana&#39;s API enables customization and automation of your organization’s workflow through scripts built to specialize your use of Asana. Using Asana to track your work and leveraging Asana’s API to automate your processes is a powerful combination which can make your team much more efficient. Here&#39;s one example of how we do it at Asana.
@@ -3189,7 +3189,7 @@ In node, a normal loop would send all requests at once, which doesn’t work in 
 In this guide, we will build a simple triage bot that will assign tasks. This is a common Asana use case with support inboxes or request projects. 
 </span></p>
 
-<p>If you want to skip ahead and see the code for the triage bot, it’s on Github in the Javascript folder of our <a href="https://github.com/Asana/devrel-examples">devrel-examples repo</a>.</p>
+<p>If you want to skip ahead and see the code for the triage bot, it’s on GitHub in the JavaScript folder of our <a href="https://github.com/Asana/devrel-examples">devrel-examples repo</a>.</p>
 
 <p>For this guide, let’s suppose a design team has a requests project where people from the marketing team fill out an <a href="https://asana.com/guide/help/premium/forms">Asana form</a> to request graphics from the design team. The form creates a task in the design requests project that needs to be assigned to a designer. </p>
 
@@ -3203,7 +3203,7 @@ In this guide, we will build a simple triage bot that will assign tasks. This is
 <li><a href="/docs/asana">Asana API reference docs</a></li>
 <li><a href="/docs/why-use-asana-39-s-api">Asana longform documentation</a></li>
 <li><a href="https://forum.asana.com/c/developersAPI">Asana developer community</a> -- if you get blocked or have a question about the API, there are devs in our community that are eager to help. We also post API updates and news to the community forum.</li>
-<li>The <a href="https://github.com/Asana/devrel-examples/tree/master/javascript/triage_bot">code for this bot on Github</a></li>
+<li>The <a href="https://github.com/Asana/devrel-examples/tree/master/javascript/triage_bot">code for this bot on GitHub</a></li>
 </ul>
 <h3 id='create-your-bot-user-in-asana'  >Create your bot user in Asana</h3>
 <p>Create a new Asana account for your bot (<a href="https://asana.com/guide/help/organizations/members#gl-invite">instructions for inviting users</a>). You want to create a distinct Asana account for your bot because any action it takes in Asana will be attributed to this user. Give your bot a name and photo that will be recognizable to users in Asana that encounter it. Note that if your bot is a guest member in Asana that it will need to be added to every project you need it to work in. Bots based on guest Asana accounts will also not have access to some API features such as defining new custom fields or modifying their settings.</p>
@@ -3762,7 +3762,7 @@ replay attacks. </p>
 App and request the Workflow App functionliaty onto it via the 
 <a href="https://form-beta.asana.com?k=LBWpDpqZ6b-6pV4ZIbP-OA&amp;d=15793206719">Create a UI Hook Alpha App</a> form.</p>
 
-<p>To create an oauth app, see <a href="/docs/authentication-quick-start">Authentication Quick Start</a>.</p>
+<p>To create an OAuth app, see <a href="/docs/authentication-quick-start">Authentication Quick Start</a>.</p>
 
 <p>To create a Workflow App you&#39;ll need to fill out the <a href="https://form-beta.asana.com?k=LBWpDpqZ6b-6pV4ZIbP-OA&amp;d=15793206719">Create a UI Hook Alpha App</a>
 form with the data in the table below.</p>
@@ -3815,7 +3815,7 @@ provide:</p>
 
 <ul>
 <li><code>authenticationUrl</code> &amp; <code>authModalMetadata</code> is only required if your app needs access to the Asana API and/or needs to 
-oauth with a different application. If you plan to use Asana&#39;s API, create an <a href="/docs/oauth">OAuth App</a> via the <a href="https://app.asana.com/0/developer-console">Developer Console</a>. 
+OAuth with a different application. If you plan to use Asana&#39;s API, create an <a href="/docs/oauth">OAuth App</a> via the <a href="https://app.asana.com/0/developer-console">Developer Console</a>. 
 The URL you place in <code>authenticationUrl</code> should be something like <code>https://localhost:5000/auth</code>. This url should redirect
 users to the <a href="#user-authorization-endpoint">User Authorization Endpoint</a> with the required url parameters for OAuth.</li>
 <li><code>resource_widget</code> is required if you want to display an <a href="/docs/app-widget">App Widget</a>. Widgets are displayed for 
@@ -3847,7 +3847,7 @@ things happened:</p>
 <code>authenticationUrl</code>. If your OAuth is set up properly, you should be able to complete this flow. 
 
 <ul>
-<li>If the flow completes but the window doesn&#39;t close, ensure the last step of your oauth sends a
+<li>If the flow completes but the window doesn&#39;t close, ensure the last step of your OAuth sends a
 <code>postMessage</code> with the message &quot;success&quot;. The origin of this message should be set to the url of 
 the app server. </li>
 </ul></li>
@@ -4949,7 +4949,7 @@ Get the metadata from the App Server to render a widget.
 <h3 id="get-widget-metadata-parameters">Parameters</h3>
 <div class='table-holder'><table class='asana-table'><thead><tr><td></td>
 <td>Name</td><td>Description</td></tr>
-</thead><tbody><tr class='c0'><td><svg class='chevron' viewBox='0 0 40 40'><path d='M23.2,16c0,0.3-0.1,0.7-0.3,0.9l-9,11c-0.5,0.6-1.5,0.7-2.1,0.2s-0.7-1.5-0.2-2.1l8.2-10L11.6,6c-0.5-0.6-0.4-1.6,0.2-2.1s1.6-0.4,2.1,0.2l9,11C23.1,15.3,23.2,15.7,23.2,16z'></path></svg></td><td>?resource_url<span class="param-type"> string</span><div class="param-required">required</div></td><td>The URL of the URL attachment on the task (i.e. Jira issue, Github pull request)</td></tr></tr><tr class='c0'><td><svg class='chevron' viewBox='0 0 40 40'><path d='M23.2,16c0,0.3-0.1,0.7-0.3,0.9l-9,11c-0.5,0.6-1.5,0.7-2.1,0.2s-0.7-1.5-0.2-2.1l8.2-10L11.6,6c-0.5-0.6-0.4-1.6,0.2-2.1s1.6-0.4,2.1,0.2l9,11C23.1,15.3,23.2,15.7,23.2,16z'></path></svg></td><td>?workspace<span class="param-type"> string</span><div class="param-required">required</div></td><td>The workspace gid this hook is coming from.</td></tr></tr><tr class='c0'><td><svg class='chevron' viewBox='0 0 40 40'><path d='M23.2,16c0,0.3-0.1,0.7-0.3,0.9l-9,11c-0.5,0.6-1.5,0.7-2.1,0.2s-0.7-1.5-0.2-2.1l8.2-10L11.6,6c-0.5-0.6-0.4-1.6,0.2-2.1s1.6-0.4,2.1,0.2l9,11C23.1,15.3,23.2,15.7,23.2,16z'></path></svg></td><td>?task<span class="param-type"> string</span><div class="param-required">required</div></td><td>The task gid this hook is coming from.</td></tr></tr><tr class='c0'><td><svg class='chevron' viewBox='0 0 40 40'><path d='M23.2,16c0,0.3-0.1,0.7-0.3,0.9l-9,11c-0.5,0.6-1.5,0.7-2.1,0.2s-0.7-1.5-0.2-2.1l8.2-10L11.6,6c-0.5-0.6-0.4-1.6,0.2-2.1s1.6-0.4,2.1,0.2l9,11C23.1,15.3,23.2,15.7,23.2,16z'></path></svg></td><td>?user<span class="param-type"> string</span><div class="param-required">required</div></td><td>The user gid this hook is coming from.</td></tr></tr><tr class='c0'><td><svg class='chevron' viewBox='0 0 40 40'><path d='M23.2,16c0,0.3-0.1,0.7-0.3,0.9l-9,11c-0.5,0.6-1.5,0.7-2.1,0.2s-0.7-1.5-0.2-2.1l8.2-10L11.6,6c-0.5-0.6-0.4-1.6,0.2-2.1s1.6-0.4,2.1,0.2l9,11C23.1,15.3,23.2,15.7,23.2,16z'></path></svg></td><td>?locale<span class="param-type"> string</span><div class="param-required">required</div></td><td>The locale of the user (i.e. en, fr)</td></tr></tr><tr class='c0'><td><svg class='chevron' viewBox='0 0 40 40'><path d='M23.2,16c0,0.3-0.1,0.7-0.3,0.9l-9,11c-0.5,0.6-1.5,0.7-2.1,0.2s-0.7-1.5-0.2-2.1l8.2-10L11.6,6c-0.5-0.6-0.4-1.6,0.2-2.1s1.6-0.4,2.1,0.2l9,11C23.1,15.3,23.2,15.7,23.2,16z'></path></svg></td><td>?attachment<span class="param-type"> string</span><div class="param-required">required</div></td><td>The attachment id of the URL attachment</td></tr></tr><tr class='c0'><td><svg class='chevron' viewBox='0 0 40 40'><path d='M23.2,16c0,0.3-0.1,0.7-0.3,0.9l-9,11c-0.5,0.6-1.5,0.7-2.1,0.2s-0.7-1.5-0.2-2.1l8.2-10L11.6,6c-0.5-0.6-0.4-1.6,0.2-2.1s1.6-0.4,2.1,0.2l9,11C23.1,15.3,23.2,15.7,23.2,16z'></path></svg></td><td>?asset<span class="param-type"> string</span><div class="param-required">required</div></td><td>The asset id of the asset containing the URL attachment</td></tr></tr><tr class='c0'><td><svg class='chevron' viewBox='0 0 40 40'><path d='M23.2,16c0,0.3-0.1,0.7-0.3,0.9l-9,11c-0.5,0.6-1.5,0.7-2.1,0.2s-0.7-1.5-0.2-2.1l8.2-10L11.6,6c-0.5-0.6-0.4-1.6,0.2-2.1s1.6-0.4,2.1,0.2l9,11C23.1,15.3,23.2,15.7,23.2,16z'></path></svg></td><td>?expires_at<span class="param-type"> string</span><div class="param-required">required</div></td><td>The time (in ISO-8601 date format) when the request should expire</td></tr></tr></tbody></table></div>
+</thead><tbody><tr class='c0'><td><svg class='chevron' viewBox='0 0 40 40'><path d='M23.2,16c0,0.3-0.1,0.7-0.3,0.9l-9,11c-0.5,0.6-1.5,0.7-2.1,0.2s-0.7-1.5-0.2-2.1l8.2-10L11.6,6c-0.5-0.6-0.4-1.6,0.2-2.1s1.6-0.4,2.1,0.2l9,11C23.1,15.3,23.2,15.7,23.2,16z'></path></svg></td><td>?resource_url<span class="param-type"> string</span><div class="param-required">required</div></td><td>The URL of the URL attachment on the task (i.e. Jira issue, GitHub pull request)</td></tr></tr><tr class='c0'><td><svg class='chevron' viewBox='0 0 40 40'><path d='M23.2,16c0,0.3-0.1,0.7-0.3,0.9l-9,11c-0.5,0.6-1.5,0.7-2.1,0.2s-0.7-1.5-0.2-2.1l8.2-10L11.6,6c-0.5-0.6-0.4-1.6,0.2-2.1s1.6-0.4,2.1,0.2l9,11C23.1,15.3,23.2,15.7,23.2,16z'></path></svg></td><td>?workspace<span class="param-type"> string</span><div class="param-required">required</div></td><td>The workspace gid this hook is coming from.</td></tr></tr><tr class='c0'><td><svg class='chevron' viewBox='0 0 40 40'><path d='M23.2,16c0,0.3-0.1,0.7-0.3,0.9l-9,11c-0.5,0.6-1.5,0.7-2.1,0.2s-0.7-1.5-0.2-2.1l8.2-10L11.6,6c-0.5-0.6-0.4-1.6,0.2-2.1s1.6-0.4,2.1,0.2l9,11C23.1,15.3,23.2,15.7,23.2,16z'></path></svg></td><td>?task<span class="param-type"> string</span><div class="param-required">required</div></td><td>The task gid this hook is coming from.</td></tr></tr><tr class='c0'><td><svg class='chevron' viewBox='0 0 40 40'><path d='M23.2,16c0,0.3-0.1,0.7-0.3,0.9l-9,11c-0.5,0.6-1.5,0.7-2.1,0.2s-0.7-1.5-0.2-2.1l8.2-10L11.6,6c-0.5-0.6-0.4-1.6,0.2-2.1s1.6-0.4,2.1,0.2l9,11C23.1,15.3,23.2,15.7,23.2,16z'></path></svg></td><td>?user<span class="param-type"> string</span><div class="param-required">required</div></td><td>The user gid this hook is coming from.</td></tr></tr><tr class='c0'><td><svg class='chevron' viewBox='0 0 40 40'><path d='M23.2,16c0,0.3-0.1,0.7-0.3,0.9l-9,11c-0.5,0.6-1.5,0.7-2.1,0.2s-0.7-1.5-0.2-2.1l8.2-10L11.6,6c-0.5-0.6-0.4-1.6,0.2-2.1s1.6-0.4,2.1,0.2l9,11C23.1,15.3,23.2,15.7,23.2,16z'></path></svg></td><td>?locale<span class="param-type"> string</span><div class="param-required">required</div></td><td>The locale of the user (i.e. en, fr)</td></tr></tr><tr class='c0'><td><svg class='chevron' viewBox='0 0 40 40'><path d='M23.2,16c0,0.3-0.1,0.7-0.3,0.9l-9,11c-0.5,0.6-1.5,0.7-2.1,0.2s-0.7-1.5-0.2-2.1l8.2-10L11.6,6c-0.5-0.6-0.4-1.6,0.2-2.1s1.6-0.4,2.1,0.2l9,11C23.1,15.3,23.2,15.7,23.2,16z'></path></svg></td><td>?attachment<span class="param-type"> string</span><div class="param-required">required</div></td><td>The attachment id of the URL attachment</td></tr></tr><tr class='c0'><td><svg class='chevron' viewBox='0 0 40 40'><path d='M23.2,16c0,0.3-0.1,0.7-0.3,0.9l-9,11c-0.5,0.6-1.5,0.7-2.1,0.2s-0.7-1.5-0.2-2.1l8.2-10L11.6,6c-0.5-0.6-0.4-1.6,0.2-2.1s1.6-0.4,2.1,0.2l9,11C23.1,15.3,23.2,15.7,23.2,16z'></path></svg></td><td>?asset<span class="param-type"> string</span><div class="param-required">required</div></td><td>The asset id of the asset containing the URL attachment</td></tr></tr><tr class='c0'><td><svg class='chevron' viewBox='0 0 40 40'><path d='M23.2,16c0,0.3-0.1,0.7-0.3,0.9l-9,11c-0.5,0.6-1.5,0.7-2.1,0.2s-0.7-1.5-0.2-2.1l8.2-10L11.6,6c-0.5-0.6-0.4-1.6,0.2-2.1s1.6-0.4,2.1,0.2l9,11C23.1,15.3,23.2,15.7,23.2,16z'></path></svg></td><td>?expires_at<span class="param-type"> string</span><div class="param-required">required</div></td><td>The time (in ISO-8601 date format) when the request should expire</td></tr></tr></tbody></table></div>
 <h3 id="get-widget-metadata-responses">Responses</h3>
 <div class='table-holder'><table class='asana-table'><thead><tr><td></td>
 <td>Status</td><td>Description</td></tr>
