@@ -319,7 +319,13 @@
                     <a href="/docs/reading-rich-text" class="toc-h2 toc-link" data-title="Reading rich text">Reading rich text</a>
                   </li>
                   <li>
+                    <a href="/docs/reading-defensively" class="toc-h2 toc-link" data-title="Reading defensively">Reading defensively</a>
+                  </li>
+                  <li>
                     <a href="/docs/writing-rich-text" class="toc-h2 toc-link" data-title="Writing rich text">Writing rich text</a>
+                  </li>
+                  <li>
+                    <a href="/docs/writing-defensively" class="toc-h2 toc-link" data-title="Writing defensively">Writing defensively</a>
                   </li>
               </ul>
           </li>
@@ -1979,8 +1985,6 @@ The web product offers a number of rich formatting features when writing task no
 </thead><tbody><tr class='c0'><td><svg class='chevron' viewBox='0 0 40 40'><path d='M23.2,16c0,0.3-0.1,0.7-0.3,0.9l-9,11c-0.5,0.6-1.5,0.7-2.1,0.2s-0.7-1.5-0.2-2.1l8.2-10L11.6,6c-0.5-0.6-0.4-1.6,0.2-2.1s1.6-0.4,2.1,0.2l9,11C23.1,15.3,23.2,15.7,23.2,16z'></path></svg></td><td>Tasks</td><td><code>notes</code></td><td><code>html_notes</code></td></tr></tr><tr class='c0'><td><svg class='chevron' viewBox='0 0 40 40'><path d='M23.2,16c0,0.3-0.1,0.7-0.3,0.9l-9,11c-0.5,0.6-1.5,0.7-2.1,0.2s-0.7-1.5-0.2-2.1l8.2-10L11.6,6c-0.5-0.6-0.4-1.6,0.2-2.1s1.6-0.4,2.1,0.2l9,11C23.1,15.3,23.2,15.7,23.2,16z'></path></svg></td><td>Projects</td><td><code>notes</code></td><td><code>html_notes</code></td></tr></tr><tr class='c0'><td><svg class='chevron' viewBox='0 0 40 40'><path d='M23.2,16c0,0.3-0.1,0.7-0.3,0.9l-9,11c-0.5,0.6-1.5,0.7-2.1,0.2s-0.7-1.5-0.2-2.1l8.2-10L11.6,6c-0.5-0.6-0.4-1.6,0.2-2.1s1.6-0.4,2.1,0.2l9,11C23.1,15.3,23.2,15.7,23.2,16z'></path></svg></td><td>Stories</td><td><code>text</code></td><td><code>html_text</code></td></tr></tr><tr class='c0'><td><svg class='chevron' viewBox='0 0 40 40'><path d='M23.2,16c0,0.3-0.1,0.7-0.3,0.9l-9,11c-0.5,0.6-1.5,0.7-2.1,0.2s-0.7-1.5-0.2-2.1l8.2-10L11.6,6c-0.5-0.6-0.4-1.6,0.2-2.1s1.6-0.4,2.1,0.2l9,11C23.1,15.3,23.2,15.7,23.2,16z'></path></svg></td><td>Project status updates</td><td><code>text</code></td><td><code>html_text</code></td></tr></tr><tr class='c0'><td><svg class='chevron' viewBox='0 0 40 40'><path d='M23.2,16c0,0.3-0.1,0.7-0.3,0.9l-9,11c-0.5,0.6-1.5,0.7-2.1,0.2s-0.7-1.5-0.2-2.1l8.2-10L11.6,6c-0.5-0.6-0.4-1.6,0.2-2.1s1.6-0.4,2.1,0.2l9,11C23.1,15.3,23.2,15.7,23.2,16z'></path></svg></td><td>Teams</td><td><code>description</code></td><td><code>html_description</code></td></tr></tr></tbody></table></div>
 <p><a id="reading"></a></p>
 <h2 id='reading-rich-text'  >Reading rich text</h2>
-<p><strong><em>Note:</em></strong>  <em>we are actively adding new rich texts formats to various objects in Asana. <strong>This may break existing apps. New apps should be built using parsers and display logic that is forward compatible with the forthcoming rich text formats</strong>. More details and ongoing updates can be found in <strong><a href="https://forum.asana.com/t/changes-are-coming-to-rich-text-html-notes-and-html-text-in-asana/113434">this post in the developer forum</a></strong>.</em></p>
-
 <blockquote>
 <p>Python</p>
 </blockquote>
@@ -2019,7 +2023,9 @@ The web product offers a number of rich formatting features when writing task no
     <span class="nx">node</span> <span class="o">=</span> <span class="nx">iterator</span><span class="p">.</span><span class="nx">iterateNext</span><span class="p">();</span>
 <span class="p">}</span>
 </code></pre>
-<p>Rich text in the API is formatted as an HTML fragment, which is wrapped in a root <code>&lt;body&gt;</code> tag. Rich text is guaranteed to be valid XML; there will always be a root element, all tags will be closed, balanced, and case-sensitive, and all attribute values will be quoted. The following is a list of all the tags that are currently returned by the API:</p>
+<p>Rich text in the API is formatted as an HTML fragment, which is wrapped in a root <code>&lt;body&gt;</code> tag. Rich text is guaranteed 
+to be valid XML; there will always be a root element, all tags will be closed, balanced, and case-sensitive, and all 
+attribute values will be quoted. The following is a list of all the tags that are currently returned by the API:</p>
 <div class='table-holder'><table class='asana-table'><thead><tr><td></td>
 <td>Tag</td><td>Meaning in Asana</td></tr>
 </thead><tbody><tr class='c0'><td><svg class='chevron' viewBox='0 0 40 40'><path d='M23.2,16c0,0.3-0.1,0.7-0.3,0.9l-9,11c-0.5,0.6-1.5,0.7-2.1,0.2s-0.7-1.5-0.2-2.1l8.2-10L11.6,6c-0.5-0.6-0.4-1.6,0.2-2.1s1.6-0.4,2.1,0.2l9,11C23.1,15.3,23.2,15.7,23.2,16z'></path></svg></td><td><code>&lt;body&gt;</code></td><td>None</td></tr></tr><tr class='c0'><td><svg class='chevron' viewBox='0 0 40 40'><path d='M23.2,16c0,0.3-0.1,0.7-0.3,0.9l-9,11c-0.5,0.6-1.5,0.7-2.1,0.2s-0.7-1.5-0.2-2.1l8.2-10L11.6,6c-0.5-0.6-0.4-1.6,0.2-2.1s1.6-0.4,2.1,0.2l9,11C23.1,15.3,23.2,15.7,23.2,16z'></path></svg></td><td><code>&lt;strong&gt;</code></td><td>Bold text</td></tr></tr><tr class='c0'><td><svg class='chevron' viewBox='0 0 40 40'><path d='M23.2,16c0,0.3-0.1,0.7-0.3,0.9l-9,11c-0.5,0.6-1.5,0.7-2.1,0.2s-0.7-1.5-0.2-2.1l8.2-10L11.6,6c-0.5-0.6-0.4-1.6,0.2-2.1s1.6-0.4,2.1,0.2l9,11C23.1,15.3,23.2,15.7,23.2,16z'></path></svg></td><td><code>&lt;em&gt;</code></td><td>Italic text</td></tr></tr><tr class='c0'><td><svg class='chevron' viewBox='0 0 40 40'><path d='M23.2,16c0,0.3-0.1,0.7-0.3,0.9l-9,11c-0.5,0.6-1.5,0.7-2.1,0.2s-0.7-1.5-0.2-2.1l8.2-10L11.6,6c-0.5-0.6-0.4-1.6,0.2-2.1s1.6-0.4,2.1,0.2l9,11C23.1,15.3,23.2,15.7,23.2,16z'></path></svg></td><td><code>&lt;u&gt;</code></td><td>Underlined text</td></tr></tr><tr class='c0'><td><svg class='chevron' viewBox='0 0 40 40'><path d='M23.2,16c0,0.3-0.1,0.7-0.3,0.9l-9,11c-0.5,0.6-1.5,0.7-2.1,0.2s-0.7-1.5-0.2-2.1l8.2-10L11.6,6c-0.5-0.6-0.4-1.6,0.2-2.1s1.6-0.4,2.1,0.2l9,11C23.1,15.3,23.2,15.7,23.2,16z'></path></svg></td><td><code>&lt;s&gt;</code></td><td>Strikethrough text</td></tr></tr><tr class='c0'><td><svg class='chevron' viewBox='0 0 40 40'><path d='M23.2,16c0,0.3-0.1,0.7-0.3,0.9l-9,11c-0.5,0.6-1.5,0.7-2.1,0.2s-0.7-1.5-0.2-2.1l8.2-10L11.6,6c-0.5-0.6-0.4-1.6,0.2-2.1s1.6-0.4,2.1,0.2l9,11C23.1,15.3,23.2,15.7,23.2,16z'></path></svg></td><td><code>&lt;code&gt;</code></td><td>Monospaced text</td></tr></tr><tr class='c0'><td><svg class='chevron' viewBox='0 0 40 40'><path d='M23.2,16c0,0.3-0.1,0.7-0.3,0.9l-9,11c-0.5,0.6-1.5,0.7-2.1,0.2s-0.7-1.5-0.2-2.1l8.2-10L11.6,6c-0.5-0.6-0.4-1.6,0.2-2.1s1.6-0.4,2.1,0.2l9,11C23.1,15.3,23.2,15.7,23.2,16z'></path></svg></td><td><code>&lt;ol&gt;</code></td><td>Ordered list</td></tr></tr><tr class='c0'><td><svg class='chevron' viewBox='0 0 40 40'><path d='M23.2,16c0,0.3-0.1,0.7-0.3,0.9l-9,11c-0.5,0.6-1.5,0.7-2.1,0.2s-0.7-1.5-0.2-2.1l8.2-10L11.6,6c-0.5-0.6-0.4-1.6,0.2-2.1s1.6-0.4,2.1,0.2l9,11C23.1,15.3,23.2,15.7,23.2,16z'></path></svg></td><td><code>&lt;ul&gt;</code></td><td>Unordered list</td></tr></tr><tr class='c0'><td><svg class='chevron' viewBox='0 0 40 40'><path d='M23.2,16c0,0.3-0.1,0.7-0.3,0.9l-9,11c-0.5,0.6-1.5,0.7-2.1,0.2s-0.7-1.5-0.2-2.1l8.2-10L11.6,6c-0.5-0.6-0.4-1.6,0.2-2.1s1.6-0.4,2.1,0.2l9,11C23.1,15.3,23.2,15.7,23.2,16z'></path></svg></td><td><code>&lt;li&gt;</code></td><td>List item</td></tr></tr><tr class='c0'><td><svg class='chevron' viewBox='0 0 40 40'><path d='M23.2,16c0,0.3-0.1,0.7-0.3,0.9l-9,11c-0.5,0.6-1.5,0.7-2.1,0.2s-0.7-1.5-0.2-2.1l8.2-10L11.6,6c-0.5-0.6-0.4-1.6,0.2-2.1s1.6-0.4,2.1,0.2l9,11C23.1,15.3,23.2,15.7,23.2,16z'></path></svg></td><td><code>&lt;a&gt;</code></td><td>Link</td></tr></tr></tbody></table></div>
@@ -2059,6 +2065,66 @@ The web product offers a number of rich formatting features when writing task no
 <p><code>
 &lt;body&gt;All these new tasks are &lt;em&gt;really&lt;/em&gt; getting disorganized, so &lt;a href=&quot;https://app.asana.com/0/4168466/list&quot; data-asana-accessible=&quot;true&quot; data-asana-dynamic=&quot;true&quot; data-asana-type=&quot;user&quot; data-asana-gid=&quot;4168112&quot;&gt;Tim Bizzaro&lt;/a&gt; just made the new &lt;a href=&quot;https://app.asana.com/0/5732985/list&quot; data-asana-accessible=&quot;true&quot; data-asana-dynamic=&quot;true&quot; data-asana-type=&quot;project&quot; data-asana-gid=&quot;5732985&quot;&gt;Work Requests&lt;/a&gt; project to help keep them organized. &lt;strong&gt;Everyone&lt;/strong&gt; should start using the &lt;a href=&quot;https://app.asana.com/0/5732985/6489418&quot; data-asana-accessible=&quot;true&quot; data-asana-dynamic=&quot;true&quot; data-asana-type=&quot;task&quot; data-asana-gid=&quot;6489418&quot; data-asana-project=&quot;5732985&quot;&gt;Request template&lt;/a&gt; when adding new tasks there.&lt;/body&gt;
 </code></p>
+<h2 id='reading-defensively'  >Reading defensively</h2>
+<blockquote>
+<p>Custom handling external media <code>&lt;object&gt;</code></p>
+</blockquote>
+<pre class="highlight javascriptjavascript"><code><span class="kr">const</span> <span class="nx">richText</span> <span class="o">=</span> <span class="s1">'&lt;body&gt;&lt;object style="display:block" type="application/vnd.asana.external_media" data="https://www.youtube.com/embed/VqnMA3K6-e0"&gt;&lt;a href="https://www.youtube.com/embed/VqnMA3K6-e0"&gt;https://www.youtube.com/embed/VqnMA3K6-e0&lt;/a&gt;&lt;/object&gt;&lt;/body&gt;'</span>
+<span class="kr">const</span> <span class="nx">parser</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">DOMParser</span><span class="p">();</span>
+<span class="kr">const</span> <span class="nx">richTextDocument</span> <span class="o">=</span> <span class="nx">parser</span><span class="p">.</span><span class="nx">parseFromString</span><span class="p">(</span><span class="nx">richText</span><span class="p">,</span> <span class="s2">"text/html"</span><span class="p">);</span>
+
+<span class="kr">const</span> <span class="nx">objects</span> <span class="o">=</span> <span class="nx">richTextDocument</span><span class="p">.</span><span class="nx">querySelectorAll</span><span class="p">(</span><span class="s2">"object"</span><span class="p">);</span>
+
+<span class="k">for</span> <span class="p">(</span><span class="kd">let</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">objects</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">replacement</span> <span class="o">=</span> <span class="kc">null</span><span class="p">;</span>
+
+    <span class="k">switch</span><span class="p">(</span><span class="nx">objects</span><span class="p">[</span><span class="nx">i</span><span class="p">].</span><span class="nx">type</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">case</span> <span class="s2">"application/vnd.asana.external_media"</span><span class="p">:</span>
+            <span class="nx">replacement</span> <span class="o">=</span> <span class="nx">richTextDocument</span><span class="p">.</span><span class="nx">createElement</span><span class="p">(</span><span class="s1">'iframe'</span><span class="p">);</span>
+            <span class="nx">replacement</span><span class="p">.</span><span class="nx">width</span> <span class="o">=</span> <span class="mi">420</span><span class="p">;</span>
+            <span class="nx">replacement</span><span class="p">.</span><span class="nx">height</span> <span class="o">=</span> <span class="mi">315</span><span class="p">;</span>
+            <span class="nx">replacement</span><span class="p">.</span><span class="nx">src</span> <span class="o">=</span> <span class="nx">objects</span><span class="p">[</span><span class="nx">i</span><span class="p">].</span><span class="nx">data</span><span class="p">;</span>
+            <span class="k">break</span><span class="p">;</span>
+        <span class="nl">default</span><span class="p">:</span>
+            <span class="nx">replacement</span> <span class="o">=</span> <span class="nx">richTextDocument</span><span class="p">.</span><span class="nx">createElement</span><span class="p">(</span><span class="s1">'div'</span><span class="p">);</span>
+            <span class="nx">replacement</span><span class="p">.</span><span class="nx">innerHtml</span> <span class="o">=</span> <span class="nx">objects</span><span class="p">[</span><span class="nx">i</span><span class="p">].</span><span class="nx">innerHTML</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="k">if</span> <span class="p">(</span><span class="nx">replacement</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">objects</span><span class="p">[</span><span class="nx">i</span><span class="p">].</span><span class="nx">parentElement</span><span class="p">.</span><span class="nx">replaceChild</span><span class="p">(</span><span class="nx">replacement</span><span class="p">,</span> <span class="nx">objects</span><span class="p">[</span><span class="nx">i</span><span class="p">]);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="nx">richTextDocument</span><span class="p">.</span><span class="nx">body</span><span class="p">.</span><span class="nx">childNodes</span><span class="p">.</span><span class="nx">forEach</span> <span class="p">(</span><span class="nx">child</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="nb">document</span><span class="p">.</span><span class="nx">body</span><span class="p">.</span><span class="nx">append</span><span class="p">(</span><span class="nx">child</span><span class="p">);</span>
+<span class="p">});</span>
+</code></pre>
+<p><strong>We are actively adding new rich text formats to various objects in Asana</strong>. An existing app will break if not built 
+defensively. Apps should use parsers and display logic that is forward compatible with unknown future rich text formats. </p>
+
+<p>To do this, Asana provides two mechanisms to parse and display tags that the app doesn&#39;t explicitly support:</p>
+
+<ul>
+<li>Defaults that render in a WebView</li>
+<li>Guidelines for how to handle new tags</li>
+</ul>
+
+<p>You can read more about rich text changes in 
+<a href="https://forum.asana.com/t/new-rich-text-tags-in-html-notes-and-html-text/115442">this forum post</a>.</p>
+<h3 id='render-rich-text-in-a-webview'  >Render rich text in a WebView</h3>
+<p>You can expect the rich text HTML to render reasonably in a WebView if you apply the following CSS style to the 
+wrapping DOM node: <code>overflow-wrap: break-word; white-space: pre-wrap;</code>. This won&#39;t look exactly like it does in Asana, 
+but it will ensure users read it in the same way.</p>
+<h3 id='how-to-handle-new-tags-no-webview'  >How to handle new tags (no WebView)</h3><h4  >An <code>&lt;object&gt;</code> with an unhandled type</h4>
+<p>Render the <code>&lt;object&gt;</code> tag as a block and render the contained HTML with the same behavior as if it were not inside an 
+<code>&lt;object&gt;</code>. We will never send an <code>&lt;object&gt;</code> tag nested inside another <code>&lt;object&gt;</code> tag.</p>
+<h4  >An <code>&lt;img&gt;</code></h4>
+<p><a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/img#attributes">Fall back</a> to the alt text if the image can’t 
+be displayed. Render <code>\n&lt;alt text&gt;\n</code> since <code>&lt;img&gt;</code> are blocks</p>
+<h4  >Empty elements except <code>&lt;img&gt;</code></h4>
+<p>It is ok to omit them. Render as a new line if the tag is a block.</p>
+<h4  >Other semantic non-terminal tags</h4>
+<p>Ignore the tag and render whatever is inside. Follow the HTML convention for whether it is a block or not.</p>
 
 <p><a name="writing"></a></p>
 <h2 id='writing-rich-text'  >Writing rich text</h2>
@@ -2069,6 +2135,17 @@ The web product offers a number of rich formatting features when writing task no
 <p>To keep the contents of your tag and make a custom vanity link, include the property <code>data-asana-dynamic=&quot;false&quot;</code> when setting the contents of the tag. You would send <code>&lt;a data-asana-gid=&quot;123&quot; data-asana-dynamic=&quot;false&quot;&gt;This is some custom text!&lt;/a&gt;</code> and receive <code>&lt;a data-asana-accessible=&quot;true&quot; data-asana-dynamic=&quot;false&quot; data-asana-type=&quot;task&quot; data-asana-gid=&quot;123&quot;&gt;This is some custom text!&lt;/a&gt;</code></p>
 
 <p>If you do not have access to the referenced object when you try to create a link, the API will not generate an <code>href</code> for you, but will instead look for an <code>href</code> you provide. This allows you to write back <code>&lt;a&gt;</code> tags unmodified even if you do not have access to the resource. If you do not have access to the referenced object and no <code>href</code> is provided, your request will be rejected with a <code>400 Bad Request</code> error. Similarly, if you provide neither a GID nor a valid <code>href</code>, the request will be rejected with the same error.</p>
+<h2 id='writing-defensively'  >Writing defensively</h2><h3 id='when-processing-rich-text-and-sending-it-back'  >When processing rich text and sending it back</h3>
+<p>It’s ok to ignore tags or attributes on tags that are unknown for rendering/processing. It’s very important to send 
+everything back (attributes and inner content) to avoid data loss. <code>&lt;object&gt;</code> is an exception where it’s ok to not send 
+any inner content back (all inner content in <code>&lt;object&gt;</code> will be ignored).</p>
+<h3 id='if-you-plan-to-write-an-editor'  >If you plan to write an editor</h3>
+<p>If the tag and attributes are known, but it contains unknown attributes, it must be treated as unknown.</p>
+
+<p>If a tag is unknown, first determine if the tag is block or inline and render it as a block or inline atomic and 
+non-copiable (and non-cut&amp;paste-able) editor node (all inner content is non-editable). This is because we don’t know if 
+the unknown node has constraints on inner content or where it can appear. The node must also keep track of all 
+attributes and inner content to be serialized back.</p>
 
 <div>
   <div class="docs-developer-satisfaction-content">
