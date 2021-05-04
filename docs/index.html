@@ -2119,10 +2119,11 @@ but it will ensure users read it in the same way.</p>
 <p>Render the <code>&lt;object&gt;</code> tag as a block and render the contained HTML with the same behavior as if it were not inside an 
 <code>&lt;object&gt;</code>. We will never send an <code>&lt;object&gt;</code> tag nested inside another <code>&lt;object&gt;</code> tag.</p>
 <h4  >An <code>&lt;img&gt;</code></h4>
-<p><a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/img#attributes">Fall back</a> to the alt text if the image can’t 
-be displayed. Render <code>\n&lt;alt text&gt;\n</code> since <code>&lt;img&gt;</code> are blocks</p>
+<p><a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/img#attributes">Fall back</a> to either the alt text or the src 
+link if the image can’t be displayed. Wrap the text with newlines like <code>\n&lt;alt text&gt;\n</code> since <code>&lt;img&gt;</code> tags are blocks.</p>
 <h4  >Empty elements except <code>&lt;img&gt;</code></h4>
-<p>It is ok to omit them. Render as a new line if the tag is a block.</p>
+<p>Empty tags are described <a href="https://developer.mozilla.org/en-US/docs/Glossary/Empty_element">here</a>. It is ok to omit them. 
+Render as a new line if the tag is a block.</p>
 <h4  >Other semantic non-terminal tags</h4>
 <p>Ignore the tag and render whatever is inside. Follow the HTML convention for whether it is a block or not.</p>
 
