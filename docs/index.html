@@ -19756,6 +19756,8 @@ handshake it will fail to setup, and you will receive an error in
 response to your attempt to create it. This means you need to be able to
 receive and complete the webhook <em>while</em> the POST request is in-flight
 (in other words, have a server that can handle requests asynchronously).</p>
+
+<p>Invalid hostnames like localhost will recieve a 403 Forbidden status code.</p>
 <pre class="highlight plaintext"><code># Request
 curl -H "Authorization: Bearer &lt;personal_access_token&gt;" \
 -X POST https://app.asana.com/api/1.0/webhooks \
