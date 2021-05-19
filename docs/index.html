@@ -2713,7 +2713,7 @@ If you’re new to developing on APIs, this is a great place to start.  You’ll
 <p>To get started</p>
 
 <ol>
-<li>Be <a href="https://app.asana.com">logged into Asana</a>.<br></li>
+<li>Be <a href="https://app.asana.com">logged into Asana</a>.</li>
 <li>Go to this URL: <a href="https://app.asana.com/api/1.0/users/me?opt_pretty&opt_client_name=hello_world_browser" target="_blank">https://app.asana.com/api/1.0/users/me</a></li>
 </ol>
 
@@ -2738,15 +2738,15 @@ If you’re new to developing on APIs, this is a great place to start.  You’ll
   </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
-<p>And Congratulations! You’ve just made your first Asana API request.  </p>
+<p>And Congratulations! You’ve just made your first Asana API request.</p>
 
-<p>Let’s unpack what just happened. The base URL for all requests to the Asana API is <code>https://app.asana.com/api/1.0</code>. We want information about users, so we go down a level to the <code>https://app.asana.com/api/1.0/users</code> resource.  Within the set of all users in Asana, We’re specifically looking to get information about our own account, so we get more specific by adding <code>/me</code> to get <code>https://app.asana.com/api/1.0/users/me</code>. The <code>/me</code> part would ordinarily be an identifier (a long number) or email address of the user, but we&#39;ve created this shorthand for getting the current user of Asana&#39;s API, whomever that may be.  Put it together and you have the above path to get your user information from Asana.</p>
+<p>Let’s unpack what just happened. The base URL for all requests to the Asana API is <code>https://app.asana.com/api/1.0</code>. We want information about users, so we go down a level to the <code>https://app.asana.com/api/1.0/users</code> resource. Within the set of all users in Asana, We’re specifically looking to get information about our own account, so we get more specific by adding <code>/me</code> to get <code>https://app.asana.com/api/1.0/users/me</code>. The <code>/me</code> part would ordinarily be an identifier (a long number) or email address of the user, but we&#39;ve created this shorthand for getting the current user of Asana&#39;s API, whomever that may be. Put it together and you have the above path to get your user information from Asana.</p>
 
 <p>Since every API request you make will start with the same base URL (&#39;https://app.asana.com/api/1.0&#39;), we&#39;ll just talk about what comes next in the URL -- which is often referred to as a &#39;resource&#39; or &#39;path&#39;. For instance, when we say <code>/users/me</code> it&#39;s actually shorthand for the entire URL which would be <code>https://app.asana.com/api/1.0/users/me</code>.</p>
 
 <p>After requesting information from the API, you will receive a response in <a href="https://en.wikipedia.org/wiki/JSON">JSON</a> format, which can be read and understood by both humans and computers. It&#39;s structured in a particular way so programs can rely on a consistent format for the data.</p>
 
-<p>Our API is documented for what resources are available and what sort of return data to expect.  For example, here are the <a href="/docs/get-a-user">docs for the <code>/users</code> endpoint</a> which we just called. This is where you can discover what&#39;s possible with our API.</p>
+<p>Our API is documented for what resources are available and what sort of return data to expect. For example, here are the <a href="/docs/get-a-user">docs for the <code>/users</code> endpoint</a> which we just called. This is where you can discover what&#39;s possible with our API.</p>
 
 <p>Now, let’s make the same call to <code>/users/me</code> more like software would. Before we do so, we’ll need to get access outside of your web browser to the API.</p>
 
@@ -2779,11 +2779,11 @@ Similarly to entering your username/password into a website or logging into Asan
 <li>Open the Developer App Management page by <a href="https://app.asana.com/-/developer_console">using this permalink</a> or following these steps:</li>
 </ol>
 
-<p>* From within Asana, click your profile photo from the top bar and select <strong>&quot;My Profile Settings&quot;</strong></p>
-
-<p>* Click the <strong>&quot;Apps&quot;</strong> tab</p>
-
-<p>* Click <strong>&quot;Manage Developer Apps&quot;</strong></p>
+<ul>
+<li><p>From within Asana, click your profile photo from the top bar and select <strong>&quot;My Profile Settings&quot;</strong></p></li>
+<li><p>Click the <strong>&quot;Apps&quot;</strong> tab</p></li>
+<li><p>Click <strong>&quot;Manage Developer Apps&quot;</strong></p></li>
+</ul>
 
 <ol>
 <li><p>Click <strong>&quot;+ Create New Personal Access Token&quot;</strong></p></li>
@@ -2792,7 +2792,7 @@ Similarly to entering your username/password into a website or logging into Asan
 <li><p>Copy your token. You will only see this one time, but you can always create another PAT later.</p></li>
 </ol>
 
-<p><em><strong>Note</strong>: treat your PAT like you would a password. Do not share it or display it online</em>. </p>
+<p><em><strong>Note</strong>: treat your PAT like you would a password. Do not share it or display it online</em>.</p>
 
 <div>
   <div class="docs-developer-satisfaction-content">
@@ -2857,18 +2857,18 @@ We’ll use cURL, a command line[^1] program to make HTTP requests. MacOS and ma
 <p><a id="accessing-the-api-with-postman"></a></p>
 
 <blockquote>
-  <div class="postman-run-button"
-  data-postman-action="collection/import"
-  data-postman-var-1="574927885441306fec13"></div>
-  <script type="text/javascript">
-    (function (p,o,s,t,m,a,n) {
-      !p[s] && (p[s] = function () { (p[t] || (p[t] = [])).push(arguments); });
-      !o.getElementById(s+t) && o.getElementsByTagName("head")[0].appendChild((
-        (n = o.createElement("script")),
-        (n.id = s+t), (n.async = 1), (n.src = m), n
-      ));
-    }(window, document, "_pm", "PostmanRunObject", "https://run.pstmn.io/button.js"));
-  </script>
+<div class="postman-run-button"
+data-postman-action="collection/import"
+data-postman-var-1="17a7f43dbe9c41e7def1"></div>
+<script type="text/javascript">
+  (function (p,o,s,t,m,a,n) {
+    !p[s] && (p[s] = function () { (p[t] || (p[t] = [])).push(arguments); });
+    !o.getElementById(s+t) && o.getElementsByTagName("head")[0].appendChild((
+      (n = o.createElement("script")),
+      (n.id = s+t), (n.async = 1), (n.src = m), n
+    ));
+  }(window, document, "_pm", "PostmanRunObject", "https://run.pstmn.io/button.js"));
+</script>
 </blockquote>
 
 <p><span class="description">
