@@ -508,6 +508,9 @@
             <a href="/docs/ui-components-security" class="toc-h1 toc-link" data-title="UI Components Security">UI Components Security</a>
               <ul class="toc-list-h2 ">
                   <li>
+                    <a href="/docs/ui-components-security-checklist" class="toc-h2 toc-link" data-title="UI Components Security Checklist">UI Components Security Checklist</a>
+                  </li>
+                  <li>
                     <a href="/docs/ui-components-authorization" class="toc-h2 toc-link" data-title="UI Components Authorization">UI Components Authorization</a>
                   </li>
                   <li>
@@ -3732,7 +3735,31 @@ the App Server with the user-specified inputs. When the rule is triggered, Asana
 </ul>
 
 <p><hr class="full-line"></p>
-<h1 id='ui-components-security'  >UI Components Security</h1><h2 id='ui-components-authorization'  >UI Components Authorization</h2>
+<h1 id='ui-components-security'  >UI Components Security</h1><h2 id='ui-components-security-checklist'  >UI Components Security Checklist</h2>
+<p>When handling requests from Asana, a UI Components app should:</p>
+
+<ul>
+<li>Reject requests with missing or incorrect signatures.</li>
+<li>Reject requests with an &quot;expires&quot; time in the past.
+
+<ul>
+<li><strong>Note</strong>: Make sure to use the correct units for this. &quot;expires&quot; is in milliseconds. If you compare the expiration time to a timestamp in seconds, it will always look like the request expires thousands of years in the future.</li>
+</ul></li>
+</ul>
+
+<p>If an app uses OAuth for authentication, the app should:</p>
+
+<ul>
+<li>Prevent OAuth CSRF attacks. This is often done using a one-time CSRF token in the &quot;state&quot; parameter. This can also be done using PKCE instead, if it&#39;s supported.</li>
+</ul>
+
+<p>If an app doesn&#39;t use OAuth for authentication, the Asana Security Team should manually review the authentication scheme the app uses. In particular, we will try to verify that:</p>
+
+<ul>
+<li>An attacker can&#39;t authenticate themselves as someone else</li>
+<li>An attacker can&#39;t force a victim to authenticate as another user (eg. with a CSRF attack)</li>
+</ul>
+<h2 id='ui-components-authorization'  >UI Components Authorization</h2>
 <p><span class="beta-indicator">ALPHA</span> - For access, please see <a href="/docs/ui-components-alpha">UI Components Alpha</a></p>
 
 <p>Authorization is handled by the app. When an app with UI components is added to a project, the user adding it is sent 
