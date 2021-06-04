@@ -11829,7 +11829,7 @@ Returns the compact project membership records for the project.
 </pre>
 
 <p><span class="description">
-A <em>project status</em> is an update on the progress of a particular project, and is sent out to all project followers when created. These updates include both text describing the update and a color code intended to represent the overall state of the project: “green” for projects that are on track, “yellow” for projects at risk, “red” for projects that are behind, and &quot;blue&quot; for projects on hold.</p>
+A <em>project status</em> is an update on the progress of a particular project, and is sent out to all project followers when created. These updates include both text describing the update and a color code intended to represent the overall state of the project: &quot;green&quot; for projects that are on track, &quot;yellow&quot; for projects at risk, &quot;red&quot; for projects that are behind, and &quot;blue&quot; for projects on hold.</p>
 
 <p>Project statuses can be created and deleted, but not modified.
 </span></p>
@@ -19636,9 +19636,12 @@ to <code>added</code> and <code>removed</code>.</li>
 <li>1k limit per resource in Asana. (If 10 apps each have 100 webhooks
 watching the same resource, no more webhooks can be placed on the
 webhook. <code>/events</code> streams count towards this limit)</li>
-<li>10k per user-app (An app can have 10k webhooks for EACH user)
-</span></li>
+<li>10k per user-app (An app can have 10k webhooks for EACH user)</li>
 </ul>
+<h4  >Example Integration: Webhook Inspector</h4>
+<p>The <a href="https://github.com/Asana/devrel-examples/tree/master/python/webhooks">Webhook Inspector</a> is a Python script that demonstrates the features of Asana webhooks, including how to both properly set them up and receive them. By using this script, you can create a webhook and log the contents of incoming notifications to your console.
+To use this demo, be sure to generate a new <a href="https://developers.asana.com/docs/personal-access-token">personal access token</a>, then follow the instructions in README.
+</span></p>
 
 <p></section>
 <hr class="half-line">
