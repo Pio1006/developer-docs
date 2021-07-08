@@ -485,10 +485,10 @@
           <li class="platform-ui-alpha">
               <hr>
               <a class="toc-h1 toc-link"><span class="beta-indicator">ALPHA</span></a></li><li class="platform-ui-alpha">
-            <a href="/docs/ui-components-alpha" class="toc-h1 toc-link" data-title="UI Components Alpha">UI Components Alpha</a>
+            <a href="/docs/app-components-alpha" class="toc-h1 toc-link" data-title="App Components Alpha">App Components Alpha</a>
           </li>
           <li class="platform-ui-alpha">
-            <a href="/docs/ui-components-overview" class="toc-h1 toc-link" data-title="UI Components Overview">UI Components Overview</a>
+            <a href="/docs/app-components-overview" class="toc-h1 toc-link" data-title="App Components Overview">App Components Overview</a>
               <ul class="toc-list-h2 ">
                   <li>
                     <a href="/docs/app-widget" class="toc-h2 toc-link" data-title="App Widget">App Widget</a>
@@ -505,33 +505,33 @@
               </ul>
           </li>
           <li class="platform-ui-alpha">
-            <a href="/docs/ui-components-security" class="toc-h1 toc-link" data-title="UI Components Security">UI Components Security</a>
+            <a href="/docs/app-components-security" class="toc-h1 toc-link" data-title="App Components Security">App Components Security</a>
               <ul class="toc-list-h2 ">
                   <li>
-                    <a href="/docs/ui-components-security-checklist" class="toc-h2 toc-link" data-title="UI Components Security Checklist">UI Components Security Checklist</a>
+                    <a href="/docs/app-components-security-checklist" class="toc-h2 toc-link" data-title="App Components Security Checklist">App Components Security Checklist</a>
                   </li>
                   <li>
-                    <a href="/docs/ui-components-authorization" class="toc-h2 toc-link" data-title="UI Components Authorization">UI Components Authorization</a>
+                    <a href="/docs/app-components-authorization" class="toc-h2 toc-link" data-title="App Components Authorization">App Components Authorization</a>
                   </li>
                   <li>
-                    <a href="/docs/ui-components-message-integrity" class="toc-h2 toc-link" data-title="UI Components Message Integrity">UI Components Message Integrity</a>
+                    <a href="/docs/app-components-message-integrity" class="toc-h2 toc-link" data-title="App Components Message Integrity">App Components Message Integrity</a>
                   </li>
                   <li>
-                    <a href="/docs/ui-components-timeliness" class="toc-h2 toc-link" data-title="UI Components Timeliness">UI Components Timeliness</a>
+                    <a href="/docs/app-components-timeliness" class="toc-h2 toc-link" data-title="App Components Timeliness">App Components Timeliness</a>
                   </li>
               </ul>
           </li>
           <li class="platform-ui-alpha">
-            <a href="/docs/ui-components-definition" class="toc-h1 toc-link" data-title="UI Components Definition">UI Components Definition</a>
+            <a href="/docs/app-components-definition" class="toc-h1 toc-link" data-title="App Components Definition">App Components Definition</a>
           </li>
           <li class="platform-ui-alpha">
-            <a href="/docs/ui-components-quickstart" class="toc-h1 toc-link" data-title="UI Components Quickstart">UI Components Quickstart</a>
+            <a href="/docs/app-components-quickstart" class="toc-h1 toc-link" data-title="App Components Quickstart">App Components Quickstart</a>
               <ul class="toc-list-h2 ">
                   <li>
                     <a href="/docs/have-an-app-server-running-locally-or-remotely" class="toc-h2 toc-link" data-title="Have an App Server running locally (or remotely)">Have an App Server running locally (or remotely)</a>
                   </li>
                   <li>
-                    <a href="/docs/register-an-app-to-use-ui-components" class="toc-h2 toc-link" data-title="Register an App to use UI Components">Register an App to use UI Components</a>
+                    <a href="/docs/register-an-app-to-use-app-components" class="toc-h2 toc-link" data-title="Register an App to use App Components">Register an App to use App Components</a>
                   </li>
                   <li>
                     <a href="/docs/install-your-app-in-a-project" class="toc-h2 toc-link" data-title="Install your app in a project">Install your app in a project</a>
@@ -560,7 +560,7 @@
               </ul>
           </li>
           <li class="platform-ui-alpha">
-            <a href="/docs/ui-components" class="toc-h1 toc-link" data-title="UI Component Reference">UI Component Reference</a>
+            <a href="/docs/ui-components" class="toc-h1 toc-link" data-title="App Component Reference">App Component Reference</a>
           </li>
           <li class="platform-ui-alpha">
             <a href="/docs/app-forms" class="toc-h1 toc-link" data-title="App Forms">App Forms</a>
@@ -613,7 +613,7 @@
               </ul>
           </li>
           <li class="platform-ui-alpha">
-            <a href="/docs/ui-component-schemas" class="toc-h1 toc-link" data-title="UI Component Schemas">UI Component Schemas</a>
+            <a href="/docs/app-component-schemas" class="toc-h1 toc-link" data-title="App Component Schemas">App Component Schemas</a>
               <ul class="toc-list-h2 ">
                   <li>
                     <a href="/docs/attached-resource" class="toc-h2 toc-link" data-title="AttachedResource">AttachedResource</a>
@@ -2400,7 +2400,7 @@ so this should not be used for private user data.</p>
 <span class="cp">?&gt;</span>
 </code></pre></div>
 <p>An App Server is required for working with <a href="/docs/webhooks">Webhooks</a>
-and <a href="/docs/ui-components">UI Components</a>. When we say &quot;App Server&quot;, we
+and <a href="/docs/app-components-overview">App Components</a>. When we say &quot;App Server&quot;, we
 are referring to the server Asana directly sends requests to. This is different
 from the service it may be connecting to in the end (like Slack or Jira).</p>
 
@@ -2412,7 +2412,7 @@ will be sent from an Asana user&#39;s browser, while other requests will be sent
 servers. </p>
 
 <p>App Servers define their own paths. Apps will need to declare the endpoints for Asana. For Webhooks, 
-this happens when you create a new webhook. For UI Components, some are declared on App Creation while others are 
+this happens when you create a new webhook. For App Components, some are declared on App Creation while others are 
 dynamically declared in responses to requests from Asana.</p>
 
 <p>You should test/debug your App Server with a tool like <a href="https://www.postman.com/">Postman</a> or 
@@ -2424,7 +2424,7 @@ dynamically declared in responses to requests from Asana.</p>
 <li>App Servers need to accept <code>http</code> requests and be accessible via <code>url</code>.</li>
 <li>Request payloads will be <code>json</code> and App Servers should respond with <code>json</code> (if a response 
 is needed).</li>
-<li>Successful requests should respond with either a <code>200</code> or <code>204</code> status code. Some UI Components 
+<li>Successful requests should respond with either a <code>200</code> or <code>204</code> status code. Some App Components 
 have additional error handling for codes like <code>400</code>.</li>
 <li>If an app server is down or throws a <code>500</code>, we will likely retry the request.</li>
 </ul>
@@ -2432,7 +2432,7 @@ have additional error handling for codes like <code>400</code>.</li>
 <p>If we attempt to send a request to an App Server and we receive an error status code, or the 
 request times out, we will retry delivery with exponential backoff. </p>
 
-<p>The tolerance threshold for retries vary between Webhooks and UI Components. Refer to the 
+<p>The tolerance threshold for retries vary between Webhooks and App Components. Refer to the 
 documentation for each for a deeper understanding.</p>
 
 <p></section></p>
@@ -3473,26 +3473,26 @@ Asana is committed to making the developer experience as smooth as possible. Par
 </section></p>
 <p><hr class="platform-ui-alpha">
 <section class="platform-ui-alpha"></p>
-<h1 id='ui-components-alpha'  >UI Components Alpha</h1>
+<h1 id='app-components-alpha'  >App Components Alpha</h1>
 <p><span class="beta-indicator">ALPHA</span></p>
 
-<p>At the moment, UI Components can only be deployed in the developer&#39;s <code>workspace</code>. Upon release, this limitation will be lifted. To get started with UI Components, submit a <a href="/docs/ui-components-definition">UI Components Definition</a>. App deployments may be delayed due to the ongoing development of UI Components.</p>
+<p>App Components are currently in a <strong>Closed Alpha</strong>. If you want to participate in the App Components Alpha Program, please 
+complete and submit <a href="https://form-beta.asana.com?k=-pVvfJKSSeboL3ySjdhYSg&amp;d=15793206719">this form</a>. We are limiting 
+the number of apps that can use these features at this time. This will open up more as we move to beta. </p>
 
-<p>The UI Components Alpha Program is a pre-general-release version of a program developed by Asana that allows developers 
-to develop and test UI components. The UI Component Alpha Program is for development, evaluation, and testing purposes 
-only, and is not for production use or subject to availability or security obligations from Asana. The UI Components 
+<p>The App Components Alpha Program is a pre-general-release version of a program developed by Asana that allows developers 
+to develop and test App Components. The App Component Alpha Program is for development, evaluation, and testing purposes 
+only, and is not for production use or subject to availability or security obligations from Asana. The App Components 
 Alpha Program is made available on an “as is” basis without warranties (express or implied) of any kind, and may be 
 discontinued or modified at any time.</p>
 
 <p><em>This Alpha program was previously named the Workflow Apps Alpha.</em></p>
-
-<p><a id="app-components-overview"></a></p>
-<h1 id='ui-components-overview'  >UI Components Overview</h1>
-<p><span class="beta-indicator">ALPHA</span> - For access, please see <a href="/docs/ui-components-alpha">UI Components Alpha</a></p>
+<h1 id='app-components-overview'  >App Components Overview</h1>
+<p><span class="beta-indicator">ALPHA</span> - For access, please see <a href="/docs/app-components-alpha">App Components Alpha</a></p>
 
 <p>To start building, follow our <a href="/docs/have-an-app-server-running-locally-or-remotely">Quickstart Guide</a>!</p>
 
-<p>Apps can use UI components to display customized widgets, forms, and rules within Asana&#39;s UI. 
+<p>Apps can use App Components to display customized widgets, forms, and rules within Asana&#39;s UI. 
 Requests go from Asana directly to an App&#39;s server. The App Server controls<br>
 the information within these customized widgets and the App Server controls what 
 happens when a User takes actions within these components.</p>
@@ -3502,7 +3502,7 @@ happens when a User takes actions within these components.</p>
 
 <p><hr></p>
 <h2 id='app-widget'  >App Widget</h2>
-<p><span class="beta-indicator">ALPHA</span> - For access, please see <a href="/docs/ui-components-alpha">UI Components Alpha</a></p>
+<p><span class="beta-indicator">ALPHA</span> - For access, please see <a href="/docs/app-components-alpha">App Components Alpha</a></p>
 
 <blockquote>
 <p>Request to the App Server</p>
@@ -3572,7 +3572,7 @@ URL parameters like <code>task</code>, <code>user</code>, and <code>workspace</c
 
 <p><hr></p>
 <h2 id='app-form'  >App Form</h2>
-<p><span class="beta-indicator">ALPHA</span> - For access, please see <a href="/docs/ui-components-alpha">UI Components Alpha</a></p>
+<p><span class="beta-indicator">ALPHA</span> - For access, please see <a href="/docs/app-components-alpha">App Components Alpha</a></p>
 
 <blockquote>
 <p>Request to the App Server</p>
@@ -3655,7 +3655,7 @@ endpoint is the <a href="/docs/on-change-callback">On change callback request</a
 
 <p><hr></p>
 <h2 id='widget-resource-searching'  >Widget Resource Searching</h2>
-<p><span class="beta-indicator">ALPHA</span> - For access, please see <a href="/docs/ui-components-alpha">UI Components Alpha</a></p>
+<p><span class="beta-indicator">ALPHA</span> - For access, please see <a href="/docs/app-components-alpha">App Components Alpha</a></p>
 
 <blockquote>
 <p>Request to the App Server</p>
@@ -3684,7 +3684,7 @@ resource or an error. </p>
 
 <p><hr></p>
 <h2 id='app-action'  >App Action</h2>
-<p><span class="beta-indicator">ALPHA</span> - For access, please see <a href="/docs/ui-components-alpha">UI Components Alpha</a></p>
+<p><span class="beta-indicator">ALPHA</span> - For access, please see <a href="/docs/app-components-alpha">App Components Alpha</a></p>
 
 <blockquote>
 <p>Request to the App Server</p>
@@ -3735,8 +3735,8 @@ the App Server with the user-specified inputs. When the rule is triggered, Asana
 </ul>
 
 <p><hr class="full-line"></p>
-<h1 id='ui-components-security'  >UI Components Security</h1><h2 id='ui-components-security-checklist'  >UI Components Security Checklist</h2>
-<p>When handling requests from Asana, a UI Components app should:</p>
+<h1 id='app-components-security'  >App Components Security</h1><h2 id='app-components-security-checklist'  >App Components Security Checklist</h2>
+<p>When handling requests from Asana, an App Components app should:</p>
 
 <ul>
 <li>Reject requests with missing or incorrect signatures.</li>
@@ -3759,10 +3759,10 @@ the App Server with the user-specified inputs. When the rule is triggered, Asana
 <li>An attacker can&#39;t authenticate themselves as someone else</li>
 <li>An attacker can&#39;t force a victim to authenticate as another user (eg. with a CSRF attack)</li>
 </ul>
-<h2 id='ui-components-authorization'  >UI Components Authorization</h2>
-<p><span class="beta-indicator">ALPHA</span> - For access, please see <a href="/docs/ui-components-alpha">UI Components Alpha</a></p>
+<h2 id='app-components-authorization'  >App Components Authorization</h2>
+<p><span class="beta-indicator">ALPHA</span> - For access, please see <a href="/docs/app-components-alpha">App Components Alpha</a></p>
 
-<p>Authorization is handled by the app. When an app with UI components is added to a project, the user adding it is sent 
+<p>Authorization is handled by the app. When an app with App Components is added to a project, the user adding it is sent 
 to the App&#39;s <code>authenticationUrl</code>. The App may perform OAuth with Asana, OAuth with a different app, perform both, or 
 perform none!</p>
 
@@ -3777,8 +3777,8 @@ hit the UI Hooks and send requests to the App Server, but the server will likely
 might be a good idea to suggest users authenticate with a bot account. </p>
 
 <p><hr></p>
-<h2 id='ui-components-message-integrity'  >UI Components Message Integrity</h2>
-<p><span class="beta-indicator">ALPHA</span> - For access, please see <a href="/docs/ui-components-alpha">UI Components Alpha</a></p>
+<h2 id='app-components-message-integrity'  >App Components Message Integrity</h2>
+<p><span class="beta-indicator">ALPHA</span> - For access, please see <a href="/docs/app-components-alpha">App Components Alpha</a></p>
 
 <p>Message integrity is provided by a SHA-256 HMAC signature on the contents of the request. This is URL parameters in the 
 case of GET requests and a JSON blob in the case of a POST request. The signature is transmitted via a header. The app 
@@ -3790,8 +3790,8 @@ something as trivial as spacing changes.</p>
 Server pretending to be Asana.</p>
 
 <p><hr></p>
-<h2 id='ui-components-timeliness'  >UI Components Timeliness</h2>
-<p><span class="beta-indicator">ALPHA</span> - For access, please see <a href="/docs/ui-components-alpha">UI Components Alpha</a></p>
+<h2 id='app-components-timeliness'  >App Components Timeliness</h2>
+<p><span class="beta-indicator">ALPHA</span> - For access, please see <a href="/docs/app-components-alpha">App Components Alpha</a></p>
 
 <p>Timeliness is provided by the addition of an expiration parameter. If this parameter were not added then a request 
 recorded, such as in logs, could be reused to continue to request information from the app at a later time.</p>
@@ -3800,11 +3800,11 @@ recorded, such as in logs, could be reused to continue to request information fr
 replay attacks. </p>
 
 <p><hr class="full-line"></p>
-<h1 id='ui-components-definition'  >UI Components Definition</h1>
-<p><span class="beta-indicator">ALPHA</span> - For access, please see <a href="/docs/ui-components-alpha">UI Components Alpha</a></p>
+<h1 id='app-components-definition'  >App Components Definition</h1>
+<p><span class="beta-indicator">ALPHA</span> - For access, please see <a href="/docs/app-components-alpha">App Components Alpha</a></p>
 
 <blockquote>
-<p>Sample of an app with a full UI components definition</p>
+<p>Sample of an app with a full App Components definition</p>
 </blockquote>
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="w">
 </span><span class="p">{</span><span class="w">
@@ -3868,13 +3868,13 @@ replay attacks. </p>
   </span><span class="err">externalSupportUrl:</span><span class="w"> </span><span class="s2">"https://asana.com/guide/help/api/jira"</span><span class="p">,</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
-<p>To create an app with UI components, you will need to create an OAuth App and request the 
-UI components functionality onto it via the 
-<a href="https://form-beta.asana.com?k=LBWpDpqZ6b-6pV4ZIbP-OA&amp;d=15793206719">Create a UI Components App</a> form.</p>
+<p>To create an app with App Components, you will need to create an OAuth App and request the 
+App Components functionality onto it via the 
+<a href="https://form-beta.asana.com?k=LBWpDpqZ6b-6pV4ZIbP-OA&amp;d=15793206719">Create an App Components App</a> form.</p>
 
 <p>To create an OAuth app, see <a href="/docs/authentication-quick-start">Authentication Quick Start</a>.</p>
 
-<p>To create a UI components app you&#39;ll need to fill out the <a href="https://form-beta.asana.com?k=LBWpDpqZ6b-6pV4ZIbP-OA&amp;d=15793206719">Create a UI Components App</a>
+<p>To create an App Components app you&#39;ll need to fill out the <a href="https://form-beta.asana.com?k=LBWpDpqZ6b-6pV4ZIbP-OA&amp;d=15793206719">Create an App Components App</a>
 form with the data in the table below.</p>
 <div class='table-holder'><table class='asana-table'><thead><tr><td></td>
 <td>Field</td><td>Type</td><td>Description</td></tr>
@@ -3882,12 +3882,12 @@ form with the data in the table below.</p>
 <p>Once your app is submitted, an Asana Developer will enable your app and notify you via email when it&#39;s ready to use. </p>
 
 <p><hr class="full-line"></p>
-<h1 id='ui-components-quickstart'  >UI Components Quickstart</h1><h2 id='have-an-app-server-running-locally-or-remotely'  >Have an App Server running locally (or remotely)</h2>
-<p><span class="beta-indicator">ALPHA</span> - For access, please see <a href="/docs/ui-components-alpha">UI Components Alpha</a></p>
+<h1 id='app-components-quickstart'  >App Components Quickstart</h1><h2 id='have-an-app-server-running-locally-or-remotely'  >Have an App Server running locally (or remotely)</h2>
+<p><span class="beta-indicator">ALPHA</span> - For access, please see <a href="/docs/app-components-alpha">App Components Alpha</a></p>
 
 <p>For this guide, we will assume your server is running locally at <code>localhost:5000/</code>. <code>localhost</code> works for requests
 that come from the browser, but won&#39;t work for server based requests (like the <code>run_action_url</code>). You should log the 
-request body and url for all requests to your server to help get everything setup. For each UI Component feature you 
+request body and url for all requests to your server to help get everything setup. For each App Component feature you 
 want to use, you&#39;ll need to supply some endpoints. You are in charge of what each path looks like, but here are some 
 provided example paths you can use for now. Add these paths for each feature you want:</p>
 
@@ -3921,11 +3921,11 @@ different types of results, like users vs tickets.</li>
 <p>You will provide Asana these paths in the next step.</p>
 
 <p><hr></p>
-<h2 id='register-an-app-to-use-ui-components'  >Register an App to use UI Components</h2>
-<p><span class="beta-indicator">ALPHA</span> - For access, please see <a href="/docs/ui-components-alpha">UI Components Alpha</a></p>
+<h2 id='register-an-app-to-use-app-components'  >Register an App to use App Components</h2>
+<p><span class="beta-indicator">ALPHA</span> - For access, please see <a href="/docs/app-components-alpha">App Components Alpha</a></p>
 
-<p>First, complete the <a href="https://form-beta.asana.com?k=LBWpDpqZ6b-6pV4ZIbP-OA&amp;d=15793206719">Create a UI Components Alpha App</a>
-described in the <a href="/docs/ui-components-definition">UI Components Section</a>. Here is a cheat-sheet for what data you need to 
+<p>First, complete the <a href="https://form-beta.asana.com?k=LBWpDpqZ6b-6pV4ZIbP-OA&amp;d=15793206719">Create an App Components Alpha App</a>
+described in the <a href="/docs/app-components-definition">App Components Section</a>. Here is a cheat-sheet for what data you need to 
 provide:</p>
 
 <ul>
@@ -3946,7 +3946,7 @@ should be used to create an external resource.</li>
 
 <p><hr></p>
 <h2 id='install-your-app-in-a-project'  >Install your app in a project</h2>
-<p><span class="beta-indicator">ALPHA</span> - For access, please see <a href="/docs/ui-components-alpha">UI Components Alpha</a></p>
+<p><span class="beta-indicator">ALPHA</span> - For access, please see <a href="/docs/app-components-alpha">App Components Alpha</a></p>
 
 <p>Login with your user and ensure you&#39;re in your sandbox domain (The one you provided in the register form). Open or 
 create an Asana project and open it.</p>
@@ -3982,7 +3982,7 @@ sent to your Attach endpoint.</p>
 
 <p><hr></p>
 <h2 id='form-basics'  >Form Basics</h2>
-<p><span class="beta-indicator">ALPHA</span> - For access, please see <a href="/docs/ui-components-alpha">UI Components Alpha</a></p>
+<p><span class="beta-indicator">ALPHA</span> - For access, please see <a href="/docs/app-components-alpha">App Components Alpha</a></p>
 
 <blockquote>
 <p>GET http://localhost:5000/resource/create</p>
@@ -4031,7 +4031,7 @@ attachment matches your <code>matchUrlPattern</code> so Asana will try to load t
 
 <p><hr></p>
 <h2 id='widget-basics'  >Widget Basics</h2>
-<p><span class="beta-indicator">ALPHA</span> - For access, please see <a href="/docs/ui-components-alpha">UI Components Alpha</a></p>
+<p><span class="beta-indicator">ALPHA</span> - For access, please see <a href="/docs/app-components-alpha">App Components Alpha</a></p>
 
 <blockquote>
 <p>GET http://localhost:5000/resource/widget/metadata</p>
@@ -4060,7 +4060,7 @@ Asana the data to display in the widget. Clicking on the widget will take you to
 
 <p><hr></p>
 <h2 id='typeahead-basics'  >Typeahead Basics</h2>
-<p><span class="beta-indicator">ALPHA</span> - For access, please see <a href="/docs/ui-components-alpha">UI Components Alpha</a></p>
+<p><span class="beta-indicator">ALPHA</span> - For access, please see <a href="/docs/app-components-alpha">App Components Alpha</a></p>
 
 <blockquote>
 <p>GET http://localhost:5000/resource/typeahead</p>
@@ -4112,7 +4112,7 @@ resource, a new attachment will be made and attached. Your widget should return!
 
 <p><hr></p>
 <h2 id='automation-basics'  >Automation Basics</h2>
-<p><span class="beta-indicator">ALPHA</span> - For access, please see <a href="/docs/ui-components-alpha">UI Components Alpha</a></p>
+<p><span class="beta-indicator">ALPHA</span> - For access, please see <a href="/docs/app-components-alpha">App Components Alpha</a></p>
 
 <blockquote>
 <p>GET http://localhost:5000/automation/action/metadata</p>
@@ -4163,7 +4163,7 @@ debugging this (unless you setup a localhost proxy like ngrok).</p>
 
 <p>Once your server is ready, follow the <a href="https://asana.com/guide/help/premium/rules">Asana Rules_Guide</a> to create a rule.
 When choosing an action, you should select your app&#39;s action. These will only show up if the project has the app installed
-and you submitted app actions when you <a href="/docs/register-a-platform-ui-app">defined your UI Component endpoints</a>. You should 
+and you submitted app actions when you <a href="/docs/register-an-app-to-use-app-components">defined your App Component endpoints</a>. You should 
 see your customized form. Feel free to submit it and create the rule.</p>
 
 <p>Sadly, you will be unable to test the action being triggered while hosting locally. To test this, deploy your server 
@@ -4171,7 +4171,7 @@ or setup something like ngrok to expose your localhost server.</p>
 
 <p><hr></p>
 <h2 id='being-secure'  >Being Secure</h2>
-<p><span class="beta-indicator">ALPHA</span> - For access, please see <a href="/docs/ui-components-alpha">UI Components Alpha</a></p>
+<p><span class="beta-indicator">ALPHA</span> - For access, please see <a href="/docs/app-components-alpha">App Components Alpha</a></p>
 <div class="highlight"><pre class="highlight javascript tab-javascript"><code><span class="kd">function</span> <span class="nx">forAllRequests</span><span class="p">(</span><span class="nx">req</span><span class="p">)</span> <span class="p">{</span>
   <span class="kd">let</span> <span class="nx">secret</span> <span class="o">=</span> <span class="nx">getSecret</span><span class="p">();</span>
   <span class="nx">stringToVerify</span> <span class="o">=</span> <span class="kc">null</span><span class="p">;</span>
@@ -4212,7 +4212,7 @@ server. This is also shown in the pseudocode on the right.</p>
 
 <p><hr></p>
 <h2 id='deploying'  >Deploying</h2>
-<p><span class="beta-indicator">ALPHA</span> - For access, please see <a href="/docs/ui-components-alpha">UI Components Alpha</a></p>
+<p><span class="beta-indicator">ALPHA</span> - For access, please see <a href="/docs/app-components-alpha">App Components Alpha</a></p>
 
 <p>To deploy you&#39;ll need to host your localhost server to a full <a href="/docs/app-server">App Server</a>.</p>
 
@@ -4223,7 +4223,7 @@ server. This is also shown in the pseudocode on the right.</p>
 
 <p><hr></p>
 <h2 id='publishing'  >Publishing</h2>
-<p><span class="beta-indicator">ALPHA</span> - For access, please see <a href="/docs/ui-components-alpha">UI Components Alpha</a></p>
+<p><span class="beta-indicator">ALPHA</span> - For access, please see <a href="/docs/app-components-alpha">App Components Alpha</a></p>
 
 <p><strong>Publishing is generally not available during the Alpha</strong></p>
 
@@ -4236,16 +4236,16 @@ email devrel@asana.com with your app&#39;s email and the name of the app you wis
 
 <p><hr class="full-line">
 <section class="full-section">
-<h1 id="ui-components">UI Component Reference</h1></p>
+<h1 id="ui-components">App Component Reference</h1></p>
 
-<p><span class="beta-indicator">ALPHA</span> - For access, please see <a href="/docs/ui-components-alpha">UI Components Alpha</a></p>
+<p><span class="beta-indicator">ALPHA</span> - For access, please see <a href="/docs/app-components-alpha">App Components Alpha</a></p>
 
 <blockquote>
 <p>Scroll down for code samples, example requests and responses. Select a language for code samples from the tabs above or the mobile navigation menu.</p>
 </blockquote>
 
 <p><span class="description">
-This is the interface for handling requests for <a href="https://developers.asana.com/docs/ui-components-overview">UI components</a>. This reference is generated from an <a href="https://raw.githubusercontent.com/Asana/developer-docs/master/defs/ui_hooks_oas.yaml">OpenAPI spec</a>.
+This is the interface for handling requests for <a href="https://developers.asana.com/docs/app-components-overview">App Components</a>. This reference is generated from an <a href="https://raw.githubusercontent.com/Asana/developer-docs/master/defs/ui_hooks_oas.yaml">OpenAPI spec</a>.
 </span></p>
 
 <p>Base URLs:</p>
@@ -4261,7 +4261,7 @@ Web: <a href="https://asana.com/support">Asana Support</a>
 <a id="asana-app-forms"></a>
 <h1 id="app-forms">App Forms</h1></p>
 
-<p><span class="beta-indicator">ALPHA</span> - For access, please see <a href="/docs/ui-components-alpha">UI Components Alpha</a></p>
+<p><span class="beta-indicator">ALPHA</span> - For access, please see <a href="/docs/app-components-alpha">App Components Alpha</a></p>
 
 <pre class="highlight http tab-http">
 <code><a href="/docs/get-form-metadata"><span class="get-verb">GET</span> <span class=""nn>/{form_metadata_url}</span></a><br><a href="/docs/on-change-callback"><span class="post-verb">POST</span> <span class=""nn>/{on_change_callback}</span></a><br><a href="/docs/on-submit-callback"><span class="post-verb">POST</span> <span class=""nn>/{on_submit_callback}</span></a></code>
@@ -4275,7 +4275,7 @@ The creation form is displayed when the user starts the flow to create a resourc
 <hr class="half-line">
 <section></p>
 <h2 id='get-form-metadata'  >Get form metadata</h2>
-<p><span class="beta-indicator">ALPHA</span> - For access, please see <a href="/docs/ui-components-alpha">UI Components Alpha</a></p>
+<p><span class="beta-indicator">ALPHA</span> - For access, please see <a href="/docs/app-components-alpha">App Components Alpha</a></p>
 
 <p><a id="opIdgetFormMetadata"></a></p>
 
@@ -4351,7 +4351,7 @@ Get the metadata from the App Server to render a form.
 <p></section><hr class="half-line">
 <section></p>
 <h2 id='on-change-callback'  >On change callback</h2>
-<p><span class="beta-indicator">ALPHA</span> - For access, please see <a href="/docs/ui-components-alpha">UI Components Alpha</a></p>
+<p><span class="beta-indicator">ALPHA</span> - For access, please see <a href="/docs/app-components-alpha">App Components Alpha</a></p>
 
 <p><a id="opIdonFormChange"></a></p>
 
@@ -4440,7 +4440,7 @@ The callback request made to an App Server when a watched field&#39;s value chan
 <p></section><hr class="half-line">
 <section></p>
 <h2 id='on-submit-callback'  >On submit callback</h2>
-<p><span class="beta-indicator">ALPHA</span> - For access, please see <a href="/docs/ui-components-alpha">UI Components Alpha</a></p>
+<p><span class="beta-indicator">ALPHA</span> - For access, please see <a href="/docs/app-components-alpha">App Components Alpha</a></p>
 
 <p><a id="opIdonFormSubmit"></a></p>
 
@@ -4551,7 +4551,7 @@ The callback request made to an App Server when a form is submitted.
 <a id="asana-app-rules"></a>
 <h1 id="app-rules">App Rules</h1></p>
 
-<p><span class="beta-indicator">ALPHA</span> - For access, please see <a href="/docs/ui-components-alpha">UI Components Alpha</a></p>
+<p><span class="beta-indicator">ALPHA</span> - For access, please see <a href="/docs/app-components-alpha">App Components Alpha</a></p>
 
 <pre class="highlight http tab-http">
 <code><a href="/docs/run-action"><span class="post-verb">POST</span> <span class=""nn>/{run_action_url}</span></a><br><a href="/docs/get-action-metadata"><span class="get-verb">GET</span> <span class=""nn>/{action.metadata_url}</span></a><br><a href="/docs/on-action-change-callback"><span class="post-verb">POST</span> <span class=""nn>/{action.on_change_callback}</span></a><br><a href="/docs/on-action-submit-callback"><span class="post-verb">POST</span> <span class=""nn>/{action.on_submit_callback}</span></a></code>
@@ -4565,7 +4565,7 @@ When a rule containing an app action is triggered, the Rules Engine will make a 
 <hr class="half-line">
 <section></p>
 <h2 id='run-action'  >Run action</h2>
-<p><span class="beta-indicator">ALPHA</span> - For access, please see <a href="/docs/ui-components-alpha">UI Components Alpha</a></p>
+<p><span class="beta-indicator">ALPHA</span> - For access, please see <a href="/docs/app-components-alpha">App Components Alpha</a></p>
 
 <p><a id="opIdrunAction"></a></p>
 
@@ -4639,7 +4639,7 @@ The request made when an action is triggered.
 <p></section><hr class="half-line">
 <section></p>
 <h2 id='get-action-metadata'  >Get action metadata</h2>
-<p><span class="beta-indicator">ALPHA</span> - For access, please see <a href="/docs/ui-components-alpha">UI Components Alpha</a></p>
+<p><span class="beta-indicator">ALPHA</span> - For access, please see <a href="/docs/app-components-alpha">App Components Alpha</a></p>
 
 <p><a id="opIdgetActionMetadata"></a></p>
 
@@ -4715,7 +4715,7 @@ When a user has navigated to the Custom Rule Builder UI and selected an App Acti
 <p></section><hr class="half-line">
 <section></p>
 <h2 id='on-action-change-callback'  >On action change callback</h2>
-<p><span class="beta-indicator">ALPHA</span> - For access, please see <a href="/docs/ui-components-alpha">UI Components Alpha</a></p>
+<p><span class="beta-indicator">ALPHA</span> - For access, please see <a href="/docs/app-components-alpha">App Components Alpha</a></p>
 
 <p><a id="opIdonActionFormChange"></a></p>
 
@@ -4805,7 +4805,7 @@ The callback request made to an App Server when a watched field&#39;s value chan
 <p></section><hr class="half-line">
 <section></p>
 <h2 id='on-action-submit-callback'  >On action submit callback</h2>
-<p><span class="beta-indicator">ALPHA</span> - For access, please see <a href="/docs/ui-components-alpha">UI Components Alpha</a></p>
+<p><span class="beta-indicator">ALPHA</span> - For access, please see <a href="/docs/app-components-alpha">App Components Alpha</a></p>
 
 <p><a id="opIdonActionFormSubmit"></a></p>
 
@@ -4942,7 +4942,7 @@ The form is submitted when the user chooses to create their Rule. Asana will cre
 <a id="asana-app-resource-searching"></a>
 <h1 id="app-resource-searching">App Resource Searching</h1></p>
 
-<p><span class="beta-indicator">ALPHA</span> - For access, please see <a href="/docs/ui-components-alpha">UI Components Alpha</a></p>
+<p><span class="beta-indicator">ALPHA</span> - For access, please see <a href="/docs/app-components-alpha">App Components Alpha</a></p>
 
 <pre class="highlight http tab-http">
 <code><a href="/docs/resource-search"><span class="post-verb">POST</span> <span class=""nn>/{resource_search_url}</span></a></code>
@@ -4956,7 +4956,7 @@ If the app defined a search url, tasks without a widget offer the search functio
 <hr class="half-line">
 <section></p>
 <h2 id='resource-search'  >Resource Search</h2>
-<p><span class="beta-indicator">ALPHA</span> - For access, please see <a href="/docs/ui-components-alpha">UI Components Alpha</a></p>
+<p><span class="beta-indicator">ALPHA</span> - For access, please see <a href="/docs/app-components-alpha">App Components Alpha</a></p>
 
 <p><a id="opIdresourceSearch"></a></p>
 
@@ -5025,7 +5025,7 @@ The search request made to an App Server when the search field is submitted.
 <a id="asana-app-widgets"></a>
 <h1 id="app-widgets">App Widgets</h1></p>
 
-<p><span class="beta-indicator">ALPHA</span> - For access, please see <a href="/docs/ui-components-alpha">UI Components Alpha</a></p>
+<p><span class="beta-indicator">ALPHA</span> - For access, please see <a href="/docs/app-components-alpha">App Components Alpha</a></p>
 
 <pre class="highlight http tab-http">
 <code><a href="/docs/get-widget-metadata"><span class="get-verb">GET</span> <span class=""nn>/{widget_metadata_url}</span></a><br><a href="/docs/attach-resource"><span class="post-verb">POST</span> <span class=""nn>/{resource_attach_url}</span></a></code>
@@ -5039,7 +5039,7 @@ The widget is displayed when the user views a task with an attachment with a res
 <hr class="half-line">
 <section></p>
 <h2 id='get-widget-metadata'  >Get widget metadata</h2>
-<p><span class="beta-indicator">ALPHA</span> - For access, please see <a href="/docs/ui-components-alpha">UI Components Alpha</a></p>
+<p><span class="beta-indicator">ALPHA</span> - For access, please see <a href="/docs/app-components-alpha">App Components Alpha</a></p>
 
 <p><a id="opIdgetWidgetMetadata"></a></p>
 
@@ -5114,7 +5114,7 @@ Get the metadata from the App Server to render a widget.
 <p></section><hr class="half-line">
 <section></p>
 <h2 id='attach-resource'  >Attach resource</h2>
-<p><span class="beta-indicator">ALPHA</span> - For access, please see <a href="/docs/ui-components-alpha">UI Components Alpha</a></p>
+<p><span class="beta-indicator">ALPHA</span> - For access, please see <a href="/docs/app-components-alpha">App Components Alpha</a></p>
 
 <p><a id="opIdattachResource"></a></p>
 
@@ -5180,8 +5180,8 @@ When the user attaches a resource URL to a task, Asana will make a signed reques
 </thead><tbody><tr class='c0'><td><svg class='chevron' viewBox='0 0 40 40'><path d='M23.2,16c0,0.3-0.1,0.7-0.3,0.9l-9,11c-0.5,0.6-1.5,0.7-2.1,0.2s-0.7-1.5-0.2-2.1l8.2-10L11.6,6c-0.5-0.6-0.4-1.6,0.2-2.1s1.6-0.4,2.1,0.2l9,11C23.1,15.3,23.2,15.7,23.2,16z'></path></svg></td><td>200<span class="param-type"> <a href="#schemaattachedresource">AttachedResource</a></span></td><td>Successfully attached the resource to the given object.</td></tr></tr><tr class='c0 hidden-row common-item'><td><svg class='chevron' viewBox='0 0 40 40'><path d='M23.2,16c0,0.3-0.1,0.7-0.3,0.9l-9,11c-0.5,0.6-1.5,0.7-2.1,0.2s-0.7-1.5-0.2-2.1l8.2-10L11.6,6c-0.5-0.6-0.4-1.6,0.2-2.1s1.6-0.4,2.1,0.2l9,11C23.1,15.3,23.2,15.7,23.2,16z'></path></svg></td><td>400<span class="param-type"> None</span></td><td>Bad Request</td></tr></tr><tr class='c0 hidden-row common-item'><td><svg class='chevron' viewBox='0 0 40 40'><path d='M23.2,16c0,0.3-0.1,0.7-0.3,0.9l-9,11c-0.5,0.6-1.5,0.7-2.1,0.2s-0.7-1.5-0.2-2.1l8.2-10L11.6,6c-0.5-0.6-0.4-1.6,0.2-2.1s1.6-0.4,2.1,0.2l9,11C23.1,15.3,23.2,15.7,23.2,16z'></path></svg></td><td>401<span class="param-type"> None</span></td><td>Unauthorized</td></tr></tr><tr class='c0 hidden-row common-item'><td><svg class='chevron' viewBox='0 0 40 40'><path d='M23.2,16c0,0.3-0.1,0.7-0.3,0.9l-9,11c-0.5,0.6-1.5,0.7-2.1,0.2s-0.7-1.5-0.2-2.1l8.2-10L11.6,6c-0.5-0.6-0.4-1.6,0.2-2.1s1.6-0.4,2.1,0.2l9,11C23.1,15.3,23.2,15.7,23.2,16z'></path></svg></td><td>403<span class="param-type"> None</span></td><td>Forbidden</td></tr></tr><tr class='c0 hidden-row common-item'><td><svg class='chevron' viewBox='0 0 40 40'><path d='M23.2,16c0,0.3-0.1,0.7-0.3,0.9l-9,11c-0.5,0.6-1.5,0.7-2.1,0.2s-0.7-1.5-0.2-2.1l8.2-10L11.6,6c-0.5-0.6-0.4-1.6,0.2-2.1s1.6-0.4,2.1,0.2l9,11C23.1,15.3,23.2,15.7,23.2,16z'></path></svg></td><td>404<span class="param-type"> None</span></td><td>Not Found</td></tr></tr><tr class='c0 hidden-row common-item'><td><svg class='chevron' viewBox='0 0 40 40'><path d='M23.2,16c0,0.3-0.1,0.7-0.3,0.9l-9,11c-0.5,0.6-1.5,0.7-2.1,0.2s-0.7-1.5-0.2-2.1l8.2-10L11.6,6c-0.5-0.6-0.4-1.6,0.2-2.1s1.6-0.4,2.1,0.2l9,11C23.1,15.3,23.2,15.7,23.2,16z'></path></svg></td><td>500<span class="param-type"> None</span></td><td>Server Error</td></tr></tr><tr class='common-items-toggle'><td class='show-common-items' colspan=6>&darr; Show Common Responses &darr;</td><td class='hide-common-items' colspan=6>&uarr; Hide Common Responses &uarr;</td></tr></tbody></table></div>
 <p></section><hr class="full-line">
 <section class="full-section"></p>
-<h1 id='ui-component-schemas'  >UI Component Schemas</h1>
-<p><span class="beta-indicator">ALPHA</span> - For access, please see <a href="/docs/ui-components-alpha">UI Components Alpha</a></p>
+<h1 id='app-component-schemas'  >App Component Schemas</h1>
+<p><span class="beta-indicator">ALPHA</span> - For access, please see <a href="/docs/app-components-alpha">App Components Alpha</a></p>
 
 <p><span class="description">
 The schema definitions for each object requested or returned from Asana&#39;s API. Some fields are not returned by
@@ -5197,7 +5197,7 @@ default and you&#39;ll need to use <a href="/docs/input-output-options">Input/Ou
 <a id="tocS_AttachedResource"></a>
 <h2 id="attached-resource">AttachedResource</h2></p>
 
-<p><span class="beta-indicator">ALPHA</span> - For access, please see <a href="/docs/ui-components-alpha">UI Components Alpha</a></p>
+<p><span class="beta-indicator">ALPHA</span> - For access, please see <a href="/docs/app-components-alpha">App Components Alpha</a></p>
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
   </span><span class="nl">"error"</span><span class="p">:</span><span class="w"> </span><span class="s2">"No resource matched that input"</span><span class="p">,</span><span class="w">
   </span><span class="nl">"resource_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Build the Thing"</span><span class="p">,</span><span class="w">
@@ -5221,7 +5221,7 @@ The response to a successful attach request.</p>
 <a id="tocS_FormMetadata"></a>
 <h2 id="form-metadata">FormMetadata</h2></p>
 
-<p><span class="beta-indicator">ALPHA</span> - For access, please see <a href="/docs/ui-components-alpha">UI Components Alpha</a></p>
+<p><span class="beta-indicator">ALPHA</span> - For access, please see <a href="/docs/app-components-alpha">App Components Alpha</a></p>
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
   </span><span class="nl">"metadata"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
     </span><span class="nl">"fields"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
@@ -5270,7 +5270,7 @@ Contains the metadata that describes how to display and manage a form</p>
 <a id="tocS_RanAction"></a>
 <h2 id="ran-action">RanAction</h2></p>
 
-<p><span class="beta-indicator">ALPHA</span> - For access, please see <a href="/docs/ui-components-alpha">UI Components Alpha</a></p>
+<p><span class="beta-indicator">ALPHA</span> - For access, please see <a href="/docs/app-components-alpha">App Components Alpha</a></p>
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
   </span><span class="nl">"action_result"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ok"</span><span class="p">,</span><span class="w">
   </span><span class="nl">"error"</span><span class="p">:</span><span class="w"> </span><span class="s2">"That resource no longer exists"</span><span class="p">,</span><span class="w">
@@ -5302,7 +5302,7 @@ The response to an action request.</p>
 <a id="tocS_TypeaheadItem"></a>
 <h2 id="typeahead-item">TypeaheadItem</h2></p>
 
-<p><span class="beta-indicator">ALPHA</span> - For access, please see <a href="/docs/ui-components-alpha">UI Components Alpha</a></p>
+<p><span class="beta-indicator">ALPHA</span> - For access, please see <a href="/docs/app-components-alpha">App Components Alpha</a></p>
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
   </span><span class="nl">"icon_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://example-icon.png"</span><span class="p">,</span><span class="w">
   </span><span class="nl">"subtitle"</span><span class="p">:</span><span class="w"> </span><span class="s2">"OTP"</span><span class="p">,</span><span class="w">
@@ -5327,7 +5327,7 @@ An object describing a typeahead result</p>
 <a id="tocS_WidgetMetadata"></a>
 <h2 id="widget-metadata">WidgetMetadata</h2></p>
 
-<p><span class="beta-indicator">ALPHA</span> - For access, please see <a href="/docs/ui-components-alpha">UI Components Alpha</a></p>
+<p><span class="beta-indicator">ALPHA</span> - For access, please see <a href="/docs/app-components-alpha">App Components Alpha</a></p>
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
   </span><span class="nl">"metadata"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
     </span><span class="nl">"error"</span><span class="p">:</span><span class="w"> </span><span class="s2">"The resource cannot be accessed"</span><span class="p">,</span><span class="w">
